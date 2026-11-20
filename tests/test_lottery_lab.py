@@ -304,5 +304,45 @@ class TestSignalAuditArtifact(unittest.TestCase):
         self.assertEqual(self.report["decision"]["action"], "keep_random_strict")
 
 
+class TestPeriodReviewArtifact(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.report = json.loads(
+            (ROOT / "reports" / "period_2026_01.json").read_text(encoding="utf-8")
+        )
+
+    def test_protocol_is_strict_walk_forward(self) -> None:
+        meta = self.report["meta"]
+        self.assertEqual(meta["start"], "2026-01-01")
+        self.assertEqual(meta["end"], "2026-01-31")
+        self.assertEqual(meta["validation_end"], "2025-12-31")
+        self.assertEqual(meta["review_draws"], 13)
+        self.assertTrue(meta["no_lookahead"])
+        self.assertTrue(meta["retrospective_replay"])
+        self.assertEqual(meta["champion_key"], "random")
+
+    def test_each_prediction_uses_only_earlier_issues(self) -> None:
+        cases = self.report["cases"]
+        self.assertEqual(len(cases), 13)
+        self.assertEqual(cases[0]["issue"], "2026001")
+        self.assertEqual(cases[0]["history_last_issue"], "2025151")
+        for index, case in enumerate(cases):
+            self.assertLess(int(case["history_last_issue"]), int(case["issue"]))
+            if index:
+                self.assertEqual(case["history_last_issue"], cases[index - 1]["issue"])
+
+    def test_outcome_is_not_overstated(self) -> None:
+        strict = self.report["summaries"]["random"]
+        ensemble = self.report["summaries"]["ensemble"]
+        self.assertEqual(strict["top10_coverage_count"], 11)
+        self.assertEqual(strict["any_prize_count"], 0)
+        self.assertEqual(strict["jackpot_count"], 0)
+        self.assertEqual(ensemble["top10_coverage_count"], 12)
+        self.assertEqual(ensemble["any_prize_count"], 2)
+        self.assertEqual(ensemble["top3_exact_count"], 0)
+        self.assertEqual(ensemble["jackpot_count"], 0)
+        self.assertEqual(ensemble["top10_top4_candidate_count"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()

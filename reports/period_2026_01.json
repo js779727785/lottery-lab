@@ -1,0 +1,6228 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-11-20T03:24:13.085027+00:00",
+    "experiment": "strict walk-forward period review",
+    "start": "2026-01-01",
+    "end": "2026-01-31",
+    "validation_start": "2024-01-01",
+    "validation_end": "2025-12-31",
+    "data_rows": 3166,
+    "data_first_issue": "2006001",
+    "data_last_issue": "2026133",
+    "csv_sha256": "08ed44c4330561459580190acaaef55c909fdbeea5403e419ee88e22149147fd",
+    "review_draws": 13,
+    "no_lookahead": true,
+    "retrospective_replay": true,
+    "selection_rule": "验证窗 NDCG@10 配对 bootstrap 95% 下界 > 0；否则回退随机",
+    "champion_key": "random",
+    "champion_label": "随机基线",
+    "champion_reason": "验证窗没有模型显著优于随机基线，按预设规则回退随机基线。"
+  },
+  "selection": {
+    "champion_key": "random",
+    "champion_label": "随机基线",
+    "reason": "验证窗没有模型显著优于随机基线，按预设规则回退随机基线。",
+    "comparisons": {
+      "frequency": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.017761490256522842,
+        "ci95_low": -0.009573696348592352,
+        "ci95_high": 0.04315049743140054,
+        "significant_improvement": false
+      },
+      "recency": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.0146668812387795,
+        "ci95_low": -0.012260947235738439,
+        "ci95_high": 0.040884477665643015,
+        "significant_improvement": false
+      },
+      "gap": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.0035198848415143717,
+        "ci95_low": -0.020105341922800155,
+        "ci95_high": 0.025556203661595372,
+        "significant_improvement": false
+      },
+      "markov": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.025001056710804926,
+        "ci95_low": -0.0016095300209238344,
+        "ci95_high": 0.050444803309868905,
+        "significant_improvement": false
+      },
+      "ensemble": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.021862445005449493,
+        "ci95_low": -0.004879284885657666,
+        "ci95_high": 0.04724301327045886,
+        "significant_improvement": false
+      },
+      "logistic": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.0032583833618045704,
+        "ci95_low": -0.02253159210547727,
+        "ci95_high": 0.02770839286660979,
+        "significant_improvement": false
+      },
+      "logistic_fast": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.0032583833618045704,
+        "ci95_low": -0.02253159210547727,
+        "ci95_high": 0.02770839286660979,
+        "significant_improvement": false
+      }
+    },
+    "validation_summaries": {
+      "random": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 18,
+        "any_prize_rate": 0.059602649006622516,
+        "any_prize_wilson_95": [
+          0.03803027134139833,
+          0.09223846907847916
+        ],
+        "top10_coverage_count": 270,
+        "top10_coverage_rate": 0.8940397350993378,
+        "top10_coverage_wilson_95": [
+          0.8542419066485321,
+          0.9239386940284198
+        ],
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.012560750401515034
+        ],
+        "avg_red_hits": 0.9900662251655629,
+        "avg_top10_hits": 1.728476821192053,
+        "mean_ndcg_at_10": 0.23679755782543688,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 18
+        },
+        "total_cost": 604,
+        "total_payout": 90,
+        "roi": -0.8509933774834437
+      },
+      "frequency": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 16,
+        "any_prize_rate": 0.052980132450331126,
+        "any_prize_wilson_95": [
+          0.032870716691872484,
+          0.08431935817040917
+        ],
+        "top10_coverage_count": 280,
+        "top10_coverage_rate": 0.9271523178807947,
+        "top10_coverage_wilson_95": [
+          0.8921702228010322,
+          0.9514037056638986
+        ],
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.012560750401515034
+        ],
+        "avg_red_hits": 1.1324503311258278,
+        "avg_top10_hits": 1.913907284768212,
+        "mean_ndcg_at_10": 0.2545590480819597,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 1,
+          "6": 14
+        },
+        "total_cost": 604,
+        "total_payout": 280,
+        "roi": -0.5364238410596026
+      },
+      "recency": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 21,
+        "any_prize_rate": 0.0695364238410596,
+        "any_prize_wilson_95": [
+          0.04592734710709882,
+          0.10395939164917241
+        ],
+        "top10_coverage_count": 277,
+        "top10_coverage_rate": 0.9172185430463576,
+        "top10_coverage_wilson_95": [
+          0.8806540932161542,
+          0.9433018369123831
+        ],
+        "top10_top4_candidate_count": 2,
+        "top10_top4_candidate_rate": 0.006622516556291391,
+        "top10_top4_candidate_wilson_95": [
+          0.0018179775208326306,
+          0.023821438438278233
+        ],
+        "avg_red_hits": 1.1324503311258278,
+        "avg_top10_hits": 1.8410596026490067,
+        "mean_ndcg_at_10": 0.25146443906421667,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 1,
+          "6": 19
+        },
+        "total_cost": 604,
+        "total_payout": 305,
+        "roi": -0.49503311258278143
+      },
+      "gap": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 23,
+        "any_prize_rate": 0.076158940397351,
+        "any_prize_wilson_95": [
+          0.05128168869052767,
+          0.11168371562333941
+        ],
+        "top10_coverage_count": 276,
+        "top10_coverage_rate": 0.9139072847682119,
+        "top10_coverage_wilson_95": [
+          0.8768442305206852,
+          0.9405723668290542
+        ],
+        "top10_top4_candidate_count": 1,
+        "top10_top4_candidate_rate": 0.0033112582781456954,
+        "top10_top4_candidate_wilson_95": [
+          0.0005847426840939248,
+          0.018515340496219022
+        ],
+        "avg_red_hits": 1.0298013245033113,
+        "avg_top10_hits": 1.7748344370860927,
+        "mean_ndcg_at_10": 0.24031744266695126,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 3,
+          "6": 20
+        },
+        "total_cost": 604,
+        "total_payout": 130,
+        "roi": -0.7847682119205298
+      },
+      "markov": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 18,
+        "any_prize_rate": 0.059602649006622516,
+        "any_prize_wilson_95": [
+          0.03803027134139833,
+          0.09223846907847916
+        ],
+        "top10_coverage_count": 278,
+        "top10_coverage_rate": 0.9205298013245033,
+        "top10_coverage_wilson_95": [
+          0.8844778561444738,
+          0.9460174067628614
+        ],
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.012560750401515034
+        ],
+        "avg_red_hits": 1.1688741721854305,
+        "avg_top10_hits": 1.900662251655629,
+        "mean_ndcg_at_10": 0.26179861453624187,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 5,
+          "6": 13
+        },
+        "total_cost": 604,
+        "total_payout": 115,
+        "roi": -0.8096026490066225
+      },
+      "ensemble": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 17,
+        "any_prize_rate": 0.056291390728476824,
+        "any_prize_wilson_95": [
+          0.035438913045486534,
+          0.08829049459559304
+        ],
+        "top10_coverage_count": 280,
+        "top10_coverage_rate": 0.9271523178807947,
+        "top10_coverage_wilson_95": [
+          0.8921702228010322,
+          0.9514037056638986
+        ],
+        "top10_top4_candidate_count": 1,
+        "top10_top4_candidate_rate": 0.0033112582781456954,
+        "top10_top4_candidate_wilson_95": [
+          0.0005847426840939248,
+          0.018515340496219022
+        ],
+        "avg_red_hits": 1.1324503311258278,
+        "avg_top10_hits": 1.8874172185430464,
+        "mean_ndcg_at_10": 0.2586600028308864,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 3,
+          "6": 14
+        },
+        "total_cost": 604,
+        "total_payout": 100,
+        "roi": -0.8344370860927153
+      },
+      "logistic": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 19,
+        "any_prize_rate": 0.06291390728476821,
+        "any_prize_wilson_95": [
+          0.04064309371796346,
+          0.09616497948071195
+        ],
+        "top10_coverage_count": 279,
+        "top10_coverage_rate": 0.9238410596026491,
+        "top10_coverage_wilson_95": [
+          0.8883162843766607,
+          0.9487183113094725
+        ],
+        "top10_top4_candidate_count": 1,
+        "top10_top4_candidate_rate": 0.0033112582781456954,
+        "top10_top4_candidate_wilson_95": [
+          0.0005847426840939248,
+          0.018515340496219022
+        ],
+        "avg_red_hits": 1.0728476821192052,
+        "avg_top10_hits": 1.7748344370860927,
+        "mean_ndcg_at_10": 0.24005594118724163,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 1,
+          "6": 18
+        },
+        "total_cost": 604,
+        "total_payout": 100,
+        "roi": -0.8344370860927153
+      },
+      "logistic_fast": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 19,
+        "any_prize_rate": 0.06291390728476821,
+        "any_prize_wilson_95": [
+          0.04064309371796346,
+          0.09616497948071195
+        ],
+        "top10_coverage_count": 279,
+        "top10_coverage_rate": 0.9238410596026491,
+        "top10_coverage_wilson_95": [
+          0.8883162843766607,
+          0.9487183113094725
+        ],
+        "top10_top4_candidate_count": 1,
+        "top10_top4_candidate_rate": 0.0033112582781456954,
+        "top10_top4_candidate_wilson_95": [
+          0.0005847426840939248,
+          0.018515340496219022
+        ],
+        "avg_red_hits": 1.0728476821192052,
+        "avg_top10_hits": 1.7748344370860927,
+        "mean_ndcg_at_10": 0.24005594118724163,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 1,
+          "6": 18
+        },
+        "total_cost": 604,
+        "total_payout": 100,
+        "roi": -0.8344370860927153
+      }
+    }
+  },
+  "summaries": {
+    "random": {
+      "n": 13,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 0,
+      "any_prize_rate": 0.0,
+      "any_prize_wilson_95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "top10_coverage_count": 11,
+      "top10_coverage_rate": 0.8461538461538461,
+      "top10_coverage_wilson_95": [
+        0.5776482949136899,
+        0.9567427368172621
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "avg_red_hits": 1.0,
+      "avg_top10_hits": 1.6923076923076923,
+      "mean_ndcg_at_10": 0.2620375656507382,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "total_cost": 26,
+      "total_payout": 0,
+      "roi": -1.0
+    },
+    "frequency": {
+      "n": 13,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 1,
+      "any_prize_rate": 0.07692307692307693,
+      "any_prize_wilson_95": [
+        0.013710066379696295,
+        0.3331453392824736
+      ],
+      "top10_coverage_count": 12,
+      "top10_coverage_rate": 0.9230769230769231,
+      "top10_coverage_wilson_95": [
+        0.6668546607175265,
+        0.9862899336203037
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "avg_red_hits": 0.7692307692307693,
+      "avg_top10_hits": 1.6153846153846154,
+      "mean_ndcg_at_10": 0.20322822009366714,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 1
+      },
+      "total_cost": 26,
+      "total_payout": 5,
+      "roi": -0.8076923076923077
+    },
+    "recency": {
+      "n": 13,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 3,
+      "any_prize_rate": 0.23076923076923078,
+      "any_prize_wilson_95": [
+        0.08179379092465708,
+        0.5025687399512693
+      ],
+      "top10_coverage_count": 11,
+      "top10_coverage_rate": 0.8461538461538461,
+      "top10_coverage_wilson_95": [
+        0.5776482949136899,
+        0.9567427368172621
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "avg_red_hits": 1.3846153846153846,
+      "avg_top10_hits": 1.8461538461538463,
+      "mean_ndcg_at_10": 0.29840497373987956,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 3
+      },
+      "total_cost": 26,
+      "total_payout": 15,
+      "roi": -0.4230769230769231
+    },
+    "gap": {
+      "n": 13,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 1,
+      "any_prize_rate": 0.07692307692307693,
+      "any_prize_wilson_95": [
+        0.013710066379696295,
+        0.3331453392824736
+      ],
+      "top10_coverage_count": 13,
+      "top10_coverage_rate": 1.0,
+      "top10_coverage_wilson_95": [
+        0.7718981569447083,
+        1.0
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "avg_red_hits": 1.0,
+      "avg_top10_hits": 1.6923076923076923,
+      "mean_ndcg_at_10": 0.2506861731435829,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0
+      },
+      "total_cost": 26,
+      "total_payout": 10,
+      "roi": -0.6153846153846154
+    },
+    "markov": {
+      "n": 13,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 1,
+      "any_prize_rate": 0.07692307692307693,
+      "any_prize_wilson_95": [
+        0.013710066379696295,
+        0.3331453392824736
+      ],
+      "top10_coverage_count": 10,
+      "top10_coverage_rate": 0.7692307692307693,
+      "top10_coverage_wilson_95": [
+        0.49743126004873084,
+        0.918206209075343
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "avg_red_hits": 1.2307692307692308,
+      "avg_top10_hits": 1.4615384615384615,
+      "mean_ndcg_at_10": 0.22651185230431592,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 1
+      },
+      "total_cost": 26,
+      "total_payout": 5,
+      "roi": -0.8076923076923077
+    },
+    "ensemble": {
+      "n": 13,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 2,
+      "any_prize_rate": 0.15384615384615385,
+      "any_prize_wilson_95": [
+        0.04325726318273798,
+        0.4223517050863101
+      ],
+      "top10_coverage_count": 12,
+      "top10_coverage_rate": 0.9230769230769231,
+      "top10_coverage_wilson_95": [
+        0.6668546607175265,
+        0.9862899336203037
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "avg_red_hits": 0.8461538461538461,
+      "avg_top10_hits": 1.9230769230769231,
+      "mean_ndcg_at_10": 0.26061081220617566,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 2
+      },
+      "total_cost": 26,
+      "total_payout": 10,
+      "roi": -0.6153846153846154
+    },
+    "logistic": {
+      "n": 13,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 2,
+      "any_prize_rate": 0.15384615384615385,
+      "any_prize_wilson_95": [
+        0.04325726318273798,
+        0.4223517050863101
+      ],
+      "top10_coverage_count": 12,
+      "top10_coverage_rate": 0.9230769230769231,
+      "top10_coverage_wilson_95": [
+        0.6668546607175265,
+        0.9862899336203037
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "avg_red_hits": 1.0,
+      "avg_top10_hits": 1.8461538461538463,
+      "mean_ndcg_at_10": 0.2318553937471264,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 2
+      },
+      "total_cost": 26,
+      "total_payout": 10,
+      "roi": -0.6153846153846154
+    },
+    "logistic_fast": {
+      "n": 13,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 2,
+      "any_prize_rate": 0.15384615384615385,
+      "any_prize_wilson_95": [
+        0.04325726318273798,
+        0.4223517050863101
+      ],
+      "top10_coverage_count": 12,
+      "top10_coverage_rate": 0.9230769230769231,
+      "top10_coverage_wilson_95": [
+        0.6668546607175265,
+        0.9862899336203037
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "avg_red_hits": 1.0,
+      "avg_top10_hits": 1.8461538461538463,
+      "mean_ndcg_at_10": 0.2318553937471264,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 2
+      },
+      "total_cost": 26,
+      "total_payout": 10,
+      "roi": -0.6153846153846154
+    }
+  },
+  "cases": [
+    {
+      "issue": "2026001",
+      "date": "2026-01-01",
+      "history_rows": 3033,
+      "history_last_issue": "2025151",
+      "actual_reds": [
+        2,
+        6,
+        11,
+        12,
+        13,
+        33
+      ],
+      "actual_blue": 15,
+      "models": {
+        "random": {
+          "issue": "2026001",
+          "date": "2026-01-01",
+          "history_rows": 3033,
+          "history_last_issue": "2025151",
+          "actual_reds": [
+            2,
+            6,
+            11,
+            12,
+            13,
+            33
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            3,
+            20,
+            25,
+            21,
+            8,
+            12
+          ],
+          "single_blue": 6,
+          "top10_reds": [
+            3,
+            20,
+            25,
+            21,
+            8,
+            12,
+            11,
+            27,
+            18,
+            32
+          ],
+          "top4_blues": [
+            6,
+            3,
+            4,
+            11
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.20865662569078208
+        },
+        "frequency": {
+          "issue": "2026001",
+          "date": "2026-01-01",
+          "history_rows": 3033,
+          "history_last_issue": "2025151",
+          "actual_reds": [
+            2,
+            6,
+            11,
+            12,
+            13,
+            33
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            22,
+            14,
+            26,
+            17,
+            6,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            26,
+            17,
+            6,
+            1,
+            18,
+            2,
+            32,
+            27
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.21252302622743086
+        },
+        "recency": {
+          "issue": "2026001",
+          "date": "2026-01-01",
+          "history_rows": 3033,
+          "history_last_issue": "2025151",
+          "actual_reds": [
+            2,
+            6,
+            11,
+            12,
+            13,
+            33
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            2,
+            9,
+            13,
+            8,
+            24,
+            10
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            2,
+            9,
+            13,
+            8,
+            24,
+            10,
+            3,
+            17,
+            5,
+            15
+          ],
+          "top4_blues": [
+            16,
+            10,
+            3,
+            5
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4539036202482202
+        },
+        "gap": {
+          "issue": "2026001",
+          "date": "2026-01-01",
+          "history_rows": 3033,
+          "history_last_issue": "2025151",
+          "actual_reds": [
+            2,
+            6,
+            11,
+            12,
+            13,
+            33
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            16,
+            21,
+            29,
+            23,
+            27,
+            20
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            16,
+            21,
+            29,
+            23,
+            27,
+            20,
+            11,
+            18,
+            25,
+            32
+          ],
+          "top4_blues": [
+            9,
+            1,
+            11,
+            7
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.10086747116627115
+        },
+        "markov": {
+          "issue": "2026001",
+          "date": "2026-01-01",
+          "history_rows": 3033,
+          "history_last_issue": "2025151",
+          "actual_reds": [
+            2,
+            6,
+            11,
+            12,
+            13,
+            33
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            2,
+            22,
+            6,
+            27,
+            26,
+            17
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            2,
+            22,
+            6,
+            27,
+            26,
+            17,
+            1,
+            8,
+            20,
+            32
+          ],
+          "top4_blues": [
+            16,
+            14,
+            5,
+            7
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4539036202482202
+        },
+        "ensemble": {
+          "issue": "2026001",
+          "date": "2026-01-01",
+          "history_rows": 3033,
+          "history_last_issue": "2025151",
+          "actual_reds": [
+            2,
+            6,
+            11,
+            12,
+            13,
+            33
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            2,
+            6,
+            22,
+            17,
+            8,
+            26
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            2,
+            6,
+            22,
+            17,
+            8,
+            26,
+            9,
+            1,
+            14,
+            18
+          ],
+          "top4_blues": [
+            16,
+            5,
+            1,
+            14
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4935232796777481
+        },
+        "logistic": {
+          "issue": "2026001",
+          "date": "2026-01-01",
+          "history_rows": 3033,
+          "history_last_issue": "2025151",
+          "actual_reds": [
+            2,
+            6,
+            11,
+            12,
+            13,
+            33
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            28,
+            30,
+            9,
+            14,
+            22,
+            8
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            28,
+            30,
+            9,
+            14,
+            22,
+            8,
+            21,
+            16,
+            29,
+            33
+          ],
+          "top4_blues": [
+            4,
+            16,
+            5,
+            3
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0874717141014082
+        },
+        "logistic_fast": {
+          "issue": "2026001",
+          "date": "2026-01-01",
+          "history_rows": 3033,
+          "history_last_issue": "2025151",
+          "actual_reds": [
+            2,
+            6,
+            11,
+            12,
+            13,
+            33
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            28,
+            30,
+            9,
+            14,
+            22,
+            8
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            28,
+            30,
+            9,
+            14,
+            22,
+            8,
+            21,
+            16,
+            29,
+            33
+          ],
+          "top4_blues": [
+            4,
+            16,
+            5,
+            3
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0874717141014082
+        }
+      }
+    },
+    {
+      "issue": "2026002",
+      "date": "2026-01-04",
+      "history_rows": 3034,
+      "history_last_issue": "2026001",
+      "actual_reds": [
+        1,
+        5,
+        7,
+        18,
+        30,
+        32
+      ],
+      "actual_blue": 2,
+      "models": {
+        "random": {
+          "issue": "2026002",
+          "date": "2026-01-04",
+          "history_rows": 3034,
+          "history_last_issue": "2026001",
+          "actual_reds": [
+            1,
+            5,
+            7,
+            18,
+            30,
+            32
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            4,
+            26,
+            13,
+            22,
+            15,
+            20
+          ],
+          "single_blue": 11,
+          "top10_reds": [
+            4,
+            26,
+            13,
+            22,
+            15,
+            20,
+            8,
+            27,
+            6,
+            16
+          ],
+          "top4_blues": [
+            11,
+            8,
+            6,
+            1
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "frequency": {
+          "issue": "2026002",
+          "date": "2026-01-04",
+          "history_rows": 3034,
+          "history_last_issue": "2026001",
+          "actual_reds": [
+            1,
+            5,
+            7,
+            18,
+            30,
+            32
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            22,
+            14,
+            26,
+            17,
+            6,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            26,
+            17,
+            6,
+            1,
+            18,
+            2,
+            32,
+            27
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.2997490289142401
+        },
+        "recency": {
+          "issue": "2026002",
+          "date": "2026-01-04",
+          "history_rows": 3034,
+          "history_last_issue": "2026001",
+          "actual_reds": [
+            1,
+            5,
+            7,
+            18,
+            30,
+            32
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            2,
+            13,
+            9,
+            8,
+            24,
+            10
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            2,
+            13,
+            9,
+            8,
+            24,
+            10,
+            3,
+            17,
+            33,
+            6
+          ],
+          "top4_blues": [
+            16,
+            10,
+            3,
+            5
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "gap": {
+          "issue": "2026002",
+          "date": "2026-01-04",
+          "history_rows": 3034,
+          "history_last_issue": "2026001",
+          "actual_reds": [
+            1,
+            5,
+            7,
+            18,
+            30,
+            32
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            16,
+            21,
+            29,
+            23,
+            27,
+            20
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            16,
+            21,
+            29,
+            23,
+            27,
+            20,
+            18,
+            25,
+            32,
+            7
+          ],
+          "top4_blues": [
+            9,
+            1,
+            11,
+            7
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.2794315884911374
+        },
+        "markov": {
+          "issue": "2026002",
+          "date": "2026-01-04",
+          "history_rows": 3034,
+          "history_last_issue": "2026001",
+          "actual_reds": [
+            1,
+            5,
+            7,
+            18,
+            30,
+            32
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            17,
+            14,
+            22,
+            6,
+            1,
+            26
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            17,
+            14,
+            22,
+            6,
+            1,
+            26,
+            19,
+            9,
+            2,
+            10
+          ],
+          "top4_blues": [
+            4,
+            2,
+            12,
+            8
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.11706259313796354
+        },
+        "ensemble": {
+          "issue": "2026002",
+          "date": "2026-01-04",
+          "history_rows": 3034,
+          "history_last_issue": "2026001",
+          "actual_reds": [
+            1,
+            5,
+            7,
+            18,
+            30,
+            32
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            17,
+            14,
+            2,
+            6,
+            22,
+            9
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            17,
+            14,
+            2,
+            6,
+            22,
+            9,
+            1,
+            8,
+            26,
+            10
+          ],
+          "top4_blues": [
+            16,
+            12,
+            15,
+            5
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.10086747116627115
+        },
+        "logistic": {
+          "issue": "2026002",
+          "date": "2026-01-04",
+          "history_rows": 3034,
+          "history_last_issue": "2026001",
+          "actual_reds": [
+            1,
+            5,
+            7,
+            18,
+            30,
+            32
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            33,
+            11,
+            12,
+            13,
+            6,
+            2
+          ],
+          "single_blue": 15,
+          "top10_reds": [
+            33,
+            11,
+            12,
+            13,
+            6,
+            2,
+            21,
+            29,
+            16,
+            28
+          ],
+          "top4_blues": [
+            15,
+            16,
+            4,
+            8
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "logistic_fast": {
+          "issue": "2026002",
+          "date": "2026-01-04",
+          "history_rows": 3034,
+          "history_last_issue": "2026001",
+          "actual_reds": [
+            1,
+            5,
+            7,
+            18,
+            30,
+            32
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            33,
+            11,
+            12,
+            13,
+            6,
+            2
+          ],
+          "single_blue": 15,
+          "top10_reds": [
+            33,
+            11,
+            12,
+            13,
+            6,
+            2,
+            21,
+            29,
+            16,
+            28
+          ],
+          "top4_blues": [
+            15,
+            16,
+            4,
+            8
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        }
+      }
+    },
+    {
+      "issue": "2026003",
+      "date": "2026-01-06",
+      "history_rows": 3035,
+      "history_last_issue": "2026002",
+      "actual_reds": [
+        5,
+        6,
+        9,
+        21,
+        28,
+        30
+      ],
+      "actual_blue": 16,
+      "models": {
+        "random": {
+          "issue": "2026003",
+          "date": "2026-01-06",
+          "history_rows": 3035,
+          "history_last_issue": "2026002",
+          "actual_reds": [
+            5,
+            6,
+            9,
+            21,
+            28,
+            30
+          ],
+          "actual_blue": 16,
+          "single_reds": [
+            21,
+            26,
+            18,
+            6,
+            33,
+            16
+          ],
+          "single_blue": 13,
+          "top10_reds": [
+            21,
+            26,
+            18,
+            6,
+            33,
+            16,
+            13,
+            4,
+            1,
+            31
+          ],
+          "top4_blues": [
+            13,
+            1,
+            2,
+            9
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4329261794091841
+        },
+        "frequency": {
+          "issue": "2026003",
+          "date": "2026-01-06",
+          "history_rows": 3035,
+          "history_last_issue": "2026002",
+          "actual_reds": [
+            5,
+            6,
+            9,
+            21,
+            28,
+            30
+          ],
+          "actual_blue": 16,
+          "single_reds": [
+            22,
+            14,
+            26,
+            17,
+            6,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            26,
+            17,
+            6,
+            1,
+            18,
+            2,
+            32,
+            27
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.11706259313796354
+        },
+        "recency": {
+          "issue": "2026003",
+          "date": "2026-01-06",
+          "history_rows": 3035,
+          "history_last_issue": "2026002",
+          "actual_reds": [
+            5,
+            6,
+            9,
+            21,
+            28,
+            30
+          ],
+          "actual_blue": 16,
+          "single_reds": [
+            2,
+            13,
+            9,
+            8,
+            24,
+            10
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            2,
+            13,
+            9,
+            8,
+            24,
+            10,
+            5,
+            3,
+            17,
+            33
+          ],
+          "top4_blues": [
+            16,
+            10,
+            3,
+            5
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.2521686779156779
+        },
+        "gap": {
+          "issue": "2026003",
+          "date": "2026-01-06",
+          "history_rows": 3035,
+          "history_last_issue": "2026002",
+          "actual_reds": [
+            5,
+            6,
+            9,
+            21,
+            28,
+            30
+          ],
+          "actual_blue": 16,
+          "single_reds": [
+            16,
+            21,
+            29,
+            23,
+            27,
+            20
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            16,
+            21,
+            29,
+            23,
+            27,
+            20,
+            25,
+            26,
+            3,
+            10
+          ],
+          "top4_blues": [
+            9,
+            1,
+            11,
+            7
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.19092086617893467
+        },
+        "markov": {
+          "issue": "2026003",
+          "date": "2026-01-06",
+          "history_rows": 3035,
+          "history_last_issue": "2026002",
+          "actual_reds": [
+            5,
+            6,
+            9,
+            21,
+            28,
+            30
+          ],
+          "actual_blue": 16,
+          "single_reds": [
+            14,
+            26,
+            20,
+            27,
+            1,
+            2
+          ],
+          "single_blue": 6,
+          "top10_reds": [
+            14,
+            26,
+            20,
+            27,
+            1,
+            2,
+            18,
+            22,
+            8,
+            17
+          ],
+          "top4_blues": [
+            6,
+            2,
+            16,
+            9
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "ensemble": {
+          "issue": "2026003",
+          "date": "2026-01-06",
+          "history_rows": 3035,
+          "history_last_issue": "2026002",
+          "actual_reds": [
+            5,
+            6,
+            9,
+            21,
+            28,
+            30
+          ],
+          "actual_blue": 16,
+          "single_reds": [
+            2,
+            14,
+            26,
+            13,
+            8,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            2,
+            14,
+            26,
+            13,
+            8,
+            1,
+            17,
+            9,
+            18,
+            6
+          ],
+          "top4_blues": [
+            16,
+            6,
+            11,
+            15
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.18293214719087553
+        },
+        "logistic": {
+          "issue": "2026003",
+          "date": "2026-01-06",
+          "history_rows": 3035,
+          "history_last_issue": "2026002",
+          "actual_reds": [
+            5,
+            6,
+            9,
+            21,
+            28,
+            30
+          ],
+          "actual_blue": 16,
+          "single_reds": [
+            30,
+            32,
+            7,
+            5,
+            18,
+            1
+          ],
+          "single_blue": 2,
+          "top10_reds": [
+            30,
+            32,
+            7,
+            5,
+            18,
+            1,
+            21,
+            29,
+            16,
+            28
+          ],
+          "top4_blues": [
+            2,
+            16,
+            6,
+            15
+          ],
+          "top10_hits": 4,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.6212653646768634
+        },
+        "logistic_fast": {
+          "issue": "2026003",
+          "date": "2026-01-06",
+          "history_rows": 3035,
+          "history_last_issue": "2026002",
+          "actual_reds": [
+            5,
+            6,
+            9,
+            21,
+            28,
+            30
+          ],
+          "actual_blue": 16,
+          "single_reds": [
+            30,
+            32,
+            7,
+            5,
+            18,
+            1
+          ],
+          "single_blue": 2,
+          "top10_reds": [
+            30,
+            32,
+            7,
+            5,
+            18,
+            1,
+            21,
+            29,
+            16,
+            28
+          ],
+          "top4_blues": [
+            2,
+            16,
+            6,
+            15
+          ],
+          "top10_hits": 4,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.6212653646768634
+        }
+      }
+    },
+    {
+      "issue": "2026004",
+      "date": "2026-01-08",
+      "history_rows": 3036,
+      "history_last_issue": "2026003",
+      "actual_reds": [
+        3,
+        7,
+        8,
+        9,
+        18,
+        32
+      ],
+      "actual_blue": 10,
+      "models": {
+        "random": {
+          "issue": "2026004",
+          "date": "2026-01-08",
+          "history_rows": 3036,
+          "history_last_issue": "2026003",
+          "actual_reds": [
+            3,
+            7,
+            8,
+            9,
+            18,
+            32
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            7,
+            25,
+            14,
+            3,
+            19,
+            10
+          ],
+          "single_blue": 13,
+          "top10_reds": [
+            7,
+            25,
+            14,
+            3,
+            19,
+            10,
+            20,
+            18,
+            23,
+            30
+          ],
+          "top4_blues": [
+            13,
+            4,
+            14,
+            2
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.5283866124986514
+        },
+        "frequency": {
+          "issue": "2026004",
+          "date": "2026-01-08",
+          "history_rows": 3036,
+          "history_last_issue": "2026003",
+          "actual_reds": [
+            3,
+            7,
+            8,
+            9,
+            18,
+            32
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            22,
+            14,
+            26,
+            6,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            26,
+            6,
+            17,
+            1,
+            18,
+            2,
+            32,
+            27
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.1919598743897292
+        },
+        "recency": {
+          "issue": "2026004",
+          "date": "2026-01-08",
+          "history_rows": 3036,
+          "history_last_issue": "2026003",
+          "actual_reds": [
+            3,
+            7,
+            8,
+            9,
+            18,
+            32
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            2,
+            9,
+            13,
+            8,
+            5,
+            24
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            2,
+            9,
+            13,
+            8,
+            5,
+            24,
+            10,
+            6,
+            3,
+            17
+          ],
+          "top4_blues": [
+            16,
+            10,
+            3,
+            5
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4123370353127634
+        },
+        "gap": {
+          "issue": "2026004",
+          "date": "2026-01-08",
+          "history_rows": 3036,
+          "history_last_issue": "2026003",
+          "actual_reds": [
+            3,
+            7,
+            8,
+            9,
+            18,
+            32
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            16,
+            29,
+            23,
+            27,
+            20,
+            25
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            16,
+            29,
+            23,
+            27,
+            20,
+            25,
+            26,
+            3,
+            10,
+            15
+          ],
+          "top4_blues": [
+            9,
+            1,
+            11,
+            7
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.09546043308946733
+        },
+        "markov": {
+          "issue": "2026004",
+          "date": "2026-01-08",
+          "history_rows": 3036,
+          "history_last_issue": "2026003",
+          "actual_reds": [
+            3,
+            7,
+            8,
+            9,
+            18,
+            32
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            6,
+            26,
+            22,
+            18,
+            27,
+            1
+          ],
+          "single_blue": 5,
+          "top10_reds": [
+            6,
+            26,
+            22,
+            18,
+            27,
+            1,
+            2,
+            4,
+            17,
+            14
+          ],
+          "top4_blues": [
+            5,
+            11,
+            6,
+            14
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.13032376591037062
+        },
+        "ensemble": {
+          "issue": "2026004",
+          "date": "2026-01-08",
+          "history_rows": 3036,
+          "history_last_issue": "2026003",
+          "actual_reds": [
+            3,
+            7,
+            8,
+            9,
+            18,
+            32
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            6,
+            2,
+            26,
+            18,
+            22,
+            1
+          ],
+          "single_blue": 5,
+          "top10_reds": [
+            6,
+            2,
+            26,
+            18,
+            22,
+            1,
+            17,
+            8,
+            9,
+            14
+          ],
+          "top4_blues": [
+            5,
+            11,
+            6,
+            1
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.316876602223296
+        },
+        "logistic": {
+          "issue": "2026004",
+          "date": "2026-01-08",
+          "history_rows": 3036,
+          "history_last_issue": "2026003",
+          "actual_reds": [
+            3,
+            7,
+            8,
+            9,
+            18,
+            32
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            28,
+            21,
+            30,
+            5,
+            9,
+            6
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            28,
+            21,
+            30,
+            5,
+            9,
+            6,
+            29,
+            16,
+            23,
+            33
+          ],
+          "top4_blues": [
+            16,
+            5,
+            6,
+            3
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.11706259313796354
+        },
+        "logistic_fast": {
+          "issue": "2026004",
+          "date": "2026-01-08",
+          "history_rows": 3036,
+          "history_last_issue": "2026003",
+          "actual_reds": [
+            3,
+            7,
+            8,
+            9,
+            18,
+            32
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            28,
+            21,
+            30,
+            5,
+            9,
+            6
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            28,
+            21,
+            30,
+            5,
+            9,
+            6,
+            29,
+            16,
+            23,
+            33
+          ],
+          "top4_blues": [
+            16,
+            5,
+            6,
+            3
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.11706259313796354
+        }
+      }
+    },
+    {
+      "issue": "2026005",
+      "date": "2026-01-11",
+      "history_rows": 3037,
+      "history_last_issue": "2026004",
+      "actual_reds": [
+        1,
+        20,
+        22,
+        27,
+        30,
+        33
+      ],
+      "actual_blue": 10,
+      "models": {
+        "random": {
+          "issue": "2026005",
+          "date": "2026-01-11",
+          "history_rows": 3037,
+          "history_last_issue": "2026004",
+          "actual_reds": [
+            1,
+            20,
+            22,
+            27,
+            30,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            11,
+            15,
+            12,
+            20,
+            26,
+            1
+          ],
+          "single_blue": 1,
+          "top10_reds": [
+            11,
+            15,
+            12,
+            20,
+            26,
+            1,
+            33,
+            5,
+            22,
+            32
+          ],
+          "top4_blues": [
+            1,
+            6,
+            12,
+            16
+          ],
+          "top10_hits": 4,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.43007279482461075
+        },
+        "frequency": {
+          "issue": "2026005",
+          "date": "2026-01-11",
+          "history_rows": 3037,
+          "history_last_issue": "2026004",
+          "actual_reds": [
+            1,
+            20,
+            22,
+            27,
+            30,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            22,
+            14,
+            26,
+            6,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            26,
+            6,
+            17,
+            1,
+            18,
+            2,
+            32,
+            8
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4103915680233244
+        },
+        "recency": {
+          "issue": "2026005",
+          "date": "2026-01-11",
+          "history_rows": 3037,
+          "history_last_issue": "2026004",
+          "actual_reds": [
+            1,
+            20,
+            22,
+            27,
+            30,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            2,
+            9,
+            13,
+            8,
+            5,
+            24
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            2,
+            9,
+            13,
+            8,
+            5,
+            24,
+            3,
+            10,
+            6,
+            18
+          ],
+          "top4_blues": [
+            16,
+            10,
+            3,
+            5
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "gap": {
+          "issue": "2026005",
+          "date": "2026-01-11",
+          "history_rows": 3037,
+          "history_last_issue": "2026004",
+          "actual_reds": [
+            1,
+            20,
+            22,
+            27,
+            30,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            16,
+            29,
+            23,
+            27,
+            20,
+            25
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            16,
+            29,
+            23,
+            27,
+            20,
+            25,
+            26,
+            10,
+            15,
+            4
+          ],
+          "top4_blues": [
+            9,
+            1,
+            11,
+            7
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.24738635904833417
+        },
+        "markov": {
+          "issue": "2026005",
+          "date": "2026-01-11",
+          "history_rows": 3037,
+          "history_last_issue": "2026004",
+          "actual_reds": [
+            1,
+            20,
+            22,
+            27,
+            30,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            1,
+            14,
+            17,
+            6,
+            27,
+            22
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            1,
+            14,
+            17,
+            6,
+            27,
+            22,
+            32,
+            2,
+            18,
+            26
+          ],
+          "top4_blues": [
+            12,
+            2,
+            15,
+            4
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 3,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.5274541611612878
+        },
+        "ensemble": {
+          "issue": "2026005",
+          "date": "2026-01-11",
+          "history_rows": 3037,
+          "history_last_issue": "2026004",
+          "actual_reds": [
+            1,
+            20,
+            22,
+            27,
+            30,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            2,
+            17,
+            1,
+            14,
+            6,
+            13
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            2,
+            17,
+            1,
+            14,
+            6,
+            13,
+            18,
+            22,
+            9,
+            8
+          ],
+          "top4_blues": [
+            12,
+            16,
+            2,
+            15
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.24676163983887406
+        },
+        "logistic": {
+          "issue": "2026005",
+          "date": "2026-01-11",
+          "history_rows": 3037,
+          "history_last_issue": "2026004",
+          "actual_reds": [
+            1,
+            20,
+            22,
+            27,
+            30,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            32,
+            7,
+            18,
+            3,
+            8,
+            9
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            32,
+            7,
+            18,
+            3,
+            8,
+            9,
+            29,
+            16,
+            23,
+            33
+          ],
+          "top4_blues": [
+            10,
+            16,
+            12,
+            2
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.0874717141014082
+        },
+        "logistic_fast": {
+          "issue": "2026005",
+          "date": "2026-01-11",
+          "history_rows": 3037,
+          "history_last_issue": "2026004",
+          "actual_reds": [
+            1,
+            20,
+            22,
+            27,
+            30,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            32,
+            7,
+            18,
+            3,
+            8,
+            9
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            32,
+            7,
+            18,
+            3,
+            8,
+            9,
+            29,
+            16,
+            23,
+            33
+          ],
+          "top4_blues": [
+            10,
+            16,
+            12,
+            2
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.0874717141014082
+        }
+      }
+    },
+    {
+      "issue": "2026006",
+      "date": "2026-01-13",
+      "history_rows": 3038,
+      "history_last_issue": "2026005",
+      "actual_reds": [
+        2,
+        6,
+        22,
+        23,
+        24,
+        28
+      ],
+      "actual_blue": 15,
+      "models": {
+        "random": {
+          "issue": "2026006",
+          "date": "2026-01-13",
+          "history_rows": 3038,
+          "history_last_issue": "2026005",
+          "actual_reds": [
+            2,
+            6,
+            22,
+            23,
+            24,
+            28
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            7,
+            8,
+            26,
+            29,
+            32,
+            2
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            7,
+            8,
+            26,
+            29,
+            32,
+            2,
+            25,
+            31,
+            22,
+            3
+          ],
+          "top4_blues": [
+            12,
+            1,
+            14,
+            16
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.198881557747969
+        },
+        "frequency": {
+          "issue": "2026006",
+          "date": "2026-01-13",
+          "history_rows": 3038,
+          "history_last_issue": "2026005",
+          "actual_reds": [
+            2,
+            6,
+            22,
+            23,
+            24,
+            28
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            22,
+            14,
+            26,
+            6,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            26,
+            6,
+            17,
+            1,
+            18,
+            2,
+            32,
+            27
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.5283866124986514
+        },
+        "recency": {
+          "issue": "2026006",
+          "date": "2026-01-13",
+          "history_rows": 3038,
+          "history_last_issue": "2026005",
+          "actual_reds": [
+            2,
+            6,
+            22,
+            23,
+            24,
+            28
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            2,
+            9,
+            13,
+            8,
+            5,
+            24
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            2,
+            9,
+            13,
+            8,
+            5,
+            24,
+            3,
+            10,
+            33,
+            6
+          ],
+          "top4_blues": [
+            10,
+            16,
+            3,
+            5
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4978632821247326
+        },
+        "gap": {
+          "issue": "2026006",
+          "date": "2026-01-13",
+          "history_rows": 3038,
+          "history_last_issue": "2026005",
+          "actual_reds": [
+            2,
+            6,
+            22,
+            23,
+            24,
+            28
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            16,
+            29,
+            23,
+            25,
+            26,
+            10
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            16,
+            29,
+            23,
+            25,
+            26,
+            10,
+            15,
+            4,
+            17,
+            19
+          ],
+          "top4_blues": [
+            9,
+            1,
+            11,
+            7
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.15130120674940672
+        },
+        "markov": {
+          "issue": "2026006",
+          "date": "2026-01-13",
+          "history_rows": 3038,
+          "history_last_issue": "2026005",
+          "actual_reds": [
+            2,
+            6,
+            22,
+            23,
+            24,
+            28
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            20,
+            6,
+            26,
+            17,
+            22,
+            2
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            20,
+            6,
+            26,
+            17,
+            22,
+            2,
+            10,
+            8,
+            13,
+            14
+          ],
+          "top4_blues": [
+            12,
+            2,
+            15,
+            4
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 3,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4157726138414091
+        },
+        "ensemble": {
+          "issue": "2026006",
+          "date": "2026-01-13",
+          "history_rows": 3038,
+          "history_last_issue": "2026005",
+          "actual_reds": [
+            2,
+            6,
+            22,
+            23,
+            24,
+            28
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            2,
+            6,
+            17,
+            9,
+            8,
+            13
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            2,
+            6,
+            17,
+            9,
+            8,
+            13,
+            26,
+            10,
+            22,
+            14
+          ],
+          "top4_blues": [
+            12,
+            16,
+            2,
+            15
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.5846156829012061
+        },
+        "logistic": {
+          "issue": "2026006",
+          "date": "2026-01-13",
+          "history_rows": 3038,
+          "history_last_issue": "2026005",
+          "actual_reds": [
+            2,
+            6,
+            22,
+            23,
+            24,
+            28
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            33,
+            30,
+            27,
+            20,
+            22,
+            1
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            33,
+            30,
+            27,
+            20,
+            22,
+            1,
+            29,
+            16,
+            23,
+            25
+          ],
+          "top4_blues": [
+            10,
+            12,
+            16,
+            1
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.20815499636142162
+        },
+        "logistic_fast": {
+          "issue": "2026006",
+          "date": "2026-01-13",
+          "history_rows": 3038,
+          "history_last_issue": "2026005",
+          "actual_reds": [
+            2,
+            6,
+            22,
+            23,
+            24,
+            28
+          ],
+          "actual_blue": 15,
+          "single_reds": [
+            33,
+            30,
+            27,
+            20,
+            22,
+            1
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            33,
+            30,
+            27,
+            20,
+            22,
+            1,
+            29,
+            16,
+            23,
+            25
+          ],
+          "top4_blues": [
+            10,
+            12,
+            16,
+            1
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.20815499636142162
+        }
+      }
+    },
+    {
+      "issue": "2026007",
+      "date": "2026-01-15",
+      "history_rows": 3039,
+      "history_last_issue": "2026006",
+      "actual_reds": [
+        9,
+        13,
+        19,
+        27,
+        29,
+        30
+      ],
+      "actual_blue": 1,
+      "models": {
+        "random": {
+          "issue": "2026007",
+          "date": "2026-01-15",
+          "history_rows": 3039,
+          "history_last_issue": "2026006",
+          "actual_reds": [
+            9,
+            13,
+            19,
+            27,
+            29,
+            30
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            17,
+            19,
+            10,
+            12,
+            26,
+            33
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            17,
+            19,
+            10,
+            12,
+            26,
+            33,
+            20,
+            3,
+            18,
+            22
+          ],
+          "top4_blues": [
+            16,
+            8,
+            12,
+            4
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.19092086617893467
+        },
+        "frequency": {
+          "issue": "2026007",
+          "date": "2026-01-15",
+          "history_rows": 3039,
+          "history_last_issue": "2026006",
+          "actual_reds": [
+            9,
+            13,
+            19,
+            27,
+            29,
+            30
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1,
+            18,
+            2,
+            32,
+            27
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0874717141014082
+        },
+        "recency": {
+          "issue": "2026007",
+          "date": "2026-01-15",
+          "history_rows": 3039,
+          "history_last_issue": "2026006",
+          "actual_reds": [
+            9,
+            13,
+            19,
+            27,
+            29,
+            30
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            2,
+            9,
+            13,
+            8,
+            24,
+            6
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            2,
+            9,
+            13,
+            8,
+            24,
+            6,
+            5,
+            3,
+            10,
+            33
+          ],
+          "top4_blues": [
+            10,
+            16,
+            15,
+            3
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.3422220729283414
+        },
+        "gap": {
+          "issue": "2026007",
+          "date": "2026-01-15",
+          "history_rows": 3039,
+          "history_last_issue": "2026006",
+          "actual_reds": [
+            9,
+            13,
+            19,
+            27,
+            29,
+            30
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            16,
+            29,
+            25,
+            26,
+            10,
+            15
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            16,
+            29,
+            25,
+            26,
+            10,
+            15,
+            4,
+            17,
+            19,
+            31
+          ],
+          "top4_blues": [
+            9,
+            1,
+            11,
+            7
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.28201326940239274
+        },
+        "markov": {
+          "issue": "2026007",
+          "date": "2026-01-15",
+          "history_rows": 3039,
+          "history_last_issue": "2026006",
+          "actual_reds": [
+            9,
+            13,
+            19,
+            27,
+            29,
+            30
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            17,
+            14,
+            26,
+            22,
+            18,
+            27
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            17,
+            14,
+            26,
+            22,
+            18,
+            27,
+            8,
+            10,
+            2,
+            11
+          ],
+          "top4_blues": [
+            4,
+            2,
+            12,
+            8
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.10778915452451093
+        },
+        "ensemble": {
+          "issue": "2026007",
+          "date": "2026-01-15",
+          "history_rows": 3039,
+          "history_last_issue": "2026006",
+          "actual_reds": [
+            9,
+            13,
+            19,
+            27,
+            29,
+            30
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            17,
+            2,
+            14,
+            18,
+            22,
+            26
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            17,
+            2,
+            14,
+            18,
+            22,
+            26,
+            8,
+            9,
+            6,
+            10
+          ],
+          "top4_blues": [
+            16,
+            15,
+            12,
+            4
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.09546043308946733
+        },
+        "logistic": {
+          "issue": "2026007",
+          "date": "2026-01-15",
+          "history_rows": 3039,
+          "history_last_issue": "2026006",
+          "actual_reds": [
+            9,
+            13,
+            19,
+            27,
+            29,
+            30
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            28,
+            23,
+            24,
+            22,
+            6,
+            2
+          ],
+          "single_blue": 15,
+          "top10_reds": [
+            28,
+            23,
+            24,
+            22,
+            6,
+            2,
+            29,
+            16,
+            31,
+            33
+          ],
+          "top4_blues": [
+            15,
+            1,
+            4,
+            2
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.10086747116627115
+        },
+        "logistic_fast": {
+          "issue": "2026007",
+          "date": "2026-01-15",
+          "history_rows": 3039,
+          "history_last_issue": "2026006",
+          "actual_reds": [
+            9,
+            13,
+            19,
+            27,
+            29,
+            30
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            28,
+            23,
+            24,
+            22,
+            6,
+            2
+          ],
+          "single_blue": 15,
+          "top10_reds": [
+            28,
+            23,
+            24,
+            22,
+            6,
+            2,
+            29,
+            16,
+            31,
+            33
+          ],
+          "top4_blues": [
+            15,
+            1,
+            4,
+            2
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.10086747116627115
+        }
+      }
+    },
+    {
+      "issue": "2026008",
+      "date": "2026-01-18",
+      "history_rows": 3040,
+      "history_last_issue": "2026007",
+      "actual_reds": [
+        6,
+        9,
+        16,
+        27,
+        31,
+        33
+      ],
+      "actual_blue": 10,
+      "models": {
+        "random": {
+          "issue": "2026008",
+          "date": "2026-01-18",
+          "history_rows": 3040,
+          "history_last_issue": "2026007",
+          "actual_reds": [
+            6,
+            9,
+            16,
+            27,
+            31,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            12,
+            3,
+            19,
+            8,
+            25,
+            18
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            12,
+            3,
+            19,
+            8,
+            25,
+            18,
+            4,
+            22,
+            21,
+            32
+          ],
+          "top4_blues": [
+            9,
+            11,
+            13,
+            1
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "frequency": {
+          "issue": "2026008",
+          "date": "2026-01-18",
+          "history_rows": 3040,
+          "history_last_issue": "2026007",
+          "actual_reds": [
+            6,
+            9,
+            16,
+            27,
+            31,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1,
+            18,
+            2,
+            32,
+            27
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.23877292085081492
+        },
+        "recency": {
+          "issue": "2026008",
+          "date": "2026-01-18",
+          "history_rows": 3040,
+          "history_last_issue": "2026007",
+          "actual_reds": [
+            6,
+            9,
+            16,
+            27,
+            31,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            2,
+            9,
+            13,
+            8,
+            24,
+            6
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            2,
+            9,
+            13,
+            8,
+            24,
+            6,
+            5,
+            30,
+            3,
+            10
+          ],
+          "top4_blues": [
+            10,
+            16,
+            15,
+            3
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.2987100207034456
+        },
+        "gap": {
+          "issue": "2026008",
+          "date": "2026-01-18",
+          "history_rows": 3040,
+          "history_last_issue": "2026007",
+          "actual_reds": [
+            6,
+            9,
+            16,
+            27,
+            31,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            16,
+            25,
+            26,
+            10,
+            15,
+            4
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            16,
+            25,
+            26,
+            10,
+            15,
+            4,
+            17,
+            31,
+            14,
+            11
+          ],
+          "top4_blues": [
+            9,
+            11,
+            7,
+            12
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.3980628465882808
+        },
+        "markov": {
+          "issue": "2026008",
+          "date": "2026-01-18",
+          "history_rows": 3040,
+          "history_last_issue": "2026007",
+          "actual_reds": [
+            6,
+            9,
+            16,
+            27,
+            31,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            22,
+            6,
+            17,
+            2,
+            19,
+            1
+          ],
+          "single_blue": 1,
+          "top10_reds": [
+            22,
+            6,
+            17,
+            2,
+            19,
+            1,
+            20,
+            26,
+            18,
+            32
+          ],
+          "top4_blues": [
+            1,
+            9,
+            3,
+            10
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.19092086617893467
+        },
+        "ensemble": {
+          "issue": "2026008",
+          "date": "2026-01-18",
+          "history_rows": 3040,
+          "history_last_issue": "2026007",
+          "actual_reds": [
+            6,
+            9,
+            16,
+            27,
+            31,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            2,
+            22,
+            6,
+            17,
+            1,
+            9
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            2,
+            22,
+            6,
+            17,
+            1,
+            9,
+            18,
+            13,
+            26,
+            10
+          ],
+          "top4_blues": [
+            16,
+            15,
+            10,
+            1
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.25909036127391766
+        },
+        "logistic": {
+          "issue": "2026008",
+          "date": "2026-01-18",
+          "history_rows": 3040,
+          "history_last_issue": "2026007",
+          "actual_reds": [
+            6,
+            9,
+            16,
+            27,
+            31,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            29,
+            30,
+            27,
+            19,
+            13,
+            9
+          ],
+          "single_blue": 1,
+          "top10_reds": [
+            29,
+            30,
+            27,
+            19,
+            13,
+            9,
+            16,
+            31,
+            25,
+            28
+          ],
+          "top4_blues": [
+            1,
+            10,
+            3,
+            16
+          ],
+          "top10_hits": 4,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.45541826552965614
+        },
+        "logistic_fast": {
+          "issue": "2026008",
+          "date": "2026-01-18",
+          "history_rows": 3040,
+          "history_last_issue": "2026007",
+          "actual_reds": [
+            6,
+            9,
+            16,
+            27,
+            31,
+            33
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            29,
+            30,
+            27,
+            19,
+            13,
+            9
+          ],
+          "single_blue": 1,
+          "top10_reds": [
+            29,
+            30,
+            27,
+            19,
+            13,
+            9,
+            16,
+            31,
+            25,
+            28
+          ],
+          "top4_blues": [
+            1,
+            10,
+            3,
+            16
+          ],
+          "top10_hits": 4,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.45541826552965614
+        }
+      }
+    },
+    {
+      "issue": "2026009",
+      "date": "2026-01-20",
+      "history_rows": 3041,
+      "history_last_issue": "2026008",
+      "actual_reds": [
+        3,
+        6,
+        13,
+        19,
+        23,
+        25
+      ],
+      "actual_blue": 10,
+      "models": {
+        "random": {
+          "issue": "2026009",
+          "date": "2026-01-20",
+          "history_rows": 3041,
+          "history_last_issue": "2026008",
+          "actual_reds": [
+            3,
+            6,
+            13,
+            19,
+            23,
+            25
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            30,
+            18,
+            8,
+            23,
+            15,
+            20
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            30,
+            18,
+            8,
+            23,
+            15,
+            20,
+            17,
+            12,
+            11,
+            9
+          ],
+          "top4_blues": [
+            12,
+            15,
+            7,
+            4
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.13032376591037062
+        },
+        "frequency": {
+          "issue": "2026009",
+          "date": "2026-01-20",
+          "history_rows": 3041,
+          "history_last_issue": "2026008",
+          "actual_reds": [
+            3,
+            6,
+            13,
+            19,
+            23,
+            25
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1,
+            18,
+            2,
+            32,
+            27
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.15130120674940672
+        },
+        "recency": {
+          "issue": "2026009",
+          "date": "2026-01-20",
+          "history_rows": 3041,
+          "history_last_issue": "2026008",
+          "actual_reds": [
+            3,
+            6,
+            13,
+            19,
+            23,
+            25
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            9,
+            2,
+            13,
+            8,
+            6,
+            24
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            9,
+            2,
+            13,
+            8,
+            6,
+            24,
+            33,
+            5,
+            30,
+            3
+          ],
+          "top4_blues": [
+            10,
+            16,
+            15,
+            3
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.35583551398877844
+        },
+        "gap": {
+          "issue": "2026009",
+          "date": "2026-01-20",
+          "history_rows": 3041,
+          "history_last_issue": "2026008",
+          "actual_reds": [
+            3,
+            6,
+            13,
+            19,
+            23,
+            25
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            25,
+            26,
+            10,
+            15,
+            4,
+            17
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            25,
+            26,
+            10,
+            15,
+            4,
+            17,
+            14,
+            11,
+            12,
+            5
+          ],
+          "top4_blues": [
+            9,
+            11,
+            7,
+            12
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.30260241349881345
+        },
+        "markov": {
+          "issue": "2026009",
+          "date": "2026-01-20",
+          "history_rows": 3041,
+          "history_last_issue": "2026008",
+          "actual_reds": [
+            3,
+            6,
+            13,
+            19,
+            23,
+            25
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            6,
+            22,
+            26,
+            17,
+            1,
+            2
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            6,
+            22,
+            26,
+            17,
+            1,
+            2,
+            3,
+            14,
+            20,
+            27
+          ],
+          "top4_blues": [
+            12,
+            2,
+            15,
+            4
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4034698846650846
+        },
+        "ensemble": {
+          "issue": "2026009",
+          "date": "2026-01-20",
+          "history_rows": 3041,
+          "history_last_issue": "2026008",
+          "actual_reds": [
+            3,
+            6,
+            13,
+            19,
+            23,
+            25
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            6,
+            2,
+            17,
+            22,
+            26,
+            9
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            6,
+            2,
+            17,
+            22,
+            26,
+            9,
+            1,
+            14,
+            10,
+            3
+          ],
+          "top4_blues": [
+            12,
+            16,
+            15,
+            2
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.39007412760022164
+        },
+        "logistic": {
+          "issue": "2026009",
+          "date": "2026-01-20",
+          "history_rows": 3041,
+          "history_last_issue": "2026008",
+          "actual_reds": [
+            3,
+            6,
+            13,
+            19,
+            23,
+            25
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            33,
+            31,
+            16,
+            27,
+            9,
+            6
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            33,
+            31,
+            16,
+            27,
+            9,
+            6,
+            25,
+            21,
+            28,
+            15
+          ],
+          "top4_blues": [
+            10,
+            12,
+            2,
+            1
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.20865662569078208
+        },
+        "logistic_fast": {
+          "issue": "2026009",
+          "date": "2026-01-20",
+          "history_rows": 3041,
+          "history_last_issue": "2026008",
+          "actual_reds": [
+            3,
+            6,
+            13,
+            19,
+            23,
+            25
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            33,
+            31,
+            16,
+            27,
+            9,
+            6
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            33,
+            31,
+            16,
+            27,
+            9,
+            6,
+            25,
+            21,
+            28,
+            15
+          ],
+          "top4_blues": [
+            10,
+            12,
+            2,
+            1
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.20865662569078208
+        }
+      }
+    },
+    {
+      "issue": "2026010",
+      "date": "2026-01-22",
+      "history_rows": 3042,
+      "history_last_issue": "2026009",
+      "actual_reds": [
+        4,
+        9,
+        10,
+        15,
+        19,
+        26
+      ],
+      "actual_blue": 12,
+      "models": {
+        "random": {
+          "issue": "2026010",
+          "date": "2026-01-22",
+          "history_rows": 3042,
+          "history_last_issue": "2026009",
+          "actual_reds": [
+            4,
+            9,
+            10,
+            15,
+            19,
+            26
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            29,
+            2,
+            24,
+            16,
+            5,
+            27
+          ],
+          "single_blue": 1,
+          "top10_reds": [
+            29,
+            2,
+            24,
+            16,
+            5,
+            27,
+            22,
+            12,
+            9,
+            11
+          ],
+          "top4_blues": [
+            1,
+            7,
+            8,
+            2
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.09109240322345806
+        },
+        "frequency": {
+          "issue": "2026010",
+          "date": "2026-01-22",
+          "history_rows": 3042,
+          "history_last_issue": "2026009",
+          "actual_reds": [
+            4,
+            9,
+            10,
+            15,
+            19,
+            26
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1,
+            18,
+            2,
+            32,
+            27
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.13032376591037062
+        },
+        "recency": {
+          "issue": "2026010",
+          "date": "2026-01-22",
+          "history_rows": 3042,
+          "history_last_issue": "2026009",
+          "actual_reds": [
+            4,
+            9,
+            10,
+            15,
+            19,
+            26
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            9,
+            2,
+            13,
+            6,
+            8,
+            24
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            9,
+            2,
+            13,
+            6,
+            8,
+            24,
+            3,
+            33,
+            5,
+            30
+          ],
+          "top4_blues": [
+            10,
+            16,
+            15,
+            3
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.30260241349881345
+        },
+        "gap": {
+          "issue": "2026010",
+          "date": "2026-01-22",
+          "history_rows": 3042,
+          "history_last_issue": "2026009",
+          "actual_reds": [
+            4,
+            9,
+            10,
+            15,
+            19,
+            26
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            26,
+            10,
+            15,
+            4,
+            17,
+            14
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            26,
+            10,
+            15,
+            4,
+            17,
+            14,
+            11,
+            12,
+            5,
+            21
+          ],
+          "top4_blues": [
+            9,
+            11,
+            7,
+            12
+          ],
+          "top10_hits": 4,
+          "top10_coverage": true,
+          "red_hits": 4,
+          "blue_hit": false,
+          "tier": 5,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 10,
+          "ndcg10": 0.7751482523375255
+        },
+        "markov": {
+          "issue": "2026010",
+          "date": "2026-01-22",
+          "history_rows": 3042,
+          "history_last_issue": "2026009",
+          "actual_reds": [
+            4,
+            9,
+            10,
+            15,
+            19,
+            26
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            18,
+            22,
+            17,
+            14,
+            26,
+            19
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            18,
+            22,
+            17,
+            14,
+            26,
+            19,
+            6,
+            16,
+            9,
+            1
+          ],
+          "top4_blues": [
+            12,
+            2,
+            15,
+            4
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.31594415088593253
+        },
+        "ensemble": {
+          "issue": "2026010",
+          "date": "2026-01-22",
+          "history_rows": 3042,
+          "history_last_issue": "2026009",
+          "actual_reds": [
+            4,
+            9,
+            10,
+            15,
+            19,
+            26
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            18,
+            6,
+            17,
+            22,
+            9,
+            2
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            18,
+            6,
+            17,
+            22,
+            9,
+            2,
+            14,
+            26,
+            10,
+            1
+          ],
+          "top4_blues": [
+            12,
+            16,
+            15,
+            2
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.30361542945088893
+        },
+        "logistic": {
+          "issue": "2026010",
+          "date": "2026-01-22",
+          "history_rows": 3042,
+          "history_last_issue": "2026009",
+          "actual_reds": [
+            4,
+            9,
+            10,
+            15,
+            19,
+            26
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            25,
+            23,
+            19,
+            13,
+            3,
+            6
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            25,
+            23,
+            19,
+            13,
+            3,
+            6,
+            21,
+            28,
+            29,
+            15
+          ],
+          "top4_blues": [
+            10,
+            12,
+            2,
+            1
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.23877292085081492
+        },
+        "logistic_fast": {
+          "issue": "2026010",
+          "date": "2026-01-22",
+          "history_rows": 3042,
+          "history_last_issue": "2026009",
+          "actual_reds": [
+            4,
+            9,
+            10,
+            15,
+            19,
+            26
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            25,
+            23,
+            19,
+            13,
+            3,
+            6
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            25,
+            23,
+            19,
+            13,
+            3,
+            6,
+            21,
+            28,
+            29,
+            15
+          ],
+          "top4_blues": [
+            10,
+            12,
+            2,
+            1
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.23877292085081492
+        }
+      }
+    },
+    {
+      "issue": "2026011",
+      "date": "2026-01-25",
+      "history_rows": 3043,
+      "history_last_issue": "2026010",
+      "actual_reds": [
+        2,
+        3,
+        4,
+        20,
+        31,
+        32
+      ],
+      "actual_blue": 4,
+      "models": {
+        "random": {
+          "issue": "2026011",
+          "date": "2026-01-25",
+          "history_rows": 3043,
+          "history_last_issue": "2026010",
+          "actual_reds": [
+            2,
+            3,
+            4,
+            20,
+            31,
+            32
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            20,
+            8,
+            11,
+            18,
+            22,
+            26
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            20,
+            8,
+            11,
+            18,
+            22,
+            26,
+            19,
+            23,
+            31,
+            5
+          ],
+          "top4_blues": [
+            16,
+            8,
+            12,
+            2
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.3936948167222715
+        },
+        "frequency": {
+          "issue": "2026011",
+          "date": "2026-01-25",
+          "history_rows": 3043,
+          "history_last_issue": "2026010",
+          "actual_reds": [
+            2,
+            3,
+            4,
+            20,
+            31,
+            32
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1,
+            18,
+            2,
+            32,
+            9
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.18655283631292538
+        },
+        "recency": {
+          "issue": "2026011",
+          "date": "2026-01-25",
+          "history_rows": 3043,
+          "history_last_issue": "2026010",
+          "actual_reds": [
+            2,
+            3,
+            4,
+            20,
+            31,
+            32
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            9,
+            2,
+            13,
+            6,
+            8,
+            24
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            9,
+            2,
+            13,
+            6,
+            8,
+            24,
+            3,
+            10,
+            33,
+            19
+          ],
+          "top4_blues": [
+            10,
+            16,
+            15,
+            3
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.29178833734520576
+        },
+        "gap": {
+          "issue": "2026011",
+          "date": "2026-01-25",
+          "history_rows": 3043,
+          "history_last_issue": "2026010",
+          "actual_reds": [
+            2,
+            3,
+            4,
+            20,
+            31,
+            32
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            17,
+            14,
+            11,
+            12,
+            5,
+            21
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            17,
+            14,
+            11,
+            12,
+            5,
+            21,
+            7,
+            8,
+            18,
+            32
+          ],
+          "top4_blues": [
+            9,
+            11,
+            7,
+            5
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0874717141014082
+        },
+        "markov": {
+          "issue": "2026011",
+          "date": "2026-01-25",
+          "history_rows": 3043,
+          "history_last_issue": "2026010",
+          "actual_reds": [
+            2,
+            3,
+            4,
+            20,
+            31,
+            32
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            1,
+            32,
+            17,
+            6,
+            22,
+            18
+          ],
+          "single_blue": 6,
+          "top10_reds": [
+            1,
+            32,
+            17,
+            6,
+            22,
+            18,
+            7,
+            13,
+            2,
+            14
+          ],
+          "top4_blues": [
+            6,
+            16,
+            10,
+            13
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.28201326940239274
+        },
+        "ensemble": {
+          "issue": "2026011",
+          "date": "2026-01-25",
+          "history_rows": 3043,
+          "history_last_issue": "2026010",
+          "actual_reds": [
+            2,
+            3,
+            4,
+            20,
+            31,
+            32
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            1,
+            6,
+            17,
+            2,
+            22,
+            18
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            1,
+            6,
+            17,
+            2,
+            22,
+            18,
+            13,
+            32,
+            9,
+            14
+          ],
+          "top4_blues": [
+            16,
+            10,
+            6,
+            15
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.22578419899983795
+        },
+        "logistic": {
+          "issue": "2026011",
+          "date": "2026-01-25",
+          "history_rows": 3043,
+          "history_last_issue": "2026010",
+          "actual_reds": [
+            2,
+            3,
+            4,
+            20,
+            31,
+            32
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            15,
+            19,
+            4,
+            26,
+            10,
+            9
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            15,
+            19,
+            4,
+            26,
+            10,
+            9,
+            21,
+            28,
+            29,
+            31
+          ],
+          "top4_blues": [
+            12,
+            6,
+            1,
+            16
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.23877292085081492
+        },
+        "logistic_fast": {
+          "issue": "2026011",
+          "date": "2026-01-25",
+          "history_rows": 3043,
+          "history_last_issue": "2026010",
+          "actual_reds": [
+            2,
+            3,
+            4,
+            20,
+            31,
+            32
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            15,
+            19,
+            4,
+            26,
+            10,
+            9
+          ],
+          "single_blue": 12,
+          "top10_reds": [
+            15,
+            19,
+            4,
+            26,
+            10,
+            9,
+            21,
+            28,
+            29,
+            31
+          ],
+          "top4_blues": [
+            12,
+            6,
+            1,
+            16
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.23877292085081492
+        }
+      }
+    },
+    {
+      "issue": "2026012",
+      "date": "2026-01-27",
+      "history_rows": 3044,
+      "history_last_issue": "2026011",
+      "actual_reds": [
+        3,
+        5,
+        7,
+        16,
+        20,
+        24
+      ],
+      "actual_blue": 8,
+      "models": {
+        "random": {
+          "issue": "2026012",
+          "date": "2026-01-27",
+          "history_rows": 3044,
+          "history_last_issue": "2026011",
+          "actual_reds": [
+            3,
+            5,
+            7,
+            16,
+            20,
+            24
+          ],
+          "actual_blue": 8,
+          "single_reds": [
+            7,
+            18,
+            21,
+            22,
+            15,
+            8
+          ],
+          "single_blue": 5,
+          "top10_reds": [
+            7,
+            18,
+            21,
+            22,
+            15,
+            8,
+            20,
+            13,
+            28,
+            32
+          ],
+          "top4_blues": [
+            5,
+            7,
+            9,
+            11
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4034698846650846
+        },
+        "frequency": {
+          "issue": "2026012",
+          "date": "2026-01-27",
+          "history_rows": 3044,
+          "history_last_issue": "2026011",
+          "actual_reds": [
+            3,
+            5,
+            7,
+            16,
+            20,
+            24
+          ],
+          "actual_blue": 8,
+          "single_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1,
+            18,
+            2,
+            32,
+            9
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "recency": {
+          "issue": "2026012",
+          "date": "2026-01-27",
+          "history_rows": 3044,
+          "history_last_issue": "2026011",
+          "actual_reds": [
+            3,
+            5,
+            7,
+            16,
+            20,
+            24
+          ],
+          "actual_blue": 8,
+          "single_reds": [
+            9,
+            2,
+            13,
+            6,
+            3,
+            8
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            9,
+            2,
+            13,
+            6,
+            3,
+            8,
+            24,
+            10,
+            33,
+            19
+          ],
+          "top4_blues": [
+            10,
+            16,
+            15,
+            3
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.21793006430423467
+        },
+        "gap": {
+          "issue": "2026012",
+          "date": "2026-01-27",
+          "history_rows": 3044,
+          "history_last_issue": "2026011",
+          "actual_reds": [
+            3,
+            5,
+            7,
+            16,
+            20,
+            24
+          ],
+          "actual_blue": 8,
+          "single_reds": [
+            17,
+            14,
+            11,
+            12,
+            5,
+            21
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            17,
+            14,
+            11,
+            12,
+            5,
+            21,
+            7,
+            8,
+            18,
+            1
+          ],
+          "top4_blues": [
+            9,
+            11,
+            7,
+            5
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.21793006430423467
+        },
+        "markov": {
+          "issue": "2026012",
+          "date": "2026-01-27",
+          "history_rows": 3044,
+          "history_last_issue": "2026011",
+          "actual_reds": [
+            3,
+            5,
+            7,
+            16,
+            20,
+            24
+          ],
+          "actual_blue": 8,
+          "single_reds": [
+            14,
+            1,
+            32,
+            6,
+            17,
+            18
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            14,
+            1,
+            32,
+            6,
+            17,
+            18,
+            19,
+            8,
+            26,
+            2
+          ],
+          "top4_blues": [
+            16,
+            14,
+            5,
+            7
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "ensemble": {
+          "issue": "2026012",
+          "date": "2026-01-27",
+          "history_rows": 3044,
+          "history_last_issue": "2026011",
+          "actual_reds": [
+            3,
+            5,
+            7,
+            16,
+            20,
+            24
+          ],
+          "actual_blue": 8,
+          "single_reds": [
+            14,
+            6,
+            2,
+            17,
+            1,
+            18
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            14,
+            6,
+            2,
+            17,
+            1,
+            18,
+            8,
+            13,
+            32,
+            9
+          ],
+          "top4_blues": [
+            16,
+            5,
+            15,
+            14
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "logistic": {
+          "issue": "2026012",
+          "date": "2026-01-27",
+          "history_rows": 3044,
+          "history_last_issue": "2026011",
+          "actual_reds": [
+            3,
+            5,
+            7,
+            16,
+            20,
+            24
+          ],
+          "actual_blue": 8,
+          "single_reds": [
+            31,
+            20,
+            32,
+            4,
+            3,
+            2
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            31,
+            20,
+            32,
+            4,
+            3,
+            2,
+            21,
+            28,
+            29,
+            33
+          ],
+          "top4_blues": [
+            4,
+            16,
+            1,
+            5
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.3079834593168982
+        },
+        "logistic_fast": {
+          "issue": "2026012",
+          "date": "2026-01-27",
+          "history_rows": 3044,
+          "history_last_issue": "2026011",
+          "actual_reds": [
+            3,
+            5,
+            7,
+            16,
+            20,
+            24
+          ],
+          "actual_blue": 8,
+          "single_reds": [
+            31,
+            20,
+            32,
+            4,
+            3,
+            2
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            31,
+            20,
+            32,
+            4,
+            3,
+            2,
+            21,
+            28,
+            29,
+            33
+          ],
+          "top4_blues": [
+            4,
+            16,
+            1,
+            5
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.3079834593168982
+        }
+      }
+    },
+    {
+      "issue": "2026013",
+      "date": "2026-01-29",
+      "history_rows": 3045,
+      "history_last_issue": "2026012",
+      "actual_reds": [
+        4,
+        9,
+        12,
+        13,
+        16,
+        20
+      ],
+      "actual_blue": 1,
+      "models": {
+        "random": {
+          "issue": "2026013",
+          "date": "2026-01-29",
+          "history_rows": 3045,
+          "history_last_issue": "2026012",
+          "actual_reds": [
+            4,
+            9,
+            12,
+            13,
+            16,
+            20
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            9,
+            23,
+            22,
+            2,
+            3,
+            1
+          ],
+          "single_blue": 11,
+          "top10_reds": [
+            9,
+            23,
+            22,
+            2,
+            3,
+            1,
+            27,
+            13,
+            14,
+            11
+          ],
+          "top4_blues": [
+            11,
+            10,
+            5,
+            16
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.3980628465882808
+        },
+        "frequency": {
+          "issue": "2026013",
+          "date": "2026-01-29",
+          "history_rows": 3045,
+          "history_last_issue": "2026012",
+          "actual_reds": [
+            4,
+            9,
+            12,
+            13,
+            16,
+            20
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1
+          ],
+          "single_blue": 16,
+          "top10_reds": [
+            22,
+            14,
+            6,
+            26,
+            17,
+            1,
+            18,
+            2,
+            32,
+            9
+          ],
+          "top4_blues": [
+            16,
+            1,
+            15,
+            6
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0874717141014082
+        },
+        "recency": {
+          "issue": "2026013",
+          "date": "2026-01-29",
+          "history_rows": 3045,
+          "history_last_issue": "2026012",
+          "actual_reds": [
+            4,
+            9,
+            12,
+            13,
+            16,
+            20
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            9,
+            2,
+            13,
+            3,
+            6,
+            24
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            9,
+            2,
+            13,
+            3,
+            6,
+            24,
+            8,
+            5,
+            10,
+            33
+          ],
+          "top4_blues": [
+            10,
+            16,
+            15,
+            8
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.4539036202482202
+        },
+        "gap": {
+          "issue": "2026013",
+          "date": "2026-01-29",
+          "history_rows": 3045,
+          "history_last_issue": "2026012",
+          "actual_reds": [
+            4,
+            9,
+            12,
+            13,
+            16,
+            20
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            17,
+            14,
+            11,
+            12,
+            21,
+            8
+          ],
+          "single_blue": 9,
+          "top10_reds": [
+            17,
+            14,
+            11,
+            12,
+            21,
+            8,
+            18,
+            1,
+            22,
+            28
+          ],
+          "top4_blues": [
+            9,
+            11,
+            7,
+            5
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.13032376591037062
+        },
+        "markov": {
+          "issue": "2026013",
+          "date": "2026-01-29",
+          "history_rows": 3045,
+          "history_last_issue": "2026012",
+          "actual_reds": [
+            4,
+            9,
+            12,
+            13,
+            16,
+            20
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            14,
+            26,
+            6,
+            18,
+            17,
+            27
+          ],
+          "single_blue": 11,
+          "top10_reds": [
+            14,
+            26,
+            6,
+            18,
+            17,
+            27,
+            1,
+            32,
+            22,
+            8
+          ],
+          "top4_blues": [
+            11,
+            15,
+            6,
+            4
+          ],
+          "top10_hits": 0,
+          "top10_coverage": false,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.0
+        },
+        "ensemble": {
+          "issue": "2026013",
+          "date": "2026-01-29",
+          "history_rows": 3045,
+          "history_last_issue": "2026012",
+          "actual_reds": [
+            4,
+            9,
+            12,
+            13,
+            16,
+            20
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            14,
+            6,
+            17,
+            2,
+            18,
+            26
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            14,
+            6,
+            17,
+            2,
+            18,
+            26,
+            9,
+            1,
+            8,
+            13
+          ],
+          "top4_blues": [
+            10,
+            15,
+            11,
+            6
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.18833918526767932
+        },
+        "logistic": {
+          "issue": "2026013",
+          "date": "2026-01-29",
+          "history_rows": 3045,
+          "history_last_issue": "2026012",
+          "actual_reds": [
+            4,
+            9,
+            12,
+            13,
+            16,
+            20
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            24,
+            16,
+            20,
+            7,
+            5,
+            3
+          ],
+          "single_blue": 8,
+          "top10_reds": [
+            24,
+            16,
+            20,
+            7,
+            5,
+            3,
+            21,
+            29,
+            28,
+            33
+          ],
+          "top4_blues": [
+            8,
+            6,
+            11,
+            5
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.3422220729283414
+        },
+        "logistic_fast": {
+          "issue": "2026013",
+          "date": "2026-01-29",
+          "history_rows": 3045,
+          "history_last_issue": "2026012",
+          "actual_reds": [
+            4,
+            9,
+            12,
+            13,
+            16,
+            20
+          ],
+          "actual_blue": 1,
+          "single_reds": [
+            24,
+            16,
+            20,
+            7,
+            5,
+            3
+          ],
+          "single_blue": 8,
+          "top10_reds": [
+            24,
+            16,
+            20,
+            7,
+            5,
+            3,
+            21,
+            29,
+            28,
+            33
+          ],
+          "top4_blues": [
+            8,
+            6,
+            11,
+            5
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.3422220729283414
+        }
+      }
+    }
+  ],
+  "comparisons": {
+    "ensemble_vs_random": {
+      "ndcg10": -0.0014267534445625563,
+      "top10_coverage": 0.07692307692307698,
+      "any_prize": 0.15384615384615385
+    }
+  },
+  "disclaimer": "这是事后执行的严格 walk-forward 回放，不是当时已发布并公证的预测。每期预测只使用该期之前的数据；Top-10 覆盖是候选池指标，不是单注准确率。",
+  "artifacts": {
+    "json": "reports/period_2026_01.json",
+    "csv": "reports/period_2026_01.csv"
+  }
+}
