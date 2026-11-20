@@ -1,0 +1,319 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-11-20T03:17:58.820173+00:00",
+    "data_rows": 3166,
+    "data_first_issue": "2006001",
+    "data_last_issue": "2026133",
+    "eval_start": "2008-01-01",
+    "eval_end": "2026-11-19",
+    "no_lookahead": true
+  },
+  "frequency": {
+    "red_chi_square": 43.46430827542639,
+    "red_df": 32,
+    "red_p_value": 0.08505214366486705,
+    "red_min_count": 523,
+    "red_max_count": 628,
+    "blue_chi_square": 8.428300694883132,
+    "blue_df": 15,
+    "blue_p_value": 0.9054667265504055,
+    "blue_min_count": 175,
+    "blue_max_count": 217
+  },
+  "repeats": {
+    "n": 3165,
+    "observed_mean_repeats": 1.0830963665086888,
+    "expected_mean_repeats": 1.0909090909090908,
+    "z": -0.5064811378535243,
+    "p_two_sided": 0.6125189277880039,
+    "distribution": {
+      "0": 844,
+      "1": 1393,
+      "2": 765,
+      "3": 148,
+      "4": 14,
+      "5": 1
+    }
+  },
+  "transitions": {
+    "given_previous_hit": {
+      "n": 18990,
+      "rate": 0.18051606108478147
+    },
+    "given_previous_miss": {
+      "n": 85455,
+      "rate": 0.18210754198115967
+    },
+    "difference": -0.0015914808963782001,
+    "z": -0.5143340268932212,
+    "p_two_sided": 0.6070184756717987
+  },
+  "annual_frequency_check": {
+    "years": [
+      {
+        "year": 2008,
+        "n": 154,
+        "random_coverage": 0.922077922077922,
+        "frequency_coverage": 0.9155844155844156,
+        "difference": -0.00649350649350644
+      },
+      {
+        "year": 2009,
+        "n": 154,
+        "random_coverage": 0.9415584415584416,
+        "frequency_coverage": 0.9155844155844156,
+        "difference": -0.025974025974025983
+      },
+      {
+        "year": 2010,
+        "n": 153,
+        "random_coverage": 0.8888888888888888,
+        "frequency_coverage": 0.934640522875817,
+        "difference": 0.045751633986928164
+      },
+      {
+        "year": 2011,
+        "n": 153,
+        "random_coverage": 0.9477124183006536,
+        "frequency_coverage": 0.9150326797385621,
+        "difference": -0.0326797385620915
+      },
+      {
+        "year": 2012,
+        "n": 154,
+        "random_coverage": 0.922077922077922,
+        "frequency_coverage": 0.8896103896103896,
+        "difference": -0.03246753246753242
+      },
+      {
+        "year": 2013,
+        "n": 154,
+        "random_coverage": 0.8896103896103896,
+        "frequency_coverage": 0.9025974025974026,
+        "difference": 0.012987012987012991
+      },
+      {
+        "year": 2014,
+        "n": 152,
+        "random_coverage": 0.9013157894736842,
+        "frequency_coverage": 0.875,
+        "difference": -0.02631578947368418
+      },
+      {
+        "year": 2015,
+        "n": 154,
+        "random_coverage": 0.935064935064935,
+        "frequency_coverage": 0.922077922077922,
+        "difference": -0.012987012987012991
+      },
+      {
+        "year": 2016,
+        "n": 153,
+        "random_coverage": 0.8954248366013072,
+        "frequency_coverage": 0.9281045751633987,
+        "difference": 0.0326797385620915
+      },
+      {
+        "year": 2017,
+        "n": 154,
+        "random_coverage": 0.922077922077922,
+        "frequency_coverage": 0.8636363636363636,
+        "difference": -0.058441558441558406
+      },
+      {
+        "year": 2018,
+        "n": 153,
+        "random_coverage": 0.8954248366013072,
+        "frequency_coverage": 0.954248366013072,
+        "difference": 0.05882352941176472
+      },
+      {
+        "year": 2019,
+        "n": 151,
+        "random_coverage": 0.9205298013245033,
+        "frequency_coverage": 0.8675496688741722,
+        "difference": -0.052980132450331174
+      },
+      {
+        "year": 2020,
+        "n": 134,
+        "random_coverage": 0.8955223880597015,
+        "frequency_coverage": 0.917910447761194,
+        "difference": 0.02238805970149249
+      },
+      {
+        "year": 2021,
+        "n": 150,
+        "random_coverage": 0.9333333333333333,
+        "frequency_coverage": 0.9,
+        "difference": -0.033333333333333326
+      },
+      {
+        "year": 2022,
+        "n": 150,
+        "random_coverage": 0.9066666666666666,
+        "frequency_coverage": 0.9133333333333333,
+        "difference": 0.00666666666666671
+      },
+      {
+        "year": 2023,
+        "n": 151,
+        "random_coverage": 0.8807947019867549,
+        "frequency_coverage": 0.9470198675496688,
+        "difference": 0.06622516556291391
+      },
+      {
+        "year": 2024,
+        "n": 151,
+        "random_coverage": 0.9205298013245033,
+        "frequency_coverage": 0.9536423841059603,
+        "difference": 0.0331125827814569
+      },
+      {
+        "year": 2025,
+        "n": 151,
+        "random_coverage": 0.8675496688741722,
+        "frequency_coverage": 0.9006622516556292,
+        "difference": 0.03311258278145701
+      },
+      {
+        "year": 2026,
+        "n": 133,
+        "random_coverage": 0.8721804511278195,
+        "frequency_coverage": 0.9097744360902256,
+        "difference": 0.03759398496240607
+      }
+    ],
+    "frequency_wins": 10,
+    "frequency_losses": 9,
+    "ties": 0
+  },
+  "fold_checks": [
+    {
+      "fold_start": "2013-01-01",
+      "fold_end": "2014-12-31",
+      "n": 306,
+      "candidate": "frequency",
+      "ndcg_difference": 0.007955089379031421,
+      "ndcg_ci95_low": -0.01806349177767907,
+      "ndcg_ci95_high": 0.03473117661332589,
+      "coverage_difference": -0.0065359477124183885
+    },
+    {
+      "fold_start": "2013-01-01",
+      "fold_end": "2014-12-31",
+      "n": 306,
+      "candidate": "long_recency",
+      "ndcg_difference": 0.008892872682777872,
+      "ndcg_ci95_low": -0.016847247442873997,
+      "ndcg_ci95_high": 0.03574069732490654,
+      "coverage_difference": 0.0
+    },
+    {
+      "fold_start": "2013-01-01",
+      "fold_end": "2014-12-31",
+      "n": 306,
+      "candidate": "ensemble",
+      "ndcg_difference": 0.00724543948913364,
+      "ndcg_ci95_low": -0.01904924887841072,
+      "ndcg_ci95_high": 0.03321919361873993,
+      "coverage_difference": -0.022875816993464082
+    },
+    {
+      "fold_start": "2015-01-01",
+      "fold_end": "2016-12-31",
+      "n": 307,
+      "candidate": "frequency",
+      "ndcg_difference": 0.014741768682885808,
+      "ndcg_ci95_low": -0.009910073794182923,
+      "ndcg_ci95_high": 0.039476214783886854,
+      "coverage_difference": 0.009771986970684043
+    },
+    {
+      "fold_start": "2015-01-01",
+      "fold_end": "2016-12-31",
+      "n": 307,
+      "candidate": "long_recency",
+      "ndcg_difference": 0.01586059892597265,
+      "ndcg_ci95_low": -0.008914753538167732,
+      "ndcg_ci95_high": 0.040385254537962816,
+      "coverage_difference": 0.006514657980456029
+    },
+    {
+      "fold_start": "2015-01-01",
+      "fold_end": "2016-12-31",
+      "n": 307,
+      "candidate": "ensemble",
+      "ndcg_difference": 0.019466805303972507,
+      "ndcg_ci95_low": -0.006476000365960761,
+      "ndcg_ci95_high": 0.04430429225655481,
+      "coverage_difference": -0.019543973941368087
+    },
+    {
+      "fold_start": "2017-01-01",
+      "fold_end": "2018-12-31",
+      "n": 307,
+      "candidate": "frequency",
+      "ndcg_difference": 0.013326116574230657,
+      "ndcg_ci95_low": -0.012542962774581671,
+      "ndcg_ci95_high": 0.037322649532471906,
+      "coverage_difference": 0.0
+    },
+    {
+      "fold_start": "2017-01-01",
+      "fold_end": "2018-12-31",
+      "n": 307,
+      "candidate": "long_recency",
+      "ndcg_difference": 0.01451164068569169,
+      "ndcg_ci95_low": -0.011062417658157773,
+      "ndcg_ci95_high": 0.038149448599627975,
+      "coverage_difference": 0.0
+    },
+    {
+      "fold_start": "2017-01-01",
+      "fold_end": "2018-12-31",
+      "n": 307,
+      "candidate": "ensemble",
+      "ndcg_difference": 0.007404123758936253,
+      "ndcg_ci95_low": -0.01799302314203714,
+      "ndcg_ci95_high": 0.03201241448244162,
+      "coverage_difference": 0.006514657980456029
+    },
+    {
+      "fold_start": "2019-01-01",
+      "fold_end": "2020-12-31",
+      "n": 285,
+      "candidate": "frequency",
+      "ndcg_difference": -0.002349509356636306,
+      "ndcg_ci95_low": -0.03218545240679524,
+      "ndcg_ci95_high": 0.026106793358002322,
+      "coverage_difference": -0.01754385964912286
+    },
+    {
+      "fold_start": "2019-01-01",
+      "fold_end": "2020-12-31",
+      "n": 285,
+      "candidate": "long_recency",
+      "ndcg_difference": -0.0033416126301832835,
+      "ndcg_ci95_low": -0.03308632607978096,
+      "ndcg_ci95_high": 0.025371447073982027,
+      "coverage_difference": -0.010526315789473717
+    },
+    {
+      "fold_start": "2019-01-01",
+      "fold_end": "2020-12-31",
+      "n": 285,
+      "candidate": "ensemble",
+      "ndcg_difference": 0.004675631908887467,
+      "ndcg_ci95_low": -0.02682909932114219,
+      "ndcg_ci95_high": 0.033516466978025086,
+      "coverage_difference": 0.014035087719298178
+    }
+  ],
+  "decision": {
+    "any_significant_bias": false,
+    "stable_edge_found": false,
+    "action": "keep_random_strict"
+  },
+  "conclusion": "频率、蓝球、红球重复和前后期转移都没有达到 5% 显著性；年度与多折检查也没有稳定优势。当前不能把频率或机器学习候选提升为正式预测模型。"
+}

@@ -1,7 +1,7 @@
 PYTHON ?= python3
 PYTHONPATH := src
 
-.PHONY: collect backtest holdout extreme test serve all
+.PHONY: collect backtest holdout extreme signal test serve all
 
 collect:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.collect20 --start 2006-01-01 --end "$$(date +%F)"
@@ -15,10 +15,13 @@ holdout:
 extreme:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.extreme --start 2008-01-01 --target 0.99
 
+signal:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.signal_audit --start 2008-01-01
+
 test:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m unittest discover -s tests -v
 
 serve:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.server --port 8765
 
-all: collect backtest holdout extreme test
+all: collect backtest holdout extreme signal test

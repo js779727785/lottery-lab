@@ -2,6 +2,7 @@ const state = {
   data: null,
   holdout: null,
   extreme: null,
+  signal: null,
   mode: 'experimental',
   year: 'all',
   page: 1,
@@ -397,6 +398,41 @@ function renderHoldout() {
   }).join('');
 }
 
+function renderSignal() {
+  const stats = $('#signalStats');
+  const count = $('#signalCount');
+  const conclusion = $('#signalConclusion');
+  if (!stats || !count || !conclusion) return;
+
+  if (!state.signal) {
+    stats.innerHTML = '';
+    count.textContent = '未生成';
+    conclusion.textContent = '请先运行 make signal 生成信号审计，再重新加载页面。';
+    return;
+  }
+
+  const report = state.signal;
+  const frequency = report.frequency;
+  const repeats = report.repeats;
+  const transitions = report.transitions;
+  const annual = report.annual_frequency_check;
+  const folds = report.fold_checks || [];
+  const significantFolds = folds.filter((fold) => fold.ndcg_ci95_low > 0).length;
+  const strict = report.decision.action === 'keep_random_strict';
+
+  stats.innerHTML = [
+    ['红球频率 p', fixed(frequency.red_p_value, 4)],
+    ['蓝球频率 p', fixed(frequency.blue_p_value, 4)],
+    ['邻期重号 p', fixed(repeats.p_two_sided, 4)],
+    ['前后期转移 p', fixed(transitions.p_two_sided, 4)],
+    ['年度频率胜负', `${annual.frequency_wins}:${annual.frequency_losses}`],
+    ['显著折数', `${significantFolds}/${folds.length}`],
+  ].map(([label, value]) => `<div class="mini-stat"><span>${label}</span><b>${value}</b></div>`).join('');
+
+  count.textContent = `${report.meta.data_rows} 期 · ${report.meta.eval_start} → ${report.meta.eval_end}`;
+  conclusion.textContent = `${report.conclusion} ${strict ? '严格模式继续保留随机基线。' : '审计要求人工复核，暂不自动提升模型。'}`;
+}
+
 function renderExtreme() {
   if (!state.extreme) {
     $('#extremeStats').innerHTML = '';
@@ -658,6 +694,7 @@ function renderAll() {
   newChallenge();
   renderBacktest();
   renderHoldout();
+  renderSignal();
   renderExtreme();
   renderModels();
   renderData();
@@ -712,15 +749,17 @@ function bindEvents() {
 
 async function init() {
   try {
-    const [response, holdoutResponse, extremeResponse] = await Promise.all([
+    const [response, holdoutResponse, extremeResponse, signalResponse] = await Promise.all([
       fetch('data/dashboard.json', { cache: 'no-store' }),
       fetch('data/holdout2015.json', { cache: 'no-store' }),
       fetch('data/extreme.json', { cache: 'no-store' }),
+      fetch('data/signal_audit.json', { cache: 'no-store' }),
     ]);
     if (!response.ok) throw new Error(`dashboard HTTP ${response.status}`);
     state.data = await response.json();
     state.holdout = holdoutResponse.ok ? await holdoutResponse.json() : null;
     state.extreme = extremeResponse.ok ? await extremeResponse.json() : null;
+    state.signal = signalResponse.ok ? await signalResponse.json() : null;
     renderAll();
     bindEvents();
   } catch (error) {

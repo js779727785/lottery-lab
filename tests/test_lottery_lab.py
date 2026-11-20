@@ -279,5 +279,30 @@ class TestExtremeAuditArtifact(unittest.TestCase):
         self.assertLess(best["best_top3_rate"], 0.99)
 
 
+class TestSignalAuditArtifact(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.report = json.loads(
+            (ROOT / "reports" / "signal_audit.json").read_text(encoding="utf-8")
+        )
+
+    def test_no_significant_frequency_or_transition_signal(self) -> None:
+        frequency = self.report["frequency"]
+        self.assertAlmostEqual(frequency["red_p_value"], 0.085052, places=5)
+        self.assertAlmostEqual(frequency["blue_p_value"], 0.905467, places=5)
+        self.assertAlmostEqual(self.report["repeats"]["p_two_sided"], 0.612519, places=5)
+        self.assertAlmostEqual(self.report["transitions"]["p_two_sided"], 0.607018, places=5)
+        self.assertGreater(frequency["red_p_value"], 0.05)
+        self.assertGreater(self.report["repeats"]["p_two_sided"], 0.05)
+
+    def test_no_stable_edge_and_no_promotion(self) -> None:
+        annual = self.report["annual_frequency_check"]
+        self.assertEqual(annual["frequency_wins"], 10)
+        self.assertEqual(annual["frequency_losses"], 9)
+        self.assertFalse(self.report["decision"]["any_significant_bias"])
+        self.assertFalse(self.report["decision"]["stable_edge_found"])
+        self.assertEqual(self.report["decision"]["action"], "keep_random_strict")
+
+
 if __name__ == "__main__":
     unittest.main()
