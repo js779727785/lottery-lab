@@ -11,7 +11,12 @@ from typing import Any, Dict, List, Sequence
 
 from .backtest import CaseResult, run_model, summarize
 from .data import DEFAULT_DATA_DIR, load_draws
-from .metrics import at_least_hits_probability, theoretical_baselines, wilson_interval
+from .metrics import (
+    at_least_hits_probability,
+    paired_bootstrap_difference,
+    theoretical_baselines,
+    wilson_interval,
+)
 from .models import model_registry
 from .schema import BLUE_MAX, TICKET_COST, validate_draw_sequence
 
@@ -83,6 +88,12 @@ def _model_summary(cases: Sequence[CaseResult]) -> Dict[str, Any]:
         "top10_top4_candidate_wilson_95": list(candidate_ci),
         "any_prize_count": summary["any_prize_count"],
         "any_prize_rate": summary["any_prize_rate"],
+        "top10_coverage_count": summary["top10_coverage_count"],
+        "top10_coverage_rate": summary["top10_coverage_rate"],
+        "avg_top10_hits": summary["avg_top10_hits"],
+        "avg_red_hits": summary["avg_red_hits"],
+        "mean_ndcg_at_10": summary["mean_ndcg_at_10"],
+        "mean_joint_logloss": summary["logloss_red"] + summary["logloss_blue"],
         "tier_counts": tiers,
         "roi": summary["roi"],
     }
@@ -135,8 +146,10 @@ def run_audit(
     distinct_jackpot = _distinct_tickets_for_confidence(1, total_tickets, target)
 
     model_rows: List[Dict[str, Any]] = []
+    model_cases: Dict[str, List[CaseResult]] = {}
     for model in model_registry():
         cases, _ = run_model(model, draws, eval_start, eval_end)
+        model_cases[model.key] = cases
         model_rows.append(
             {
                 "key": model.key,
@@ -144,6 +157,35 @@ def run_audit(
                 **_model_summary(cases),
             }
         )
+
+    random_cases = model_cases["random"]
+    comparisons_vs_random: Dict[str, Dict[str, Any]] = {}
+    for key, cases in model_cases.items():
+        if key == "random":
+            continue
+        ndcg = paired_bootstrap_difference(
+            [case.ndcg10 for case in cases],
+            [case.ndcg10 for case in random_cases],
+        )
+        joint_logloss = paired_bootstrap_difference(
+            [case.logloss_red + case.logloss_blue for case in random_cases],
+            [case.logloss_red + case.logloss_blue for case in cases],
+        )
+        comparisons_vs_random[key] = {
+            "ndcg_at_10": {
+                "difference": ndcg[0],
+                "ci95_low": ndcg[1],
+                "ci95_high": ndcg[2],
+                "significant_improvement": ndcg[1] > 0.0,
+            },
+            "joint_logloss": {
+                "difference": joint_logloss[0],
+                "ci95_low": joint_logloss[1],
+                "ci95_high": joint_logloss[2],
+                "significant_improvement": joint_logloss[1] > 0.0,
+            },
+            "dual_metric_gate_passed": ndcg[1] > 0.0 and joint_logloss[1] > 0.0,
+        }
 
     best_top3 = max(model_rows, key=lambda row: (row["top3_rate"], row["key"]))
     best_candidate = max(
@@ -162,6 +204,10 @@ def run_audit(
             "eval_draws": len(draws) - len(warmup),
             "no_lookahead": True,
             "history_replay_is_not_prediction": True,
+            "predict_before_observe": True,
+            "each_prediction_uses_all_earlier_draws": True,
+            "observed_result_updates_future_only": True,
+            "historical_results_cannot_promote": True,
             "target": target,
         },
         "baselines": baselines,
@@ -183,6 +229,15 @@ def run_audit(
         },
         "candidate_pool_99pct": _pool_requirement(target),
         "models": model_rows,
+        "comparisons_vs_random": comparisons_vs_random,
+        "promotion": {
+            "promoted_from_history": False,
+            "action": "history_replay_can_reject_or_pre_register_but_cannot_promote",
+            "required_future_evidence": (
+                "候选必须在开奖前连续冻结至少 104 期，并同时通过 NDCG@10 与"
+                "红蓝联合对数损失的预设门槛。"
+            ),
+        },
         "observed_ceiling": {
             "best_top3_model": best_top3["key"],
             "best_top3_rate": best_top3["top3_rate"],

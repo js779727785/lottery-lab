@@ -117,17 +117,38 @@ def _select_champion(
     for model in model_registry():
         if model.key == "random":
             continue
-        point, low, high = paired_bootstrap_difference(
+        ndcg_point, ndcg_low, ndcg_high = paired_bootstrap_difference(
             [case.ndcg10 for case in validation_cases[model.key]],
             [case.ndcg10 for case in random_cases],
         )
-        significant = low > 0.0
+        joint_logloss_point, joint_logloss_low, joint_logloss_high = (
+            paired_bootstrap_difference(
+                [
+                    case.logloss_red + case.logloss_blue
+                    for case in random_cases
+                ],
+                [
+                    case.logloss_red + case.logloss_blue
+                    for case in validation_cases[model.key]
+                ],
+            )
+        )
+        ndcg_significant = ndcg_low > 0.0
+        joint_logloss_significant = joint_logloss_low > 0.0
+        significant = ndcg_significant and joint_logloss_significant
         comparisons[model.key] = {
-            "metric": "mean_ndcg_at_10",
-            "difference": point,
-            "ci95_low": low,
-            "ci95_high": high,
+            "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
+            "difference": ndcg_point,
+            "ci95_low": ndcg_low,
+            "ci95_high": ndcg_high,
             "significant_improvement": significant,
+            "joint_logloss": {
+                "metric": "red_blue_joint_logloss_improvement",
+                "difference": joint_logloss_point,
+                "ci95_low": joint_logloss_low,
+                "ci95_high": joint_logloss_high,
+                "significant_improvement": joint_logloss_significant,
+            },
         }
         if significant:
             eligible.append(model.key)
@@ -137,10 +158,16 @@ def _select_champion(
             eligible,
             key=lambda key: validation_summaries[key]["mean_ndcg_at_10"],
         )
-        reason = "验证窗存在显著优于随机基线的模型，选择验证 NDCG@10 最高者。"
+        reason = (
+            "验证窗存在同时改善 NDCG@10 和红蓝联合对数损失的模型，"
+            "选择验证 NDCG@10 最高者。"
+        )
     else:
         champion_key = "random"
-        reason = "验证窗没有模型显著优于随机基线，按预设规则回退随机基线。"
+        reason = (
+            "验证窗没有模型同时显著改善 NDCG@10 和红蓝联合对数损失，"
+            "按预设规则回退随机基线。"
+        )
 
     labels = {model.key: model.label for model in model_registry()}
     return {
@@ -236,7 +263,10 @@ def run_period_review(
             "review_draws": len(issues),
             "no_lookahead": True,
             "retrospective_replay": True,
-            "selection_rule": "验证窗 NDCG@10 配对 bootstrap 95% 下界 > 0；否则回退随机",
+            "selection_rule": (
+                "验证窗 NDCG@10 与红蓝联合对数损失的配对 bootstrap 95% 下界"
+                "均 > 0；否则回退随机"
+            ),
             "champion_key": champion_key,
             "champion_label": selection["champion_label"],
             "champion_reason": selection["reason"],

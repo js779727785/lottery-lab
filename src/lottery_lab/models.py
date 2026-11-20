@@ -465,7 +465,8 @@ class OnlineExpertModel(Model):
     key = "hedge"
     label = "在线专家加权"
 
-    def __init__(self, learning_rate: float = 0.25) -> None:
+    def __init__(self, learning_rate: float = 0.25, key: str = "hedge") -> None:
+        self.key = key
         self.learning_rate = learning_rate
         self.experts = [
             FrequencyModel(),
@@ -551,6 +552,8 @@ def model_registry() -> List[Model]:
         GapModel(),
         MarkovModel(),
         EnsembleModel(),
+        OnlineExpertModel(0.05, "hedge_005"),
+        OnlineExpertModel(0.10, "hedge_01"),
         OnlineExpertModel(),
         OnlineLogisticModel("logistic", 0.03, 0.0005),
         OnlineLogisticModel("logistic_fast", 0.08, 0.0005),

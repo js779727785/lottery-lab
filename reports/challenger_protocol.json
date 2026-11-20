@@ -8,7 +8,7 @@
     "strict_model_unchanged": true,
     "historical_results_cannot_promote": true
   },
-  "candidate_count": 14,
+  "candidate_count": 16,
   "folds": [
     {
       "key": "fold_2011_2012",
@@ -69,6 +69,16 @@
           "n": 307,
           "combined_logloss": 0.7223795212780002,
           "mean_ndcg_at_10": 0.26073160704947584
+        },
+        "hedge_005": {
+          "n": 307,
+          "combined_logloss": 0.7108827072540256,
+          "mean_ndcg_at_10": 0.2707325610943152
+        },
+        "hedge_01": {
+          "n": 307,
+          "combined_logloss": 0.7107527875005841,
+          "mean_ndcg_at_10": 0.2697716513050546
         },
         "hedge": {
           "n": 307,
@@ -280,6 +290,16 @@
           "combined_logloss": 0.7257892488726237,
           "mean_ndcg_at_10": 0.2404506681241666
         },
+        "hedge_005": {
+          "n": 307,
+          "combined_logloss": 0.7122740408540131,
+          "mean_ndcg_at_10": 0.24145059721436743
+        },
+        "hedge_01": {
+          "n": 307,
+          "combined_logloss": 0.7120388364524901,
+          "mean_ndcg_at_10": 0.24095771183722617
+        },
         "hedge": {
           "n": 307,
           "combined_logloss": 0.7114827116844796,
@@ -489,6 +509,16 @@
           "n": 306,
           "combined_logloss": 0.7257977037231553,
           "mean_ndcg_at_10": 0.24648470965507682
+        },
+        "hedge_005": {
+          "n": 306,
+          "combined_logloss": 0.7117450792972285,
+          "mean_ndcg_at_10": 0.25145962840692276
+        },
+        "hedge_01": {
+          "n": 306,
+          "combined_logloss": 0.7114728896753783,
+          "mean_ndcg_at_10": 0.2529210620779464
         },
         "hedge": {
           "n": 306,
@@ -700,6 +730,16 @@
           "combined_logloss": 0.7263435355454424,
           "mean_ndcg_at_10": 0.2637481821517612
         },
+        "hedge_005": {
+          "n": 307,
+          "combined_logloss": 0.7117812538206909,
+          "mean_ndcg_at_10": 0.2625017901279155
+        },
+        "hedge_01": {
+          "n": 307,
+          "combined_logloss": 0.7113467725409864,
+          "mean_ndcg_at_10": 0.25880761915699135
+        },
         "hedge": {
           "n": 307,
           "combined_logloss": 0.7106990748967779,
@@ -910,6 +950,16 @@
           "combined_logloss": 0.7250491122266074,
           "mean_ndcg_at_10": 0.24984243240082488
         },
+        "hedge_005": {
+          "n": 307,
+          "combined_logloss": 0.7111326309664363,
+          "mean_ndcg_at_10": 0.251703640641995
+        },
+        "hedge_01": {
+          "n": 307,
+          "combined_logloss": 0.7107809858798426,
+          "mean_ndcg_at_10": 0.25408639831785
+        },
         "hedge": {
           "n": 307,
           "combined_logloss": 0.7107499930929769,
@@ -1075,24 +1125,24 @@
   "exploratory_panel": [
     {
       "key": "hedge",
-      "label": "在线专家加权",
+      "label": "在线专家加权（学习率 0.25）",
       "role": "precommitted_future_evidence_only",
       "selection_count": 0,
       "mean_validation_combined_logloss": 0.7108658173987282
     },
     {
-      "key": "gap",
-      "label": "遗漏回补",
+      "key": "hedge_01",
+      "label": "在线专家加权（学习率 0.10）",
       "role": "precommitted_future_evidence_only",
       "selection_count": 0,
-      "mean_validation_combined_logloss": 0.721950501705221
+      "mean_validation_combined_logloss": 0.7112784544098563
     },
     {
-      "key": "recency_13",
-      "label": "近因 13 期半衰期",
+      "key": "hedge_005",
+      "label": "在线专家加权（学习率 0.05）",
       "role": "precommitted_future_evidence_only",
       "selection_count": 0,
-      "mean_validation_combined_logloss": 0.7236576339580578
+      "mean_validation_combined_logloss": 0.711563142438479
     }
   ],
   "outer_estimate": {

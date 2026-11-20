@@ -97,7 +97,17 @@ def candidate_registry() -> List[CandidateSpec]:
         CandidateSpec("gap", "遗漏回补", GapModel),
         CandidateSpec("markov", "一阶转移", MarkovModel),
         CandidateSpec("ensemble", "多因子集成", EnsembleModel),
-        CandidateSpec("hedge", "在线专家加权", OnlineExpertModel),
+        CandidateSpec(
+            "hedge_005",
+            "在线专家加权（学习率 0.05）",
+            lambda: OnlineExpertModel(0.05, "hedge_005"),
+        ),
+        CandidateSpec(
+            "hedge_01",
+            "在线专家加权（学习率 0.10）",
+            lambda: OnlineExpertModel(0.10, "hedge_01"),
+        ),
+        CandidateSpec("hedge", "在线专家加权（学习率 0.25）", OnlineExpertModel),
         CandidateSpec(
             "logistic_slow",
             "在线逻辑回归慢速",

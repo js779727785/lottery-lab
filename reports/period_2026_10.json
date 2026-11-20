@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at_utc": "2026-11-20T06:07:50.465605+00:00",
+    "generated_at_utc": "2026-11-20T07:03:41.216068+00:00",
     "experiment": "strict walk-forward period review",
     "start": "2026-10-01",
     "end": "2026-10-31",
@@ -13,71 +13,155 @@
     "review_draws": 11,
     "no_lookahead": true,
     "retrospective_replay": true,
-    "selection_rule": "验证窗 NDCG@10 配对 bootstrap 95% 下界 > 0；否则回退随机",
+    "selection_rule": "验证窗 NDCG@10 与红蓝联合对数损失的配对 bootstrap 95% 下界均 > 0；否则回退随机",
     "champion_key": "random",
     "champion_label": "随机基线",
-    "champion_reason": "验证窗没有模型显著优于随机基线，按预设规则回退随机基线。"
+    "champion_reason": "验证窗没有模型同时显著改善 NDCG@10 和红蓝联合对数损失，按预设规则回退随机基线。"
   },
   "selection": {
     "champion_key": "random",
     "champion_label": "随机基线",
-    "reason": "验证窗没有模型显著优于随机基线，按预设规则回退随机基线。",
+    "reason": "验证窗没有模型同时显著改善 NDCG@10 和红蓝联合对数损失，按预设规则回退随机基线。",
     "comparisons": {
       "frequency": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.017761490256522842,
         "ci95_low": -0.009573696348592352,
         "ci95_high": 0.04315049743140054,
-        "significant_improvement": false
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.017575469177287178,
+          "ci95_low": -0.022889155289787775,
+          "ci95_high": -0.012566190162392127,
+          "significant_improvement": false
+        }
       },
       "recency": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.0146668812387795,
         "ci95_low": -0.012260947235738439,
         "ci95_high": 0.040884477665643015,
-        "significant_improvement": false
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.017493709765534937,
+          "ci95_low": -0.022221040606855914,
+          "ci95_high": -0.012540425432267776,
+          "significant_improvement": false
+        }
       },
       "gap": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.0035198848415143717,
         "ci95_low": -0.020105341922800155,
         "ci95_high": 0.025556203661595372,
-        "significant_improvement": false
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.017042786926752616,
+          "ci95_low": -0.020627078260199914,
+          "ci95_high": -0.013362333523996265,
+          "significant_improvement": false
+        }
       },
       "markov": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.025001056710804926,
         "ci95_low": -0.0016095300209238344,
         "ci95_high": 0.050444803309868905,
-        "significant_improvement": false
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.014759141913989778,
+          "ci95_low": -0.01920259907858454,
+          "ci95_high": -0.010233583789632687,
+          "significant_improvement": false
+        }
       },
       "ensemble": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.021862445005449493,
         "ci95_low": -0.004879284885657666,
         "ci95_high": 0.04724301327045886,
-        "significant_improvement": false
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.0175808119322449,
+          "ci95_low": -0.02284435530764678,
+          "ci95_high": -0.012405675947565054,
+          "significant_improvement": false
+        }
+      },
+      "hedge_005": {
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
+        "difference": 0.023413852450048768,
+        "ci95_low": -0.00349507486181028,
+        "ci95_high": 0.0486644325589928,
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.003420757801538373,
+          "ci95_low": -0.005580070946261305,
+          "ci95_high": -0.0013191073055481162,
+          "significant_improvement": false
+        }
+      },
+      "hedge_01": {
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
+        "difference": 0.010535964244424522,
+        "ci95_low": -0.015715727552808815,
+        "ci95_high": 0.03635461941282464,
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.003301432266791296,
+          "ci95_low": -0.005309506399382833,
+          "ci95_high": -0.001346317992761158,
+          "significant_improvement": false
+        }
       },
       "hedge": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": -0.0028884281076102507,
         "ci95_low": -0.026974400240537166,
         "ci95_high": 0.019640556814858934,
-        "significant_improvement": false
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.005782755557926827,
+          "ci95_low": -0.00794331213751988,
+          "ci95_high": -0.0036798684264110677,
+          "significant_improvement": false
+        }
       },
       "logistic": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.02533464194950242,
         "ci95_low": -0.001118880800094129,
         "ci95_high": 0.050994132359043556,
-        "significant_improvement": false
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.020256604337122633,
+          "ci95_low": -0.025770340079663608,
+          "ci95_high": -0.014899166185238566,
+          "significant_improvement": false
+        }
       },
       "logistic_fast": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.021499939878886664,
         "ci95_low": -0.0039971412275302985,
         "ci95_high": 0.04705729978259724,
-        "significant_improvement": false
+        "significant_improvement": false,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.021480914282423925,
+          "ci95_low": -0.02701661039090735,
+          "ci95_high": -0.01613298370684387,
+          "significant_improvement": false
+        }
       }
     },
     "validation_summaries": {
@@ -308,6 +392,82 @@
         "total_cost": 604,
         "total_payout": 100,
         "roi": -0.8344370860927153
+      },
+      "hedge_005": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 28,
+        "any_prize_rate": 0.09271523178807947,
+        "any_prize_wilson_95": [
+          0.06492555320355091,
+          0.13073651500430572
+        ],
+        "top10_coverage_count": 273,
+        "top10_coverage_rate": 0.9039735099337748,
+        "top10_coverage_wilson_95": [
+          0.8654913870388414,
+          0.932307211974504
+        ],
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.012560750401515034
+        ],
+        "avg_red_hits": 1.1490066225165563,
+        "avg_top10_hits": 1.880794701986755,
+        "mean_ndcg_at_10": 0.26021141027548567,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 5,
+          "6": 23
+        },
+        "total_cost": 604,
+        "total_payout": 165,
+        "roi": -0.7268211920529801
+      },
+      "hedge_01": {
+        "n": 302,
+        "jackpot_count": 0,
+        "jackpot_rate": 0.0,
+        "top3_exact_count": 0,
+        "any_prize_count": 26,
+        "any_prize_rate": 0.08609271523178808,
+        "any_prize_wilson_95": [
+          0.059427633170945904,
+          0.12315576947931489
+        ],
+        "top10_coverage_count": 270,
+        "top10_coverage_rate": 0.8940397350993378,
+        "top10_coverage_wilson_95": [
+          0.8542419066485321,
+          0.9239386940284198
+        ],
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.012560750401515034
+        ],
+        "avg_red_hits": 1.099337748344371,
+        "avg_top10_hits": 1.7781456953642385,
+        "mean_ndcg_at_10": 0.24733352206986148,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 5,
+          "6": 21
+        },
+        "total_cost": 604,
+        "total_payout": 155,
+        "roi": -0.7433774834437086
       },
       "hedge": {
         "n": 302,
@@ -653,6 +813,82 @@
       "total_cost": 22,
       "total_payout": 0,
       "roi": -1.0
+    },
+    "hedge_005": {
+      "n": 11,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 3,
+      "any_prize_rate": 0.2727272727272727,
+      "any_prize_wilson_95": [
+        0.09745880573921467,
+        0.5656502930102463
+      ],
+      "top10_coverage_count": 11,
+      "top10_coverage_rate": 1.0,
+      "top10_coverage_wilson_95": [
+        0.7411599827511859,
+        1.0
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        2.7755575615628914e-17,
+        0.2588400172488141
+      ],
+      "avg_red_hits": 1.7272727272727273,
+      "avg_top10_hits": 2.3636363636363638,
+      "mean_ndcg_at_10": 0.334595413417883,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
+      "total_cost": 22,
+      "total_payout": 215,
+      "roi": 8.772727272727273
+    },
+    "hedge_01": {
+      "n": 11,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "top3_exact_count": 0,
+      "any_prize_count": 2,
+      "any_prize_rate": 0.18181818181818182,
+      "any_prize_wilson_95": [
+        0.05136660067100063,
+        0.4769861375782448
+      ],
+      "top10_coverage_count": 11,
+      "top10_coverage_rate": 1.0,
+      "top10_coverage_wilson_95": [
+        0.7411599827511859,
+        1.0
+      ],
+      "top10_top4_candidate_count": 0,
+      "top10_top4_candidate_rate": 0.0,
+      "top10_top4_candidate_wilson_95": [
+        2.7755575615628914e-17,
+        0.2588400172488141
+      ],
+      "avg_red_hits": 1.3636363636363635,
+      "avg_top10_hits": 2.3636363636363638,
+      "mean_ndcg_at_10": 0.3099294337355484,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 2
+      },
+      "total_cost": 22,
+      "total_payout": 10,
+      "roi": -0.5454545454545454
     },
     "hedge": {
       "n": 11,
@@ -1090,6 +1326,108 @@
           "top10_top4_candidate": false,
           "payout": 0,
           "ndcg10": 0.28201326940239274
+        },
+        "hedge_005": {
+          "issue": "2026114",
+          "date": "2026-10-06",
+          "history_rows": 3146,
+          "history_last_issue": "2026113",
+          "actual_reds": [
+            7,
+            18,
+            23,
+            24,
+            29,
+            31
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            14,
+            18,
+            6,
+            13,
+            4,
+            22
+          ],
+          "single_blue": 11,
+          "top10_reds": [
+            14,
+            18,
+            6,
+            13,
+            4,
+            22,
+            24,
+            30,
+            1,
+            25
+          ],
+          "top4_blues": [
+            11,
+            4,
+            1,
+            10
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.29178833734520576
+        },
+        "hedge_01": {
+          "issue": "2026114",
+          "date": "2026-10-06",
+          "history_rows": 3146,
+          "history_last_issue": "2026113",
+          "actual_reds": [
+            7,
+            18,
+            23,
+            24,
+            29,
+            31
+          ],
+          "actual_blue": 10,
+          "single_reds": [
+            14,
+            18,
+            6,
+            13,
+            4,
+            22
+          ],
+          "single_blue": 10,
+          "top10_reds": [
+            14,
+            18,
+            6,
+            13,
+            4,
+            22,
+            23,
+            25,
+            24,
+            30
+          ],
+          "top4_blues": [
+            10,
+            11,
+            4,
+            1
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.38288074056866384
         },
         "hedge": {
           "issue": "2026114",
@@ -1567,6 +1905,108 @@
           "payout": 0,
           "ndcg10": 0.7247145167543899
         },
+        "hedge_005": {
+          "issue": "2026115",
+          "date": "2026-10-08",
+          "history_rows": 3147,
+          "history_last_issue": "2026114",
+          "actual_reds": [
+            4,
+            13,
+            14,
+            18,
+            22,
+            24
+          ],
+          "actual_blue": 3,
+          "single_reds": [
+            14,
+            13,
+            22,
+            6,
+            24,
+            4
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            13,
+            22,
+            6,
+            24,
+            4,
+            25,
+            30,
+            8,
+            2
+          ],
+          "top4_blues": [
+            4,
+            2,
+            1,
+            5
+          ],
+          "top10_hits": 5,
+          "top10_coverage": true,
+          "red_hits": 5,
+          "blue_hit": false,
+          "tier": 4,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 200,
+          "ndcg10": 0.8696762340896295
+        },
+        "hedge_01": {
+          "issue": "2026115",
+          "date": "2026-10-08",
+          "history_rows": 3147,
+          "history_last_issue": "2026114",
+          "actual_reds": [
+            4,
+            13,
+            14,
+            18,
+            22,
+            24
+          ],
+          "actual_blue": 3,
+          "single_reds": [
+            14,
+            13,
+            25,
+            22,
+            6,
+            8
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            13,
+            25,
+            22,
+            6,
+            8,
+            24,
+            27,
+            4,
+            30
+          ],
+          "top4_blues": [
+            4,
+            2,
+            1,
+            5
+          ],
+          "top10_hits": 5,
+          "top10_coverage": true,
+          "red_hits": 3,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.815806919977848
+        },
         "hedge": {
           "issue": "2026115",
           "date": "2026-10-08",
@@ -2042,6 +2482,108 @@
           "top10_top4_candidate": false,
           "payout": 0,
           "ndcg10": 0.0
+        },
+        "hedge_005": {
+          "issue": "2026116",
+          "date": "2026-10-11",
+          "history_rows": 3148,
+          "history_last_issue": "2026115",
+          "actual_reds": [
+            10,
+            19,
+            24,
+            27,
+            28,
+            33
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            14,
+            22,
+            6,
+            4,
+            24,
+            2
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            22,
+            6,
+            4,
+            24,
+            2,
+            30,
+            25,
+            18,
+            9
+          ],
+          "top4_blues": [
+            4,
+            3,
+            11,
+            16
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.11706259313796354
+        },
+        "hedge_01": {
+          "issue": "2026116",
+          "date": "2026-10-11",
+          "history_rows": 3148,
+          "history_last_issue": "2026115",
+          "actual_reds": [
+            10,
+            19,
+            24,
+            27,
+            28,
+            33
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            14,
+            25,
+            4,
+            6,
+            8,
+            22
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            25,
+            4,
+            6,
+            8,
+            22,
+            24,
+            2,
+            30,
+            9
+          ],
+          "top4_blues": [
+            4,
+            3,
+            11,
+            1
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.10086747116627115
         },
         "hedge": {
           "issue": "2026116",
@@ -2519,6 +3061,108 @@
           "payout": 0,
           "ndcg10": 0.4935232796777481
         },
+        "hedge_005": {
+          "issue": "2026117",
+          "date": "2026-10-13",
+          "history_rows": 3149,
+          "history_last_issue": "2026116",
+          "actual_reds": [
+            4,
+            11,
+            14,
+            22,
+            26,
+            27
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            24,
+            14,
+            22,
+            6,
+            4,
+            13
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            24,
+            14,
+            22,
+            6,
+            4,
+            13,
+            1,
+            8,
+            5,
+            25
+          ],
+          "top4_blues": [
+            4,
+            1,
+            16,
+            11
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 3,
+          "blue_hit": true,
+          "tier": 5,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 10,
+          "ndcg10": 0.4592846660663049
+        },
+        "hedge_01": {
+          "issue": "2026117",
+          "date": "2026-10-13",
+          "history_rows": 3149,
+          "history_last_issue": "2026116",
+          "actual_reds": [
+            4,
+            11,
+            14,
+            22,
+            26,
+            27
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            24,
+            14,
+            6,
+            22,
+            8,
+            25
+          ],
+          "single_blue": 13,
+          "top10_reds": [
+            24,
+            14,
+            6,
+            22,
+            8,
+            25,
+            5,
+            4,
+            13,
+            1
+          ],
+          "top4_blues": [
+            13,
+            4,
+            1,
+            16
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.41670506517877265
+        },
         "hedge": {
           "issue": "2026117",
           "date": "2026-10-13",
@@ -2994,6 +3638,108 @@
           "top10_top4_candidate": false,
           "payout": 0,
           "ndcg10": 0.30260241349881345
+        },
+        "hedge_005": {
+          "issue": "2026118",
+          "date": "2026-10-15",
+          "history_rows": 3150,
+          "history_last_issue": "2026117",
+          "actual_reds": [
+            5,
+            21,
+            22,
+            23,
+            28,
+            31
+          ],
+          "actual_blue": 14,
+          "single_reds": [
+            14,
+            22,
+            6,
+            24,
+            4,
+            8
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            22,
+            6,
+            24,
+            4,
+            8,
+            13,
+            30,
+            2,
+            18
+          ],
+          "top4_blues": [
+            4,
+            1,
+            5,
+            16
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.19092086617893467
+        },
+        "hedge_01": {
+          "issue": "2026118",
+          "date": "2026-10-15",
+          "history_rows": 3150,
+          "history_last_issue": "2026117",
+          "actual_reds": [
+            5,
+            21,
+            22,
+            23,
+            28,
+            31
+          ],
+          "actual_blue": 14,
+          "single_reds": [
+            14,
+            22,
+            8,
+            6,
+            24,
+            4
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            22,
+            8,
+            6,
+            24,
+            4,
+            25,
+            30,
+            13,
+            2
+          ],
+          "top4_blues": [
+            4,
+            1,
+            13,
+            5
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.19092086617893467
         },
         "hedge": {
           "issue": "2026118",
@@ -3471,6 +4217,108 @@
           "payout": 0,
           "ndcg10": 0.19092086617893467
         },
+        "hedge_005": {
+          "issue": "2026119",
+          "date": "2026-10-18",
+          "history_rows": 3151,
+          "history_last_issue": "2026118",
+          "actual_reds": [
+            12,
+            22,
+            23,
+            25,
+            27,
+            30
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            14,
+            22,
+            6,
+            4,
+            8,
+            24
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            22,
+            6,
+            4,
+            8,
+            24,
+            25,
+            9,
+            18,
+            2
+          ],
+          "top4_blues": [
+            4,
+            1,
+            5,
+            11
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.29178833734520576
+        },
+        "hedge_01": {
+          "issue": "2026119",
+          "date": "2026-10-18",
+          "history_rows": 3151,
+          "history_last_issue": "2026118",
+          "actual_reds": [
+            12,
+            22,
+            23,
+            25,
+            27,
+            30
+          ],
+          "actual_blue": 4,
+          "single_reds": [
+            14,
+            8,
+            25,
+            22,
+            6,
+            4
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            8,
+            25,
+            22,
+            6,
+            4,
+            9,
+            24,
+            2,
+            18
+          ],
+          "top4_blues": [
+            4,
+            1,
+            5,
+            13
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_top4_candidate": false,
+          "payout": 5,
+          "ndcg10": 0.2816249726597774
+        },
         "hedge": {
           "issue": "2026119",
           "date": "2026-10-18",
@@ -3946,6 +4794,108 @@
           "top10_top4_candidate": false,
           "payout": 0,
           "ndcg10": 0.3212446320893053
+        },
+        "hedge_005": {
+          "issue": "2026120",
+          "date": "2026-10-20",
+          "history_rows": 3152,
+          "history_last_issue": "2026119",
+          "actual_reds": [
+            13,
+            14,
+            16,
+            18,
+            20,
+            31
+          ],
+          "actual_blue": 3,
+          "single_reds": [
+            22,
+            14,
+            6,
+            4,
+            24,
+            8
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            22,
+            14,
+            6,
+            4,
+            24,
+            8,
+            2,
+            18,
+            1,
+            30
+          ],
+          "top4_blues": [
+            4,
+            1,
+            5,
+            16
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.286381299268402
+        },
+        "hedge_01": {
+          "issue": "2026120",
+          "date": "2026-10-20",
+          "history_rows": 3152,
+          "history_last_issue": "2026119",
+          "actual_reds": [
+            13,
+            14,
+            16,
+            18,
+            20,
+            31
+          ],
+          "actual_blue": 3,
+          "single_reds": [
+            22,
+            14,
+            8,
+            6,
+            24,
+            4
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            22,
+            14,
+            8,
+            6,
+            24,
+            4,
+            2,
+            9,
+            1,
+            18
+          ],
+          "top4_blues": [
+            4,
+            1,
+            13,
+            5
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.27839258028034286
         },
         "hedge": {
           "issue": "2026120",
@@ -4423,6 +5373,108 @@
           "payout": 0,
           "ndcg10": 0.2956267104628298
         },
+        "hedge_005": {
+          "issue": "2026121",
+          "date": "2026-10-22",
+          "history_rows": 3153,
+          "history_last_issue": "2026120",
+          "actual_reds": [
+            2,
+            7,
+            20,
+            24,
+            26,
+            30
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            22,
+            14,
+            6,
+            24,
+            9,
+            8
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            22,
+            14,
+            6,
+            24,
+            9,
+            8,
+            2,
+            1,
+            4,
+            30
+          ],
+          "top4_blues": [
+            4,
+            3,
+            16,
+            1
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.31866295117805
+        },
+        "hedge_01": {
+          "issue": "2026121",
+          "date": "2026-10-22",
+          "history_rows": 3153,
+          "history_last_issue": "2026120",
+          "actual_reds": [
+            2,
+            7,
+            20,
+            24,
+            26,
+            30
+          ],
+          "actual_blue": 2,
+          "single_reds": [
+            22,
+            6,
+            14,
+            8,
+            9,
+            24
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            22,
+            6,
+            14,
+            8,
+            9,
+            24,
+            2,
+            1,
+            4,
+            30
+          ],
+          "top4_blues": [
+            4,
+            3,
+            1,
+            13
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.2961283397921903
+        },
         "hedge": {
           "issue": "2026121",
           "date": "2026-10-22",
@@ -4898,6 +5950,108 @@
           "top10_top4_candidate": false,
           "payout": 0,
           "ndcg10": 0.3861817348048538
+        },
+        "hedge_005": {
+          "issue": "2026122",
+          "date": "2026-10-25",
+          "history_rows": 3154,
+          "history_last_issue": "2026121",
+          "actual_reds": [
+            1,
+            2,
+            4,
+            17,
+            19,
+            30
+          ],
+          "actual_blue": 9,
+          "single_reds": [
+            14,
+            22,
+            6,
+            1,
+            4,
+            24
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            22,
+            6,
+            1,
+            4,
+            24,
+            8,
+            13,
+            30,
+            17
+          ],
+          "top4_blues": [
+            4,
+            16,
+            2,
+            13
+          ],
+          "top10_hits": 4,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.42595047637320044
+        },
+        "hedge_01": {
+          "issue": "2026122",
+          "date": "2026-10-25",
+          "history_rows": 3154,
+          "history_last_issue": "2026121",
+          "actual_reds": [
+            1,
+            2,
+            4,
+            17,
+            19,
+            30
+          ],
+          "actual_blue": 9,
+          "single_reds": [
+            14,
+            8,
+            22,
+            6,
+            1,
+            4
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            8,
+            22,
+            6,
+            1,
+            4,
+            24,
+            9,
+            13,
+            30
+          ],
+          "top4_blues": [
+            4,
+            13,
+            16,
+            1
+          ],
+          "top10_hits": 3,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.31232346176388265
         },
         "hedge": {
           "issue": "2026122",
@@ -5375,6 +6529,108 @@
           "payout": 0,
           "ndcg10": 0.13032376591037062
         },
+        "hedge_005": {
+          "issue": "2026123",
+          "date": "2026-10-27",
+          "history_rows": 3155,
+          "history_last_issue": "2026122",
+          "actual_reds": [
+            4,
+            5,
+            20,
+            21,
+            26,
+            30
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            14,
+            22,
+            24,
+            30,
+            6,
+            4
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            22,
+            24,
+            30,
+            6,
+            4,
+            13,
+            8,
+            9,
+            18
+          ],
+          "top4_blues": [
+            4,
+            1,
+            16,
+            3
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.23811292043488155
+        },
+        "hedge_01": {
+          "issue": "2026123",
+          "date": "2026-10-27",
+          "history_rows": 3155,
+          "history_last_issue": "2026122",
+          "actual_reds": [
+            4,
+            5,
+            20,
+            21,
+            26,
+            30
+          ],
+          "actual_blue": 12,
+          "single_reds": [
+            14,
+            22,
+            24,
+            6,
+            8,
+            30
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            22,
+            24,
+            6,
+            8,
+            30,
+            9,
+            4,
+            13,
+            15
+          ],
+          "top4_blues": [
+            4,
+            1,
+            13,
+            16
+          ],
+          "top10_hits": 2,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.2032495876139783
+        },
         "hedge": {
           "issue": "2026123",
           "date": "2026-10-27",
@@ -5840,6 +7096,108 @@
             1,
             4,
             6
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.13032376591037062
+        },
+        "hedge_005": {
+          "issue": "2026124",
+          "date": "2026-10-29",
+          "history_rows": 3156,
+          "history_last_issue": "2026123",
+          "actual_reds": [
+            3,
+            11,
+            17,
+            22,
+            23,
+            29
+          ],
+          "actual_blue": 9,
+          "single_reds": [
+            14,
+            22,
+            6,
+            4,
+            30,
+            18
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            14,
+            22,
+            6,
+            4,
+            30,
+            18,
+            8,
+            13,
+            24,
+            26
+          ],
+          "top4_blues": [
+            4,
+            1,
+            16,
+            3
+          ],
+          "top10_hits": 1,
+          "top10_coverage": true,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_top4_candidate": false,
+          "payout": 0,
+          "ndcg10": 0.19092086617893467
+        },
+        "hedge_01": {
+          "issue": "2026124",
+          "date": "2026-10-29",
+          "history_rows": 3156,
+          "history_last_issue": "2026123",
+          "actual_reds": [
+            3,
+            11,
+            17,
+            22,
+            23,
+            29
+          ],
+          "actual_blue": 9,
+          "single_reds": [
+            6,
+            8,
+            14,
+            22,
+            4,
+            30
+          ],
+          "single_blue": 4,
+          "top10_reds": [
+            6,
+            8,
+            14,
+            22,
+            4,
+            30,
+            9,
+            18,
+            13,
+            24
+          ],
+          "top4_blues": [
+            4,
+            13,
+            1,
+            16
           ],
           "top10_hits": 1,
           "top10_coverage": true,

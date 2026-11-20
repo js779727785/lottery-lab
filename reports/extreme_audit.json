@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at_utc": "2026-11-20T04:57:03.091474+00:00",
+    "generated_at_utc": "2026-11-20T07:02:12.260345+00:00",
     "experiment": "pure-prediction ceiling audit",
     "data_rows": 3166,
     "data_first_issue": "2006001",
@@ -11,6 +11,10 @@
     "eval_draws": 2859,
     "no_lookahead": true,
     "history_replay_is_not_prediction": true,
+    "predict_before_observe": true,
+    "each_prediction_uses_all_earlier_draws": true,
+    "observed_result_updates_future_only": true,
+    "historical_results_cannot_promote": true,
     "target": 0.99
   },
   "baselines": {
@@ -133,6 +137,12 @@
       ],
       "any_prize_count": 192,
       "any_prize_rate": 0.06715634837355719,
+      "top10_coverage_count": 2598,
+      "top10_coverage_rate": 0.9087093389296957,
+      "avg_top10_hits": 1.8023784540048968,
+      "avg_red_hits": 1.0706540748513467,
+      "mean_ndcg_at_10": 0.24914895291759695,
+      "mean_joint_logloss": 0.7079309717642984,
       "tier_counts": {
         "1": 0,
         "2": 0,
@@ -167,6 +177,12 @@
       ],
       "any_prize_count": 188,
       "any_prize_rate": 0.06575725778244142,
+      "top10_coverage_count": 2607,
+      "top10_coverage_rate": 0.9118572927597062,
+      "avg_top10_hits": 1.863238894718433,
+      "avg_red_hits": 1.1210213361315144,
+      "mean_ndcg_at_10": 0.2554258830312532,
+      "mean_joint_logloss": 0.7263357404215599,
       "tier_counts": {
         "1": 0,
         "2": 0,
@@ -201,6 +217,12 @@
       ],
       "any_prize_count": 220,
       "any_prize_rate": 0.07694998251136762,
+      "top10_coverage_count": 2585,
+      "top10_coverage_rate": 0.9041622945085694,
+      "avg_top10_hits": 1.8373557187827911,
+      "avg_red_hits": 1.1199720181881776,
+      "mean_ndcg_at_10": 0.25340877235924897,
+      "mean_joint_logloss": 0.7243949235447182,
       "tier_counts": {
         "1": 0,
         "2": 0,
@@ -235,6 +257,12 @@
       ],
       "any_prize_count": 172,
       "any_prize_rate": 0.06016089541797831,
+      "top10_coverage_count": 2602,
+      "top10_coverage_rate": 0.9101084295208115,
+      "avg_top10_hits": 1.8177684505071703,
+      "avg_red_hits": 1.0982861140258833,
+      "mean_ndcg_at_10": 0.2527597094209448,
+      "mean_joint_logloss": 0.7222934185198197,
       "tier_counts": {
         "1": 0,
         "2": 0,
@@ -269,6 +297,12 @@
       ],
       "any_prize_count": 185,
       "any_prize_rate": 0.06470793983910458,
+      "top10_coverage_count": 2613,
+      "top10_coverage_rate": 0.9139559286463799,
+      "avg_top10_hits": 1.8293109478838754,
+      "avg_red_hits": 1.1178733823015041,
+      "mean_ndcg_at_10": 0.25355469698286964,
+      "mean_joint_logloss": 0.7240722224177127,
       "tier_counts": {
         "1": 0,
         "2": 0,
@@ -303,6 +337,12 @@
       ],
       "any_prize_count": 209,
       "any_prize_rate": 0.07310248338579924,
+      "top10_coverage_count": 2612,
+      "top10_coverage_rate": 0.913606155998601,
+      "avg_top10_hits": 1.8530954879328436,
+      "avg_red_hits": 1.124519062609304,
+      "mean_ndcg_at_10": 0.25613083082377003,
+      "mean_joint_logloss": 0.7247609238947224,
       "tier_counts": {
         "1": 0,
         "2": 0,
@@ -312,6 +352,86 @@
         "6": 180
       },
       "roi": -0.7918852745715285
+    },
+    {
+      "key": "hedge_005",
+      "label": "在线专家加权",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 0,
+      "top3_rate": 0.0,
+      "top3_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top10_top4_candidate_count": 3,
+      "top10_top4_candidate_rate": 0.001049317943336831,
+      "top10_top4_candidate_wilson_95": [
+        0.0003569190702604867,
+        0.003080784224256402
+      ],
+      "any_prize_count": 217,
+      "any_prize_rate": 0.07590066456803078,
+      "top10_coverage_count": 2602,
+      "top10_coverage_rate": 0.9101084295208115,
+      "avg_top10_hits": 1.8576425323539698,
+      "avg_red_hits": 1.129765652325988,
+      "mean_ndcg_at_10": 0.2566288094207462,
+      "mean_joint_logloss": 0.7114112343425898,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 2,
+        "5": 29,
+        "6": 186
+      },
+      "roi": -0.7166841552990556
+    },
+    {
+      "key": "hedge_01",
+      "label": "在线专家加权",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 0,
+      "top3_rate": 0.0,
+      "top3_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top10_top4_candidate_count": 4,
+      "top10_top4_candidate_rate": 0.0013990905911157748,
+      "top10_top4_candidate_wilson_95": [
+        0.0005442005277577944,
+        0.0035921093540044386
+      ],
+      "any_prize_count": 193,
+      "any_prize_rate": 0.06750612102133613,
+      "top10_coverage_count": 2597,
+      "top10_coverage_rate": 0.9083595662819167,
+      "avg_top10_hits": 1.8474991255683806,
+      "avg_red_hits": 1.1080797481636937,
+      "mean_ndcg_at_10": 0.2560143714926942,
+      "mean_joint_logloss": 0.7111349270881998,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 28,
+        "6": 164
+      },
+      "roi": -0.7726477789436866
     },
     {
       "key": "hedge",
@@ -337,6 +457,12 @@
       ],
       "any_prize_count": 192,
       "any_prize_rate": 0.06715634837355719,
+      "top10_coverage_count": 2569,
+      "top10_coverage_rate": 0.8985659321441063,
+      "avg_top10_hits": 1.8097236796082545,
+      "avg_red_hits": 1.1070304302203569,
+      "mean_ndcg_at_10": 0.2528069489339715,
+      "mean_joint_logloss": 0.7115502041023816,
       "tier_counts": {
         "1": 0,
         "2": 0,
@@ -371,6 +497,12 @@
       ],
       "any_prize_count": 184,
       "any_prize_rate": 0.06435816719132564,
+      "top10_coverage_count": 2622,
+      "top10_coverage_rate": 0.9171038824763903,
+      "avg_top10_hits": 1.8429520811472544,
+      "avg_red_hits": 1.111577474641483,
+      "mean_ndcg_at_10": 0.2548297536568336,
+      "mean_joint_logloss": 0.7276919123084594,
       "tier_counts": {
         "1": 0,
         "2": 0,
@@ -405,6 +537,12 @@
       ],
       "any_prize_count": 189,
       "any_prize_rate": 0.06610703043022036,
+      "top10_coverage_count": 2604,
+      "top10_coverage_rate": 0.9108079748163693,
+      "avg_top10_hits": 1.8275620846449807,
+      "avg_red_hits": 1.10598111227702,
+      "mean_ndcg_at_10": 0.25249966959944153,
+      "mean_joint_logloss": 0.7289264044864379,
       "tier_counts": {
         "1": 0,
         "2": 0,
@@ -416,6 +554,163 @@
       "roi": -0.8154949282966072
     }
   ],
+  "comparisons_vs_random": {
+    "frequency": {
+      "ndcg_at_10": {
+        "difference": 0.006276930113656874,
+        "ci95_low": -0.0022068183962623625,
+        "ci95_high": 0.01511030593422908,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.018404768657265005,
+        "ci95_low": -0.019966968004092648,
+        "ci95_high": -0.016723749487722216,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    },
+    "recency": {
+      "ndcg_at_10": {
+        "difference": 0.004259819441652157,
+        "ci95_low": -0.0039420639931647536,
+        "ci95_high": 0.012906400939215601,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.01646395178042084,
+        "ci95_low": -0.017966167010627837,
+        "ci95_high": -0.014947210963144985,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    },
+    "gap": {
+      "ndcg_at_10": {
+        "difference": 0.003610756503348385,
+        "ci95_low": -0.0049354198886656184,
+        "ci95_high": 0.011962347659408967,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.01436244675552381,
+        "ci95_low": -0.015568537346039756,
+        "ci95_high": -0.013158536542877757,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    },
+    "markov": {
+      "ndcg_at_10": {
+        "difference": 0.0044057440652732925,
+        "ci95_low": -0.004045084326921041,
+        "ci95_high": 0.013230722023397338,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.01614125065341732,
+        "ci95_low": -0.01754722347055159,
+        "ci95_high": -0.014590031809540207,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    },
+    "ensemble": {
+      "ndcg_at_10": {
+        "difference": 0.006981877906173448,
+        "ci95_low": -0.0010414750960637965,
+        "ci95_high": 0.015485499617465735,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.016829952130426266,
+        "ci95_low": -0.018265840104237704,
+        "ci95_high": -0.0151990741585484,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    },
+    "hedge_005": {
+      "ndcg_at_10": {
+        "difference": 0.007479856503149381,
+        "ci95_low": -0.0006759754523354211,
+        "ci95_high": 0.016137320500867365,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.0034802625782942385,
+        "ci95_low": -0.004110987992295879,
+        "ci95_high": -0.0028067728783090886,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    },
+    "hedge_01": {
+      "ndcg_at_10": {
+        "difference": 0.006865418575097371,
+        "ci95_low": -0.0014520423254108356,
+        "ci95_high": 0.01550950174288981,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.0032039553239038834,
+        "ci95_low": -0.003810996974403925,
+        "ci95_high": -0.002571682735330754,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    },
+    "hedge": {
+      "ndcg_at_10": {
+        "difference": 0.00365799601637484,
+        "ci95_low": -0.0043768287949892725,
+        "ci95_high": 0.01221148568951789,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.003619232338085668,
+        "ci95_low": -0.004255171609022347,
+        "ci95_high": -0.0029999847523548414,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    },
+    "logistic": {
+      "ndcg_at_10": {
+        "difference": 0.005680800739236524,
+        "ci95_low": -0.0023363233915900247,
+        "ci95_high": 0.01435644090538512,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.01976094054416261,
+        "ci95_low": -0.021523733227157095,
+        "ci95_high": -0.018046994777980524,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    },
+    "logistic_fast": {
+      "ndcg_at_10": {
+        "difference": 0.0033507166818453568,
+        "ci95_low": -0.005090281753475279,
+        "ci95_high": 0.011655254309682143,
+        "significant_improvement": false
+      },
+      "joint_logloss": {
+        "difference": -0.020995432722140942,
+        "ci95_low": -0.022836228619844544,
+        "ci95_high": -0.01928205011188726,
+        "significant_improvement": false
+      },
+      "dual_metric_gate_passed": false
+    }
+  },
+  "promotion": {
+    "promoted_from_history": false,
+    "action": "history_replay_can_reject_or_pre_register_but_cannot_promote",
+    "required_future_evidence": "候选必须在开奖前连续冻结至少 104 期，并同时通过 NDCG@10 与红蓝联合对数损失的预设门槛。"
+  },
   "observed_ceiling": {
     "best_top3_model": "recency",
     "best_top3_rate": 0.0,

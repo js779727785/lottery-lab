@@ -27,7 +27,14 @@ from lottery_lab.metrics import (
     theoretical_baselines,
     wilson_interval,
 )
-from lottery_lab.models import Model, OnlineExpertModel, OnlineLogisticModel, Prediction, RandomModel
+from lottery_lab.models import (
+    Model,
+    OnlineExpertModel,
+    OnlineLogisticModel,
+    Prediction,
+    RandomModel,
+    model_registry,
+)
 from lottery_lab.schema import Draw, prize_tier, validate_draw_sequence
 
 
@@ -103,6 +110,13 @@ class TestOnlineLogisticModel(unittest.TestCase):
 
 
 class TestOnlineExpertModel(unittest.TestCase):
+    def test_registry_pre_registers_rates_without_retroactive_default_change(self) -> None:
+        models = {model.key: model for model in model_registry()}
+        self.assertAlmostEqual(OnlineExpertModel().learning_rate, 0.25)
+        self.assertAlmostEqual(models["hedge_005"].learning_rate, 0.05)
+        self.assertAlmostEqual(models["hedge_01"].learning_rate, 0.10)
+        self.assertAlmostEqual(models["hedge"].learning_rate, 0.25)
+
     def test_mixes_only_past_experts_and_updates_after_observe(self) -> None:
         model = OnlineExpertModel()
         prediction = model.predict("2026001")
@@ -491,9 +505,20 @@ class TestChallengerProtocol(unittest.TestCase):
         candidates = candidate_registry()
         self.assertGreaterEqual(len(candidates), 10)
         self.assertIn("random", {candidate.key for candidate in candidates})
+        self.assertIn("hedge_005", {candidate.key for candidate in candidates})
+        self.assertIn("hedge_01", {candidate.key for candidate in candidates})
         self.assertEqual(len({candidate.key for candidate in candidates}), len(candidates))
         for candidate in candidates:
             self.assertEqual(candidate.factory().key, candidate.key)
+
+        rates = {
+            candidate.key: candidate.factory().learning_rate
+            for candidate in candidates
+            if candidate.key in {"hedge_005", "hedge_01", "hedge"}
+        }
+        self.assertAlmostEqual(rates["hedge_005"], 0.05)
+        self.assertAlmostEqual(rates["hedge_01"], 0.10)
+        self.assertAlmostEqual(rates["hedge"], 0.25)
 
 
 class TestChallengerArtifact(unittest.TestCase):
@@ -624,8 +649,10 @@ class TestDashboardArtifact(unittest.TestCase):
         self.assertEqual(data["experimental"]["test_summary"]["exact_jackpot_count"], 0)
         self.assertGreater(data["experimental"]["test_summary"]["top10_coverage_rate"], 0.88)
         self.assertLess(data["experimental"]["test_summary"]["top10_coverage_rate"], 0.93)
+        self.assertIn("联合对数损失", data["meta"]["selection_rule"])
         for model in data["models"]:
             if model["key"] != "random":
+                self.assertIn("joint_logloss", model["validation_vs_random"])
                 self.assertFalse(model["validation_vs_random"]["significant_improvement"])
 
         self.assertIn("portfolio", data)
@@ -739,10 +766,19 @@ class TestExtremeAuditArtifact(unittest.TestCase):
         meta = self.report["meta"]
         self.assertTrue(meta["no_lookahead"])
         self.assertTrue(meta["history_replay_is_not_prediction"])
+        self.assertTrue(meta["predict_before_observe"])
+        self.assertTrue(meta["each_prediction_uses_all_earlier_draws"])
+        self.assertTrue(meta["observed_result_updates_future_only"])
+        self.assertTrue(meta["historical_results_cannot_promote"])
         self.assertEqual(meta["data_rows"], 3166)
         self.assertEqual(meta["eval_start"], "2008-01-01")
         self.assertEqual(meta["eval_draws"], 2859)
         self.assertEqual(meta["target"], 0.99)
+
+        comparisons = self.report["comparisons_vs_random"]
+        self.assertIn("hedge_005", comparisons)
+        self.assertIn("joint_logloss", comparisons["hedge_005"])
+        self.assertFalse(self.report["promotion"]["promoted_from_history"])
 
     def test_single_ticket_ceiling(self) -> None:
         requirements = self.report["single_ticket_99pct"]
@@ -755,6 +791,9 @@ class TestExtremeAuditArtifact(unittest.TestCase):
         models = self.report["models"]
         self.assertGreaterEqual(len(models), 8)
         self.assertIn("hedge", {model["key"] for model in models})
+        self.assertIn("hedge_005", {model["key"] for model in models})
+        self.assertTrue(all("mean_ndcg_at_10" in model for model in models))
+        self.assertTrue(all("mean_joint_logloss" in model for model in models))
         self.assertEqual(max(model["jackpot_count"] for model in models), 0)
         self.assertLess(max(model["top3_rate"] for model in models), 0.001)
         self.assertLess(max(model["top10_top4_candidate_rate"] for model in models), 0.01)
@@ -794,6 +833,9 @@ class TestPeriodReviewArtifact(unittest.TestCase):
         cls.report = json.loads(
             (ROOT / "reports" / "period_2026_01.json").read_text(encoding="utf-8")
         )
+        cls.october_report = json.loads(
+            (ROOT / "reports" / "period_2026_10.json").read_text(encoding="utf-8")
+        )
 
     def test_protocol_is_strict_walk_forward(self) -> None:
         meta = self.report["meta"]
@@ -826,6 +868,13 @@ class TestPeriodReviewArtifact(unittest.TestCase):
         self.assertEqual(ensemble["top3_exact_count"], 0)
         self.assertEqual(ensemble["jackpot_count"], 0)
         self.assertEqual(ensemble["top10_top4_candidate_count"], 0)
+
+    def test_october_selection_uses_dual_metric_gate(self) -> None:
+        meta = self.october_report["meta"]
+        comparison = self.october_report["selection"]["comparisons"]["hedge"]
+        self.assertIn("红蓝联合对数损失", meta["selection_rule"])
+        self.assertIn("joint_logloss", comparison)
+        self.assertFalse(comparison["significant_improvement"])
 
 
 if __name__ == "__main__":

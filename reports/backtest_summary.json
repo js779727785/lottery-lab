@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at_utc": "2026-11-20T04:56:56.504434+00:00",
+    "generated_at_utc": "2026-11-20T07:04:16.562318+00:00",
     "source": "中彩网 + 中国福彩官网",
     "source_page": "https://www.zhcw.com/kjxx/ssq/",
     "fetched_at_utc": "2026-11-20T04:32:18.865979+00:00",
@@ -56,10 +56,10 @@
     "validation_start": "2019-11-20",
     "validation_end": "2021-11-19",
     "validation_n": 284,
-    "selection_rule": "验证段 NDCG@10 配对 bootstrap 95% 下界 > 0；否则回退随机基线",
+    "selection_rule": "验证段 NDCG@10 与红蓝联合对数损失改善的配对 bootstrap 95% 下界均 > 0；否则回退随机基线",
     "champion_key": "random",
     "champion_label": "随机基线",
-    "champion_reason": "没有任何候选模型在验证段对随机基线的 NDCG@10 提升达到 95% 置信显著；按预先设定的门槛回退为随机基线，避免把噪声当作预测能力。",
+    "champion_reason": "没有任何候选模型在验证段同时显著改善 NDCG@10 和红蓝联合对数损失；按预先设定的门槛回退为随机基线，避免把噪声当作预测能力。",
     "next_issue": "2026134",
     "no_lookahead": true
   },
@@ -673,7 +673,7 @@
   "exploratory_challengers": [
     {
       "key": "hedge",
-      "label": "在线专家加权",
+      "label": "在线专家加权（学习率 0.25）",
       "role": "precommitted_future_evidence_only",
       "selection_count": 0,
       "mean_validation_combined_logloss": 0.7108658173987282,
@@ -878,413 +878,413 @@
       }
     },
     {
-      "key": "gap",
-      "label": "遗漏回补",
+      "key": "hedge_01",
+      "label": "在线专家加权（学习率 0.10）",
       "role": "precommitted_future_evidence_only",
       "selection_count": 0,
-      "mean_validation_combined_logloss": 0.721950501705221,
+      "mean_validation_combined_logloss": 0.7112784544098563,
       "selection_data_end": "2020-12-31",
       "latest_prediction": {
-        "label": "2026134 · 预注册探索模型 gap",
+        "label": "2026134 · 预注册探索模型 hedge_01",
         "top10_reds": [
-          8,
-          12,
-          24,
-          23,
-          4,
-          15,
           22,
-          29,
-          32,
-          27
+          8,
+          30,
+          14,
+          4,
+          13,
+          6,
+          24,
+          26,
+          1
         ],
         "top4_blues": [
           1,
+          4,
           7,
-          8,
-          16
+          11
         ],
         "single_ticket": {
           "reds": [
+            22,
             8,
-            12,
-            24,
-            23,
+            30,
+            14,
             4,
-            15
+            13
           ],
           "blue": 1
         },
         "red_ranking": [
-          8,
-          12,
-          24,
-          23,
-          4,
-          15,
           22,
-          29,
-          32,
-          27,
-          3,
-          25,
+          8,
           30,
-          2,
-          6,
-          16,
-          20,
-          28,
-          1,
-          19,
-          31,
-          33,
-          5,
-          9,
-          13,
-          17,
-          18,
-          7,
-          10,
-          11,
           14,
-          21,
-          26
+          4,
+          13,
+          6,
+          24,
+          26,
+          1,
+          10,
+          2,
+          9,
+          5,
+          25,
+          27,
+          20,
+          18,
+          23,
+          32,
+          16,
+          17,
+          29,
+          12,
+          19,
+          3,
+          31,
+          7,
+          11,
+          15,
+          28,
+          33,
+          21
         ],
         "blue_ranking": [
           1,
-          7,
-          8,
-          16,
-          6,
-          10,
-          14,
           4,
-          3,
-          9,
+          7,
+          11,
           12,
           5,
-          2,
+          6,
+          3,
+          10,
+          8,
+          16,
           15,
-          11,
+          14,
+          2,
+          9,
           13
         ],
         "red_probabilities": [
-          0.159224626321,
-          0.16842940819,
-          0.177634190059,
-          0.214453317536,
-          0.150019844452,
-          0.16842940819,
-          0.140815062583,
-          0.435368082397,
-          0.150019844452,
-          0.140815062583,
-          0.140815062583,
-          0.269682008751,
-          0.150019844452,
-          0.140815062583,
-          0.214453317536,
-          0.16842940819,
-          0.150019844452,
-          0.150019844452,
-          0.159224626321,
-          0.16842940819,
-          0.140815062583,
-          0.205248535667,
-          0.223658099405,
-          0.251272445013,
-          0.177634190059,
-          0.140815062583,
-          0.186838971929,
-          0.16842940819,
-          0.196043753798,
-          0.177634190059,
-          0.159224626321,
-          0.196043753798,
-          0.159224626321
+          0.199518966525,
+          0.186703863363,
+          0.162495065599,
+          0.211045541594,
+          0.18393104504,
+          0.209346189019,
+          0.150263519594,
+          0.236430735408,
+          0.186147567056,
+          0.189663940713,
+          0.146722637004,
+          0.167612454689,
+          0.210485493747,
+          0.212072647725,
+          0.145363726883,
+          0.168990045584,
+          0.168902400986,
+          0.179454867855,
+          0.163534083072,
+          0.179745290041,
+          0.1394681474,
+          0.243524824066,
+          0.179366027239,
+          0.208648389681,
+          0.181806399427,
+          0.201337296387,
+          0.180853203466,
+          0.144132489884,
+          0.16868238235,
+          0.222409196314,
+          0.156015179654,
+          0.171864438949,
+          0.14346194369
         ],
         "blue_probabilities": [
-          0.112733482357,
-          0.037967369082,
-          0.05873573388,
-          0.06081257036,
-          0.040044205561,
-          0.081580935159,
-          0.104426136437,
-          0.089888281078,
-          0.050428387961,
-          0.071196752759,
-          0.033813696122,
-          0.044197878521,
-          0.031736859642,
-          0.06288940684,
-          0.035890532602,
-          0.083657771639
+          0.075615626676,
+          0.051716025659,
+          0.061656039991,
+          0.074718730248,
+          0.063669686421,
+          0.062593340531,
+          0.073529405325,
+          0.060642593239,
+          0.051509303399,
+          0.060700424306,
+          0.071606680893,
+          0.070793774858,
+          0.050147714436,
+          0.05491060148,
+          0.055985902581,
+          0.060204149957
         ],
         "top10_red_probs": [
           {
+            "number": 22,
+            "probability": 0.243525
+          },
+          {
             "number": 8,
-            "probability": 0.435368
+            "probability": 0.236431
           },
           {
-            "number": 12,
-            "probability": 0.269682
+            "number": 30,
+            "probability": 0.222409
           },
           {
-            "number": 24,
-            "probability": 0.251272
-          },
-          {
-            "number": 23,
-            "probability": 0.223658
+            "number": 14,
+            "probability": 0.212073
           },
           {
             "number": 4,
-            "probability": 0.214453
+            "probability": 0.211046
           },
           {
-            "number": 15,
-            "probability": 0.214453
+            "number": 13,
+            "probability": 0.210485
           },
           {
-            "number": 22,
-            "probability": 0.205249
+            "number": 6,
+            "probability": 0.209346
           },
           {
-            "number": 29,
-            "probability": 0.196044
+            "number": 24,
+            "probability": 0.208648
           },
           {
-            "number": 32,
-            "probability": 0.196044
+            "number": 26,
+            "probability": 0.201337
           },
           {
-            "number": 27,
-            "probability": 0.186839
+            "number": 1,
+            "probability": 0.199519
           }
         ],
         "top4_blue_probs": [
           {
             "number": 1,
-            "probability": 0.112733
+            "probability": 0.075616
+          },
+          {
+            "number": 4,
+            "probability": 0.074719
           },
           {
             "number": 7,
-            "probability": 0.104426
+            "probability": 0.073529
           },
           {
-            "number": 8,
-            "probability": 0.089888
-          },
-          {
-            "number": 16,
-            "probability": 0.083658
+            "number": 11,
+            "probability": 0.071607
           }
         ]
       }
     },
     {
-      "key": "recency_13",
-      "label": "近因 13 期半衰期",
+      "key": "hedge_005",
+      "label": "在线专家加权（学习率 0.05）",
       "role": "precommitted_future_evidence_only",
       "selection_count": 0,
-      "mean_validation_combined_logloss": 0.7236576339580578,
+      "mean_validation_combined_logloss": 0.711563142438479,
       "selection_data_end": "2020-12-31",
       "latest_prediction": {
-        "label": "2026134 · 预注册探索模型 recency_13",
+        "label": "2026134 · 预注册探索模型 hedge_005",
         "top10_reds": [
-          30,
-          26,
-          10,
-          13,
-          14,
-          4,
-          20,
           22,
-          5,
-          6
+          30,
+          14,
+          8,
+          13,
+          6,
+          4,
+          26,
+          1,
+          24
         ],
         "top4_blues": [
+          4,
           11,
-          12,
-          2,
-          4
+          1,
+          12
         ],
         "single_ticket": {
           "reds": [
+            22,
             30,
-            26,
-            10,
-            13,
             14,
-            4
+            8,
+            13,
+            6
           ],
-          "blue": 11
+          "blue": 4
         },
         "red_ranking": [
-          30,
-          26,
-          10,
-          13,
-          14,
-          4,
-          20,
           22,
-          5,
+          30,
+          14,
+          8,
+          13,
           6,
-          25,
-          11,
-          9,
+          4,
+          26,
           1,
           24,
-          16,
-          21,
-          29,
-          31,
-          27,
-          19,
-          17,
-          18,
+          10,
           2,
-          7,
-          28,
-          33,
+          9,
+          5,
+          18,
+          27,
+          25,
+          20,
+          17,
           23,
-          3,
           32,
+          16,
+          19,
+          29,
+          3,
           12,
+          31,
+          7,
+          11,
+          33,
           15,
-          8
+          28,
+          21
         ],
         "blue_ranking": [
-          11,
-          12,
-          2,
           4,
+          11,
+          1,
+          12,
+          7,
           5,
-          9,
           3,
-          15,
-          13,
-          14,
+          6,
           16,
+          15,
           10,
           8,
-          6,
-          1,
-          7
+          14,
+          2,
+          9,
+          13
         ],
         "red_probabilities": [
-          0.184518294516,
-          0.152691604618,
-          0.125410964992,
-          0.245453345805,
-          0.219550526729,
-          0.206441655079,
-          0.13889280911,
-          0.043168749027,
-          0.190529038077,
-          0.257810625117,
-          0.193912764116,
-          0.099485066484,
-          0.255061935627,
-          0.254195460275,
-          0.096052628198,
-          0.183340796266,
-          0.160605770743,
-          0.158384872309,
-          0.174468452547,
-          0.236887071534,
-          0.182591761293,
-          0.229272995437,
-          0.126417580619,
-          0.183874532649,
-          0.205221556978,
-          0.26773357308,
-          0.177998025766,
-          0.138565190287,
-          0.181559735576,
-          0.295396531875,
-          0.178061679506,
-          0.125110734211,
-          0.131333671555
+          0.205826257402,
+          0.191296160698,
+          0.162727695882,
+          0.209007694766,
+          0.185732703162,
+          0.215696107456,
+          0.152591175756,
+          0.217084336803,
+          0.190679941781,
+          0.193452435205,
+          0.146036465874,
+          0.157225965056,
+          0.215763190394,
+          0.221633459619,
+          0.13996453492,
+          0.167996432614,
+          0.173790704053,
+          0.185658237683,
+          0.164721618546,
+          0.179466762267,
+          0.136107724097,
+          0.249468275235,
+          0.173344496143,
+          0.203444457135,
+          0.180544431892,
+          0.207700375723,
+          0.181137868184,
+          0.139202790014,
+          0.163496370849,
+          0.224350860425,
+          0.153729069872,
+          0.171127084163,
+          0.139994316329
         ],
         "blue_probabilities": [
-          0.036499936251,
-          0.079748774276,
-          0.067623049588,
-          0.077762530287,
-          0.072338780581,
-          0.037289498067,
-          0.034932235869,
-          0.037474406896,
-          0.071390253516,
-          0.038834044793,
-          0.122916503671,
-          0.105011668403,
-          0.058279951969,
-          0.056071743472,
-          0.063507618088,
-          0.040319004273
+          0.073912098685,
+          0.052792233266,
+          0.061527460328,
+          0.076681065616,
+          0.06621760967,
+          0.061050301202,
+          0.069651512387,
+          0.057525094852,
+          0.051107616223,
+          0.058982476326,
+          0.07458897396,
+          0.073149989067,
+          0.049894555807,
+          0.053817471917,
+          0.059272489646,
+          0.059829051048
         ],
         "top10_red_probs": [
           {
+            "number": 22,
+            "probability": 0.249468
+          },
+          {
             "number": 30,
-            "probability": 0.295397
-          },
-          {
-            "number": 26,
-            "probability": 0.267734
-          },
-          {
-            "number": 10,
-            "probability": 0.257811
-          },
-          {
-            "number": 13,
-            "probability": 0.255062
+            "probability": 0.224351
           },
           {
             "number": 14,
-            "probability": 0.254195
+            "probability": 0.221633
           },
           {
-            "number": 4,
-            "probability": 0.245453
+            "number": 8,
+            "probability": 0.217084
           },
           {
-            "number": 20,
-            "probability": 0.236887
-          },
-          {
-            "number": 22,
-            "probability": 0.229273
-          },
-          {
-            "number": 5,
-            "probability": 0.219551
+            "number": 13,
+            "probability": 0.215763
           },
           {
             "number": 6,
-            "probability": 0.206442
+            "probability": 0.215696
+          },
+          {
+            "number": 4,
+            "probability": 0.209008
+          },
+          {
+            "number": 26,
+            "probability": 0.2077
+          },
+          {
+            "number": 1,
+            "probability": 0.205826
+          },
+          {
+            "number": 24,
+            "probability": 0.203444
           }
         ],
         "top4_blue_probs": [
           {
+            "number": 4,
+            "probability": 0.076681
+          },
+          {
             "number": 11,
-            "probability": 0.122917
+            "probability": 0.074589
+          },
+          {
+            "number": 1,
+            "probability": 0.073912
           },
           {
             "number": 12,
-            "probability": 0.105012
-          },
-          {
-            "number": 2,
-            "probability": 0.079749
-          },
-          {
-            "number": 4,
-            "probability": 0.077763
+            "probability": 0.07315
           }
         ]
       }
@@ -1633,17 +1633,31 @@
         "roi": -0.6783819628647215
       },
       "validation_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.0017995028172467105,
         "ci95_low": -0.025386322380667244,
         "ci95_high": 0.028817574852261427,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.017683015412050865,
+          "ci95_low": -0.02314536852602103,
+          "ci95_high": -0.012400533017036404,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       },
       "test_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.016118856772249186,
         "ci95_low": -0.0008375028207661261,
         "ci95_high": 0.031999671600313126,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.016576745361653916,
+          "ci95_low": -0.01989763639422978,
+          "ci95_high": -0.01350896328036735,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       }
     },
@@ -1746,17 +1760,31 @@
         "roi": -0.6452254641909815
       },
       "validation_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": -0.003412597269220124,
         "ci95_low": -0.03145490817521414,
         "ci95_high": 0.02417489365014418,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.015713009001012402,
+          "ci95_low": -0.020338646846983135,
+          "ci95_high": -0.011038141131099853,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       },
       "test_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.007143212385703227,
         "ci95_low": -0.00917276770205868,
         "ci95_high": 0.02270195924395362,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.014809066649136364,
+          "ci95_low": -0.01787703862402779,
+          "ci95_high": -0.01174547259286683,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       }
     },
@@ -1859,17 +1887,31 @@
         "roi": -0.8408488063660478
       },
       "validation_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.01227364421986642,
         "ci95_low": -0.01552848378703052,
         "ci95_high": 0.03957336330382928,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.012398560668922181,
+          "ci95_low": -0.01630868719525949,
+          "ci95_high": -0.008644924554705245,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       },
       "test_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": -0.0007369792742867553,
         "ci95_low": -0.017472196906542285,
         "ci95_high": 0.014726152413385433,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.01623932985510926,
+          "ci95_low": -0.018519636629815744,
+          "ci95_high": -0.013847782155494431,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       }
     },
@@ -1972,17 +2014,31 @@
         "roi": -0.8275862068965517
       },
       "validation_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.0073438440281809545,
         "ci95_low": -0.01982347742526994,
         "ci95_high": 0.03483419449192428,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.01584827077373912,
+          "ci95_low": -0.020914303684208196,
+          "ci95_high": -0.01107463076274958,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       },
       "test_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.014832273480400842,
         "ci95_low": -0.0018296942292770158,
         "ci95_high": 0.030699779225819967,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.017494494024692962,
+          "ci95_low": -0.02040413554561345,
+          "ci95_high": -0.014482781484209329,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       }
     },
@@ -2085,17 +2141,285 @@
         "roi": -0.8275862068965517
       },
       "validation_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.009745634045259936,
         "ci95_low": -0.019354087192316228,
         "ci95_high": 0.03804148921562606,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.01572714898919187,
+          "ci95_low": -0.021172026844274962,
+          "ci95_high": -0.011042481620881913,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       },
       "test_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.015917379071467307,
         "ci95_low": -0.0002267118452468141,
         "ci95_high": 0.03143469988144598,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.01682209595700507,
+          "ci95_low": -0.019789390867244124,
+          "ci95_high": -0.013740571931977225,
+          "significant_improvement": false
+        },
+        "significant_improvement": false
+      }
+    },
+    {
+      "key": "hedge_005",
+      "label": "在线专家加权",
+      "selected": false,
+      "validation": {
+        "n": 284,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 23,
+        "any_prize_rate": 0.08098591549295775,
+        "any_prize_wilson_95": [
+          0.054568865710638834,
+          0.11858748139137841
+        ],
+        "top10_coverage_count": 265,
+        "top10_coverage_rate": 0.9330985915492958,
+        "top10_coverage_wilson_95": [
+          0.8978810079880303,
+          0.9567557088729098
+        ],
+        "avg_top10_hits": 1.9295774647887325,
+        "avg_red_hits": 1.1866197183098592,
+        "blue_hit_rate": 0.06690140845070422,
+        "mean_ndcg_at_10": 0.2627969026305662,
+        "mean_actual_rank": 16.56983568075116,
+        "brier_red": 0.1491767826306089,
+        "brier_blue": 0.05874862474936113,
+        "logloss_red": 0.4756368820283578,
+        "logloss_blue": 0.23509764046805626,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 5,
+          "6": 18
+        },
+        "red_hits_distribution": {
+          "0": 69,
+          "1": 115,
+          "2": 82,
+          "3": 14,
+          "4": 4,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 568,
+        "total_payout": 140,
+        "net": -428,
+        "roi": -0.7535211267605634
+      },
+      "test": {
+        "n": 754,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 62,
+        "any_prize_rate": 0.08222811671087533,
+        "any_prize_wilson_95": [
+          0.06467264411210635,
+          0.10401907194043022
+        ],
+        "top10_coverage_count": 684,
+        "top10_coverage_rate": 0.9071618037135278,
+        "top10_coverage_wilson_95": [
+          0.8843330059765857,
+          0.9258626866325292
+        ],
+        "avg_top10_hits": 1.8832891246684351,
+        "avg_red_hits": 1.1511936339522546,
+        "blue_hit_rate": 0.07427055702917772,
+        "mean_ndcg_at_10": 0.25819979549056865,
+        "mean_actual_rank": 16.80017683465958,
+        "brier_red": 0.14936877969040005,
+        "brier_blue": 0.05871895397650261,
+        "logloss_red": 0.47622520273766955,
+        "logloss_blue": 0.23488404133810178,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 10,
+          "6": 51
+        },
+        "red_hits_distribution": {
+          "0": 198,
+          "1": 316,
+          "2": 175,
+          "3": 59,
+          "4": 5,
+          "5": 1,
+          "6": 0
+        },
+        "total_cost": 1508,
+        "total_payout": 555,
+        "net": -953,
+        "roi": -0.6319628647214854
+      },
+      "validation_vs_random": {
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
+        "difference": 0.0017669334094813196,
+        "ci95_low": -0.02626938284758639,
+        "ci95_high": 0.029432285613782385,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.002803550732117233,
+          "ci95_low": -0.004852819485851655,
+          "ci95_high": -0.0008715292629938653,
+          "significant_improvement": false
+        },
+        "significant_improvement": false
+      },
+      "test_vs_random": {
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
+        "difference": 0.014971940088882094,
+        "ci95_low": -0.002311659040875512,
+        "ci95_high": 0.030888414517954318,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.0031782723114743357,
+          "ci95_low": -0.0044468201382314235,
+          "ci95_high": -0.0018910573919766478,
+          "significant_improvement": false
+        },
+        "significant_improvement": false
+      }
+    },
+    {
+      "key": "hedge_01",
+      "label": "在线专家加权",
+      "selected": false,
+      "validation": {
+        "n": 284,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 16,
+        "any_prize_rate": 0.056338028169014086,
+        "any_prize_wilson_95": [
+          0.03497187469707759,
+          0.08954661046976417
+        ],
+        "top10_coverage_count": 266,
+        "top10_coverage_rate": 0.9366197183098591,
+        "top10_coverage_wilson_95": [
+          0.9020482443269385,
+          0.959536738524741
+        ],
+        "avg_top10_hits": 1.9577464788732395,
+        "avg_red_hits": 1.1971830985915493,
+        "blue_hit_rate": 0.045774647887323945,
+        "mean_ndcg_at_10": 0.273543837736488,
+        "mean_actual_rank": 16.55633802816901,
+        "brier_red": 0.14904803958821458,
+        "brier_blue": 0.058746637192736983,
+        "logloss_red": 0.475215180643433,
+        "logloss_blue": 0.23507315290191588,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 3,
+          "6": 13
+        },
+        "red_hits_distribution": {
+          "0": 62,
+          "1": 127,
+          "2": 75,
+          "3": 17,
+          "4": 3,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 568,
+        "total_payout": 95,
+        "net": -473,
+        "roi": -0.8327464788732394
+      },
+      "test": {
+        "n": 754,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 50,
+        "any_prize_rate": 0.06631299734748011,
+        "any_prize_wilson_95": [
+          0.05065948527263213,
+          0.08636334377238204
+        ],
+        "top10_coverage_count": 684,
+        "top10_coverage_rate": 0.9071618037135278,
+        "top10_coverage_wilson_95": [
+          0.8843330059765857,
+          0.9258626866325292
+        ],
+        "avg_top10_hits": 1.83289124668435,
+        "avg_red_hits": 1.0848806366047745,
+        "blue_hit_rate": 0.05702917771883289,
+        "mean_ndcg_at_10": 0.25228515481556213,
+        "mean_actual_rank": 16.87290008841732,
+        "brier_red": 0.14933554320665862,
+        "brier_blue": 0.05872369420569246,
+        "logloss_red": 0.4760866344686295,
+        "logloss_blue": 0.2349200259118581,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 11,
+          "6": 39
+        },
+        "red_hits_distribution": {
+          "0": 205,
+          "1": 343,
+          "2": 150,
+          "3": 49,
+          "4": 7,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 1508,
+        "total_payout": 305,
+        "net": -1203,
+        "roi": -0.7977453580901857
+      },
+      "validation_vs_random": {
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
+        "difference": 0.012513868515402803,
+        "ci95_low": -0.016322699724371146,
+        "ci95_high": 0.039856703108439404,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.0023573617810522503,
+          "ci95_low": -0.004214595764291821,
+          "ci95_high": -0.0006087125044625093,
+          "significant_improvement": false
+        },
+        "significant_improvement": false
+      },
+      "test_vs_random": {
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
+        "difference": 0.00905729941387541,
+        "ci95_low": -0.00833282804230258,
+        "ci95_high": 0.025052015916947314,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.0030756886161913606,
+          "ci95_low": -0.004187580906732238,
+          "ci95_high": -0.0019313130102073695,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       }
     },
@@ -2198,17 +2522,31 @@
         "roi": -0.8275862068965517
       },
       "validation_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.010912611185716998,
         "ci95_low": -0.017721513274058787,
         "ci95_high": 0.03797369747810981,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.003124334999563851,
+          "ci95_low": -0.005219370809885523,
+          "ci95_high": -0.0012313401769660868,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       },
       "test_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": -0.0028020850268336136,
         "ci95_low": -0.018936795132543434,
         "ci95_high": 0.01207560234839679,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.005443891163722326,
+          "ci95_low": -0.0066753920925773595,
+          "ci95_high": -0.004143075914555486,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       }
     },
@@ -2311,17 +2649,31 @@
         "roi": -0.8474801061007957
       },
       "validation_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.0006906104111359357,
         "ci95_low": -0.02718484890611015,
         "ci95_high": 0.027961183716983355,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.02162634701649703,
+          "ci95_low": -0.027467742769420437,
+          "ci95_high": -0.016078658435182722,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       },
       "test_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.007742601797886497,
         "ci95_low": -0.009380736717864912,
         "ci95_high": 0.02489798084563189,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.02116126310866632,
+          "ci95_low": -0.024535294309358285,
+          "ci95_high": -0.01782370523383574,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       }
     },
@@ -2424,17 +2776,31 @@
         "roi": -0.8408488063660478
       },
       "validation_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": -0.015168114739768652,
         "ci95_low": -0.043101606415248135,
         "ci95_high": 0.011537375472633187,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.023969118443122106,
+          "ci95_low": -0.029719114979708573,
+          "ci95_high": -0.01848699254699419,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       },
       "test_vs_random": {
-        "metric": "mean_ndcg_at_10",
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
         "difference": 0.005399945785274837,
         "ci95_low": -0.01141847131651327,
         "ci95_high": 0.02251885038680696,
+        "joint_logloss": {
+          "metric": "red_blue_joint_logloss_improvement",
+          "difference": -0.02153360281386759,
+          "ci95_low": -0.024889431018809388,
+          "ci95_high": -0.018236307948049774,
+          "significant_improvement": false
+        },
         "significant_improvement": false
       }
     }

@@ -140,6 +140,34 @@ def _write_cases(path: Path, cases: Sequence[CaseResult]) -> None:
             )
 
 
+def _paired_comparison(
+    candidate_cases: Sequence[CaseResult],
+    random_cases: Sequence[CaseResult],
+) -> Dict[str, Any]:
+    ndcg_point, ndcg_low, ndcg_high = paired_bootstrap_difference(
+        [case.ndcg10 for case in candidate_cases],
+        [case.ndcg10 for case in random_cases],
+    )
+    loss_point, loss_low, loss_high = paired_bootstrap_difference(
+        [case.logloss_red + case.logloss_blue for case in random_cases],
+        [case.logloss_red + case.logloss_blue for case in candidate_cases],
+    )
+    return {
+        "metric": "mean_ndcg_at_10_and_red_blue_joint_logloss",
+        "difference": ndcg_point,
+        "ci95_low": ndcg_low,
+        "ci95_high": ndcg_high,
+        "joint_logloss": {
+            "metric": "red_blue_joint_logloss_improvement",
+            "difference": loss_point,
+            "ci95_low": loss_low,
+            "ci95_high": loss_high,
+            "significant_improvement": loss_low > 0.0,
+        },
+        "significant_improvement": ndcg_low > 0.0 and loss_low > 0.0,
+    }
+
+
 def build_pipeline(
     data_dir: Path = DEFAULT_DATA_DIR,
     validation_years: int = 2,
@@ -172,18 +200,11 @@ def build_pipeline(
     for model in model_registry():
         if model.key == "random":
             continue
-        point, low, high = paired_bootstrap_difference(
-            [case.ndcg10 for case in validation_cases[model.key]],
-            [case.ndcg10 for case in random_validation],
+        comparison = _paired_comparison(
+            validation_cases[model.key], random_validation
         )
-        validation_comparisons[model.key] = {
-            "metric": "mean_ndcg_at_10",
-            "difference": point,
-            "ci95_low": low,
-            "ci95_high": high,
-            "significant_improvement": low > 0.0,
-        }
-        if low > 0.0:
+        validation_comparisons[model.key] = comparison
+        if comparison["significant_improvement"]:
             eligible.append(model.key)
 
     if eligible:
@@ -191,12 +212,13 @@ def build_pipeline(
             eligible, key=lambda key: validation_summaries[key]["mean_ndcg_at_10"]
         )
         champion_reason = (
-            "验证段 NDCG@10 的配对 bootstrap 95% 下界大于 0，表现优于随机基线。"
+            "验证段 NDCG@10 与红蓝联合对数损失改善的配对 bootstrap 95% 下界"
+            "均大于 0，表现优于随机基线。"
         )
     else:
         champion_key = "random"
         champion_reason = (
-            "没有任何候选模型在验证段对随机基线的 NDCG@10 提升达到 95% 置信显著；"
+            "没有任何候选模型在验证段同时显著改善 NDCG@10 和红蓝联合对数损失；"
             "按预先设定的门槛回退为随机基线，避免把噪声当作预测能力。"
         )
 
@@ -217,17 +239,9 @@ def build_pipeline(
     for model in model_registry():
         if model.key == "random":
             continue
-        point, low, high = paired_bootstrap_difference(
-            [case.ndcg10 for case in test_cases[model.key]],
-            [case.ndcg10 for case in random_test],
+        test_comparisons[model.key] = _paired_comparison(
+            test_cases[model.key], random_test
         )
-        test_comparisons[model.key] = {
-            "metric": "mean_ndcg_at_10",
-            "difference": point,
-            "ci95_low": low,
-            "ci95_high": high,
-            "significant_improvement": low > 0.0,
-        }
 
     champion_cases = test_cases[champion_key]
     experimental_cases = test_cases["ensemble"]
@@ -321,7 +335,10 @@ def build_pipeline(
             "validation_start": validation_start.isoformat(),
             "validation_end": validation_end.isoformat(),
             "validation_n": len(random_validation),
-            "selection_rule": "验证段 NDCG@10 配对 bootstrap 95% 下界 > 0；否则回退随机基线",
+            "selection_rule": (
+                "验证段 NDCG@10 与红蓝联合对数损失改善的配对 bootstrap 95% 下界"
+                "均 > 0；否则回退随机基线"
+            ),
             "champion_key": champion_key,
             "champion_label": next(model.label for model in model_registry() if model.key == champion_key),
             "champion_reason": champion_reason,
