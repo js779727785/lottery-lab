@@ -1,7 +1,8 @@
 {
   "meta": {
-    "generated_at_utc": "2026-11-20T04:56:59.582990+00:00",
-    "experiment": "2015 time-out",
+    "generated_at_utc": "2026-11-20T05:23:16.868016+00:00",
+    "experiment": "2015 random 10-draw time-out",
+    "target_year": 2015,
     "seed": 20261120,
     "random_count": 10,
     "selected_issues": [
@@ -27,6 +28,7 @@
     "data_first_issue": "2006001",
     "data_last_issue": "2026133",
     "no_lookahead": true,
+    "history_replay_is_not_prediction": true,
     "selection_rule": "2013–2014 NDCG@10 配对 bootstrap 95% 下界 > 0；否则回退随机"
   },
   "models_validation": {
@@ -766,7 +768,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.5958436145024278,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ]
       },
       "frequency": {
         "n": 10,
@@ -832,7 +842,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.7224598312333834,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ]
       },
       "recency": {
         "n": 10,
@@ -898,7 +916,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.7224598312333834,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ]
       },
       "gap": {
         "n": 10,
@@ -964,7 +990,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.5958436145024278,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ]
       },
       "markov": {
         "n": 10,
@@ -1030,7 +1064,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.7224598312333834,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ]
       },
       "ensemble": {
         "n": 10,
@@ -1096,7 +1138,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.7224598312333834,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ]
       },
       "hedge": {
         "n": 10,
@@ -1162,7 +1212,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.7224598312333834,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ]
       },
       "logistic": {
         "n": 10,
@@ -1228,7 +1286,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.49015684672072335,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ]
       },
       "logistic_fast": {
         "n": 10,
@@ -1294,7 +1360,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.5958436145024278,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ]
       }
     },
     "cases": {
@@ -1344,6 +1418,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.13032376591037062,
           "payout": 0
         },
@@ -1392,6 +1468,8 @@
           "tier": 6,
           "any_prize": true,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.0874717141014082,
           "payout": 5
         }
@@ -1442,6 +1520,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": false,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.0,
           "payout": 0
         },
@@ -1490,6 +1570,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.48915524981173886,
           "payout": 0
         }
@@ -1540,6 +1622,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.6105858728157117,
           "payout": 0
         },
@@ -1588,6 +1672,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.10086747116627115,
           "payout": 0
         }
@@ -1638,6 +1724,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.4103915680233244,
           "payout": 0
         },
@@ -1686,6 +1774,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.19092086617893467,
           "payout": 0
         }
@@ -1736,6 +1826,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.5709662133861837,
           "payout": 0
         },
@@ -1784,6 +1876,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.329865324074273,
           "payout": 0
         }
@@ -1834,6 +1928,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.13032376591037062,
           "payout": 0
         },
@@ -1882,6 +1978,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.3692312710536414,
           "payout": 0
         }
@@ -1932,6 +2030,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.3986875657977409,
           "payout": 0
         },
@@ -1980,6 +2080,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.32031218075194173,
           "payout": 0
         }
@@ -2030,6 +2132,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.3936948167222715,
           "payout": 0
         },
@@ -2078,6 +2182,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.6212653646768634,
           "payout": 0
         }
@@ -2128,6 +2234,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.3335733535243489,
           "payout": 0
         },
@@ -2176,6 +2284,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.30260241349881345,
           "payout": 0
         }
@@ -2226,6 +2336,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.26836379988737025,
           "payout": 0
         },
@@ -2274,6 +2386,8 @@
           "tier": null,
           "any_prize": false,
           "top10_coverage": true,
+          "top3_exact": false,
+          "top10_top4_candidate": false,
           "ndcg10": 0.28201326940239274,
           "payout": 0
         }
@@ -2356,7 +2470,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.8846025303151187,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.024338323990633647
+        ]
       },
       "frequency": {
         "n": 154,
@@ -2422,7 +2544,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.8687443442168858,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.024338323990633647
+        ]
       },
       "recency": {
         "n": 154,
@@ -2488,7 +2618,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.8609343535519216,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.024338323990633647
+        ]
       },
       "gap": {
         "n": 154,
@@ -2554,7 +2692,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.8531934321432111,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.024338323990633647
+        ]
       },
       "markov": {
         "n": 154,
@@ -2620,7 +2766,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.8687443442168858,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 1,
+        "top10_top4_candidate_rate": 0.006493506493506494,
+        "top10_top4_candidate_wilson_95": [
+          0.0011471549639692283,
+          0.03586209988392892
+        ]
       },
       "ensemble": {
         "n": 154,
@@ -2686,7 +2840,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.8531934321432111,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.024338323990633647
+        ]
       },
       "hedge": {
         "n": 154,
@@ -2752,7 +2914,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.8153385729602641,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 1,
+        "top10_top4_candidate_rate": 0.006493506493506494,
+        "top10_top4_candidate_wilson_95": [
+          0.0011471549639692283,
+          0.03586209988392892
+        ]
       },
       "logistic": {
         "n": 154,
@@ -2818,7 +2988,15 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.8153385729602641,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 2,
+        "top10_top4_candidate_rate": 0.012987012987012988,
+        "top10_top4_candidate_wilson_95": [
+          0.003568687884314088,
+          0.04611149782084855
+        ]
       },
       "logistic_fast": {
         "n": 154,
@@ -2884,10 +3062,18 @@
           "total_combinations": 17721088
         },
         "top10_coverage_lower_bound_95": 0.8455154205321458,
-        "meets_90pct_lower_bound": false
+        "meets_90pct_lower_bound": false,
+        "top3_exact_count": 0,
+        "top3_exact_rate": 0.0,
+        "top10_top4_candidate_count": 0,
+        "top10_top4_candidate_rate": 0.0,
+        "top10_top4_candidate_wilson_95": [
+          0.0,
+          0.024338323990633647
+        ]
       }
     },
     "n": 154
   },
-  "disclaimer": "Top-10 覆盖率是候选池覆盖指标，不是单注中奖率。10 期样本的 95% 置信区间很宽；即使 10/10 覆盖，也不能证明未来 90% 下限。"
+  "disclaimer": "Top-10 覆盖率是候选池覆盖指标，不是单注中奖率。10 期样本的 95% 置信区间很宽；前三等奖精确命中与 Top-10 红球 + Top-4 蓝球候选也分别统计；即使 10/10 覆盖，也不能证明未来 90% 下限。"
 }

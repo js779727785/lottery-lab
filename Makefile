@@ -5,6 +5,7 @@ END ?= 2026-01-31
 VALIDATION_START ?= 2024-01-01
 VALIDATION_END ?= 2025-12-31
 TICKETS ?= 10
+YEAR ?= 2015
 
 .PHONY: collect challenge backtest forecast future-audit holdout extreme campaign signal review test serve all
 
@@ -24,7 +25,7 @@ future-audit:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.future_audit
 
 holdout:
-	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.holdout --seed 20261120 --count 10
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.holdout --year $(YEAR) --seed 20261120 --count 10
 
 extreme:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.extreme --start 2008-01-01 --target 0.99

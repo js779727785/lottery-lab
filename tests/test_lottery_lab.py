@@ -19,6 +19,7 @@ from lottery_lab.forecast import (
     verify_forecast,
 )
 from lottery_lab.future_audit import build_future_evidence_report
+from lottery_lab.holdout import select_random_year
 from lottery_lab.metrics import (
     TOTAL_COMBINATIONS,
     ndcg_at_k,
@@ -657,6 +658,7 @@ class Test2015HoldoutArtifact(unittest.TestCase):
         self.assertEqual(meta["random_count"], 10)
         self.assertEqual(meta["data_rows"], 3166)
         self.assertTrue(meta["no_lookahead"])
+        self.assertTrue(meta["history_replay_is_not_prediction"])
         self.assertEqual(
             meta["selected_issues"],
             [
@@ -691,6 +693,39 @@ class Test2015HoldoutArtifact(unittest.TestCase):
         self.assertEqual(full["n"], 154)
         self.assertEqual(full["summaries"]["random"]["n"], 154)
         self.assertEqual(full["summaries"]["ensemble"]["exact_jackpot_count"], 0)
+
+
+class Test2024HoldoutArtifact(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.report = json.loads(
+            (ROOT / "reports" / "2024_holdout.json").read_text(encoding="utf-8")
+        )
+        cls.draws = load_draws(DEFAULT_DATA_DIR / "ssq_history.csv")
+
+    def test_selection_is_deterministic_and_year_bounded(self) -> None:
+        meta = self.report["meta"]
+        self.assertEqual(
+            meta["selected_issues"],
+            select_random_year(self.draws, year=2024, seed=20261120, count=10),
+        )
+        self.assertTrue(all(issue.startswith("2024") for issue in meta["selected_issues"]))
+        self.assertTrue(meta["no_lookahead"])
+        self.assertTrue(meta["history_replay_is_not_prediction"])
+        self.assertEqual(meta["validation_start"], "2022-01-01")
+        self.assertEqual(meta["validation_end"], "2023-12-31")
+
+    def test_2024_result_keeps_strict_baseline_and_separates_metrics(self) -> None:
+        meta = self.report["meta"]
+        random10 = self.report["random10"]["summaries"]["random"]
+        full = self.report["full_2024"]
+        self.assertEqual(meta["champion_key"], "random")
+        self.assertEqual(random10["n"], 10)
+        self.assertEqual(random10["any_prize_count"], 0)
+        self.assertEqual(random10["top3_exact_count"], 0)
+        self.assertEqual(random10["top10_top4_candidate_count"], 0)
+        self.assertEqual(full["n"], 151)
+        self.assertIn("top3_exact_rate", full["summaries"]["ensemble"])
 
 
 class TestExtremeAuditArtifact(unittest.TestCase):

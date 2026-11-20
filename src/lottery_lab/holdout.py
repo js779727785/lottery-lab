@@ -1,4 +1,4 @@
-"""2015 time-out experiment: select on 2013-2014, test on unseen 2015."""
+"""Random-year time-out experiment with a fixed pre-test selection window."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import json
 import random
 from datetime import date, datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Sequence
+from typing import Any, Dict, List, Optional, Sequence
 
 from .backtest import CaseResult, run_model, summarize
 from .data import DEFAULT_DATA_DIR, load_draws
@@ -23,12 +23,18 @@ DEFAULT_CSV = PROJECT_ROOT / "reports" / "2015_random10.csv"
 WEB_JSON = PROJECT_ROOT / "web" / "data" / "holdout2015.json"
 
 
-def select_random_2015(draws: Sequence[Draw], seed: int, count: int = 10) -> List[str]:
-    issues = [draw.issue for draw in draws if draw.draw_date.year == 2015]
+def select_random_year(
+    draws: Sequence[Draw], year: int, seed: int, count: int = 10
+) -> List[str]:
+    issues = [draw.issue for draw in draws if draw.draw_date.year == year]
     if len(issues) < count:
-        raise RuntimeError("not enough 2015 draws")
+        raise RuntimeError(f"not enough {year} draws")
     selected = random.Random(seed).sample(issues, count)
     return sorted(selected)
+
+
+def select_random_2015(draws: Sequence[Draw], seed: int, count: int = 10) -> List[str]:
+    return select_random_year(draws, year=2015, seed=seed, count=count)
 
 
 def _summary_for_issues(cases: Sequence[CaseResult], issues: set[str]) -> List[CaseResult]:
@@ -51,18 +57,41 @@ def _compact_case(case: CaseResult) -> Dict[str, Any]:
         "tier": case.tier,
         "any_prize": case.any_prize,
         "top10_coverage": case.top10_coverage,
+        "top3_exact": case.tier is not None and case.tier <= 3,
+        "top10_top4_candidate": _candidate_top3_hit(case),
         "ndcg10": case.ndcg10,
         "payout": case.payout,
     }
 
 
-def _with_confidence(summary: Dict[str, Any]) -> Dict[str, Any]:
+def _candidate_top3_hit(case: CaseResult) -> bool:
+    return (
+        len(set(case.top10_reds) & set(case.actual_reds)) >= 5
+        and case.actual_blue in case.top4_blues
+    )
+
+
+def _with_confidence(
+    summary: Dict[str, Any], cases: Optional[Sequence[CaseResult]] = None
+) -> Dict[str, Any]:
     n = int(summary.get("n", 0))
     successes = int(summary.get("top10_coverage_count", 0))
     low, high = wilson_interval(successes, n)
     summary["top10_coverage_wilson_95"] = [low, high]
     summary["top10_coverage_lower_bound_95"] = low
     summary["meets_90pct_lower_bound"] = low >= 0.90
+    if cases is not None:
+        top3_exact_count = sum(1 for case in cases if case.tier is not None and case.tier <= 3)
+        top10_top4_candidate_count = sum(1 for case in cases if _candidate_top3_hit(case))
+        summary["top3_exact_count"] = top3_exact_count
+        summary["top3_exact_rate"] = top3_exact_count / n if n else 0.0
+        summary["top10_top4_candidate_count"] = top10_top4_candidate_count
+        summary["top10_top4_candidate_rate"] = (
+            top10_top4_candidate_count / n if n else 0.0
+        )
+        summary["top10_top4_candidate_wilson_95"] = list(
+            wilson_interval(top10_top4_candidate_count, n)
+        )
     return summary
 
 
@@ -70,18 +99,30 @@ def run_holdout(
     data_dir: Path = DEFAULT_DATA_DIR,
     seed: int = 20261120,
     count: int = 10,
-    json_path: Path = DEFAULT_JSON,
-    csv_path: Path = DEFAULT_CSV,
-    web_json_path: Path = WEB_JSON,
+    year: int = 2015,
+    json_path: Optional[Path] = None,
+    csv_path: Optional[Path] = None,
+    web_json_path: Optional[Path] = None,
 ) -> Dict[str, Any]:
+    if year < 2:
+        raise ValueError("year must be at least 2")
+    json_path = json_path or (
+        DEFAULT_JSON if year == 2015 else PROJECT_ROOT / "reports" / f"{year}_holdout.json"
+    )
+    csv_path = csv_path or (
+        DEFAULT_CSV if year == 2015 else PROJECT_ROOT / "reports" / f"{year}_random10.csv"
+    )
+    web_json_path = web_json_path or (
+        WEB_JSON if year == 2015 else PROJECT_ROOT / "web" / "data" / f"holdout{year}.json"
+    )
     draws = load_draws(data_dir / "ssq_history.csv")
     validate_draw_sequence(draws)
-    selected = select_random_2015(draws, seed=seed, count=count)
+    selected = select_random_year(draws, year=year, seed=seed, count=count)
 
-    validation_start = date(2013, 1, 1)
-    validation_end = date(2014, 12, 31)
-    test_start = date(2015, 1, 1)
-    test_end = date(2015, 12, 31)
+    validation_start = date(year - 2, 1, 1)
+    validation_end = date(year - 1, 12, 31)
+    test_start = date(year, 1, 1)
+    test_end = date(year, 12, 31)
 
     validation_cases: Dict[str, List[CaseResult]] = {}
     validation_summaries: Dict[str, Dict[str, Any]] = {}
@@ -114,11 +155,12 @@ def run_holdout(
         champion_key = max(
             eligible, key=lambda key: validation_summaries[key]["mean_ndcg_at_10"]
         )
-        champion_reason = "2013–2014 验证段显著优于随机基线。"
+        champion_reason = f"{year - 2}–{year - 1} 验证段显著优于随机基线。"
     else:
         champion_key = "random"
         champion_reason = (
-            "2013–2014 验证段没有任何候选模型显著优于随机基线；按同一门槛回退随机基线。"
+            f"{year - 2}–{year - 1} 验证段没有任何候选模型显著优于随机基线；"
+            "按同一门槛回退随机基线。"
         )
 
     test_cases: Dict[str, List[CaseResult]] = {}
@@ -132,9 +174,13 @@ def run_holdout(
     random10_summaries: Dict[str, Dict[str, Any]] = {}
     for key, cases in test_cases.items():
         random10_summaries[key] = _with_confidence(
-            summarize(_summary_for_issues(cases, selected_set))
+            summarize(_summary_for_issues(cases, selected_set)),
+            _summary_for_issues(cases, selected_set),
         )
-    full_summaries = {key: _with_confidence(summary) for key, summary in test_summaries.items()}
+    full_summaries = {
+        key: _with_confidence(summary, test_cases[key])
+        for key, summary in test_summaries.items()
+    }
 
     by_issue: Dict[str, Dict[str, Any]] = {}
     for issue in selected:
@@ -158,7 +204,8 @@ def run_holdout(
     payload: Dict[str, Any] = {
         "meta": {
             "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-            "experiment": "2015 time-out",
+            "experiment": f"{year} random {count}-draw time-out",
+            "target_year": year,
             "seed": seed,
             "random_count": count,
             "selected_issues": selected,
@@ -175,7 +222,11 @@ def run_holdout(
             "data_first_issue": draws[0].issue,
             "data_last_issue": draws[-1].issue,
             "no_lookahead": True,
-            "selection_rule": "2013–2014 NDCG@10 配对 bootstrap 95% 下界 > 0；否则回退随机",
+            "history_replay_is_not_prediction": True,
+            "selection_rule": (
+                f"{year - 2}–{year - 1} NDCG@10 配对 bootstrap 95% 下界 > 0；"
+                "否则回退随机"
+            ),
         },
         "models_validation": {
             model.key: {
@@ -200,12 +251,13 @@ def run_holdout(
                 "ci95_high": ensemble_coverage_diff[2],
             },
         },
-        "full_2015": {
+        f"full_{year}": {
             "summaries": full_summaries,
             "n": len(test_cases["random"]),
         },
         "disclaimer": (
             "Top-10 覆盖率是候选池覆盖指标，不是单注中奖率。10 期样本的 95% 置信区间很宽；"
+            "前三等奖精确命中与 Top-10 红球 + Top-4 蓝球候选也分别统计；"
             "即使 10/10 覆盖，也不能证明未来 90% 下限。"
         ),
     }
@@ -216,7 +268,7 @@ def run_holdout(
     web_json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
     with csv_path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(
             [
                 "issue",
@@ -229,12 +281,16 @@ def run_holdout(
                 "ensemble_red_hits",
                 "ensemble_blue_hit",
                 "ensemble_tier",
+                "ensemble_top3_exact",
                 "ensemble_top10_coverage",
+                "ensemble_top10_top4_candidate",
                 "random_top10",
                 "random_single",
                 "random_top10_hits",
                 "random_red_hits",
                 "random_top10_coverage",
+                "random_top3_exact",
+                "random_top10_top4_candidate",
             ]
         )
         for issue in selected:
@@ -254,13 +310,17 @@ def run_holdout(
                     ensemble.get("red_hits", ""),
                     int(bool(ensemble.get("blue_hit"))),
                     ensemble.get("tier", ""),
+                    int(bool(ensemble.get("top3_exact"))),
                     int(bool(ensemble.get("top10_coverage"))),
+                    int(bool(ensemble.get("top10_top4_candidate"))),
                     " ".join(f"{n:02d}" for n in baseline.get("top10_reds", [])),
                     " ".join(f"{n:02d}" for n in baseline.get("single_reds", []))
                     + f" + {baseline.get('single_blue', 0):02d}",
                     baseline.get("top10_hits", ""),
                     baseline.get("red_hits", ""),
                     int(bool(baseline.get("top10_coverage"))),
+                    int(bool(baseline.get("top3_exact"))),
+                    int(bool(baseline.get("top10_top4_candidate"))),
                 ]
             )
     return payload
@@ -269,11 +329,13 @@ def run_holdout(
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", default=str(DEFAULT_DATA_DIR))
+    parser.add_argument("--year", type=int, default=2015)
     parser.add_argument("--seed", type=int, default=20261120)
     parser.add_argument("--count", type=int, default=10)
     args = parser.parse_args()
     payload = run_holdout(
         data_dir=Path(args.data_dir),
+        year=args.year,
         seed=args.seed,
         count=args.count,
     )
@@ -285,8 +347,8 @@ def main() -> None:
                     key: payload["random10"]["summaries"][key]
                     for key in ("random", "ensemble", payload["meta"]["champion_key"])
                 },
-                "full_2015": {
-                    key: payload["full_2015"]["summaries"][key]
+                f"full_{args.year}": {
+                    key: payload[f"full_{args.year}"]["summaries"][key]
                     for key in ("random", "ensemble", payload["meta"]["champion_key"])
                 },
                 "selected_issues": payload["meta"]["selected_issues"],
