@@ -1,0 +1,3093 @@
+{
+  "state": 0,
+  "message": "查询成功",
+  "total": 2091,
+  "pageNum": 42,
+  "pageNo": 31,
+  "pageSize": 50,
+  "Tflag": 2,
+  "result": [
+    {
+      "name": "双色球",
+      "code": "2016131",
+      "detailsLink": "/c/2016/11/08/406494.shtml",
+      "videoLink": "",
+      "date": "2016-11-08(二)",
+      "week": "二",
+      "red": "04,10,18,19,25,27",
+      "blue": "02",
+      "blue2": "",
+      "sales": "341425796",
+      "poolmoney": "1286258608",
+      "content": "河北1注,江苏1注,安徽1注,新疆1注,共4注。其中复式投注为：河北1注,江苏1注,新疆1注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "zj1": "3",
+      "mj1": "14353816(含派奖5000000)",
+      "zj6": "4457511",
+      "mj6": "10(含派奖5)",
+      "msg": "下期一等奖派奖金额：104999996元。\n六等奖派奖奖金余额：330277155元。",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "4",
+          "typemoney": "9353816"
+        },
+        {
+          "type": 2,
+          "typenum": "112",
+          "typemoney": "194366"
+        },
+        {
+          "type": 3,
+          "typenum": "1314",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "73150",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1397997",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "9534069",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016130",
+      "detailsLink": "/c/2016/11/06/406448.shtml",
+      "videoLink": "",
+      "date": "2016-11-06(日)",
+      "week": "日",
+      "red": "03,17,21,23,27,28",
+      "blue": "01",
+      "blue2": "",
+      "sales": "389013348",
+      "poolmoney": "1258366632",
+      "content": "北京1注,江苏1注,浙江2注,福建1注,广西1注,四川1注,新疆1注,共8注。其中复式投注为：北京1注,福建1注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "zj1": "2",
+      "mj1": "12792864(含派奖5000000)",
+      "zj6": "4301177",
+      "mj6": "10(含派奖5)",
+      "msg": "下期一等奖派奖金额：99999996元。\n六等奖派奖奖金余额：352564710元。",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "8",
+          "typemoney": "7792864"
+        },
+        {
+          "type": 2,
+          "typenum": "88",
+          "typemoney": "317370"
+        },
+        {
+          "type": 3,
+          "typenum": "1214",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "64648",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1330087",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "9805897",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016129",
+      "detailsLink": "/c/2016/11/03/406402.shtml",
+      "videoLink": "",
+      "date": "2016-11-03(四)",
+      "week": "四",
+      "red": "05,06,08,21,31,33",
+      "blue": "14",
+      "blue2": "",
+      "sales": "356293078",
+      "poolmoney": "1236923614",
+      "content": "湖北1注,广东1注,共2注。其中复式投注为：0注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "zj1": "0",
+      "mj1": "0(含派奖0)",
+      "zj6": "2933087",
+      "mj6": "10(含派奖5)",
+      "msg": "下期一等奖派奖金额：89999996元。\n六等奖派奖奖金余额：374070595元。",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "2",
+          "typemoney": "10000000"
+        },
+        {
+          "type": 2,
+          "typenum": "107",
+          "typemoney": "263616"
+        },
+        {
+          "type": 3,
+          "typenum": "1008",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "55664",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1182559",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "7154660",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016128",
+      "detailsLink": "/c/2016/11/01/406370.shtml",
+      "videoLink": "",
+      "date": "2016-11-01(二)",
+      "week": "二",
+      "red": "04,09,11,17,26,27",
+      "blue": "13",
+      "blue2": "",
+      "sales": "346505806",
+      "poolmoney": "1172302677",
+      "content": "河北1注,黑龙江5注,江苏1注,浙江1注,安徽1注,福建1注,江西1注,广西5注,四川1注,共17注。其中复式投注为：江苏1注,浙江1注,安徽1注,四川1注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "zj1": "4",
+      "mj1": "11039764(含派奖5000000)",
+      "zj6": "3655426",
+      "mj6": "10(含派奖5)",
+      "msg": "下期一等奖派奖金额：69999996元。\n六等奖派奖奖金余额：388736030元。",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "17",
+          "typemoney": "6039764"
+        },
+        {
+          "type": 2,
+          "typenum": "216",
+          "typemoney": "102291"
+        },
+        {
+          "type": 3,
+          "typenum": "1788",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "86126",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1559473",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8644782",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016127",
+      "detailsLink": "/c/2016/10/30/406325.shtml",
+      "videoLink": "",
+      "date": "2016-10-30(日)",
+      "week": "日",
+      "red": "07,12,17,26,29,31",
+      "blue": "16",
+      "blue2": "",
+      "sales": "377635784",
+      "poolmoney": "1208693682",
+      "content": "河北1注,山东1注,海南1注,共3注。其中复式投注为：山东1注,海南1注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "zj1": "2",
+      "mj1": "15000000(含派奖5000000)",
+      "zj6": "3507797",
+      "mj6": "10(含派奖5)",
+      "msg": "下期一等奖派奖金额：69999998元。\n六等奖派奖奖金余额：407013160元。",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "3",
+          "typemoney": "10000000"
+        },
+        {
+          "type": 2,
+          "typenum": "127",
+          "typemoney": "219909"
+        },
+        {
+          "type": 3,
+          "typenum": "1019",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "63501",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1329019",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8856059",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016126",
+      "detailsLink": "/c/2016/10/27/406302.shtml",
+      "videoLink": "",
+      "date": "2016-10-27(四)",
+      "week": "四",
+      "red": "02,06,12,17,18,19",
+      "blue": "10",
+      "blue2": "",
+      "sales": "347402822",
+      "poolmoney": "1154908300",
+      "content": "浙江1注,山东1注,河南1注,宁夏1注,共4注。其中复式投注为：河南1注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "zj1": "1",
+      "mj1": "15000000(含派奖5000000)",
+      "zj6": "2629397",
+      "mj6": "10(含派奖5)",
+      "msg": "下期一等奖派奖金额：59999999元。\n六等奖派奖奖金余额：424552145元。",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "4",
+          "typemoney": "10000000"
+        },
+        {
+          "type": 2,
+          "typenum": "182",
+          "typemoney": "141981"
+        },
+        {
+          "type": 3,
+          "typenum": "1135",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "66832",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1302078",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "7414568",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016125",
+      "detailsLink": "/c/2016/10/25/406275.shtml",
+      "videoLink": "",
+      "date": "2016-10-25(二)",
+      "week": "二",
+      "red": "01,06,08,20,27,30",
+      "blue": "03",
+      "blue2": "",
+      "sales": "346147358",
+      "poolmoney": "1117386530",
+      "content": "辽宁1注,浙江2注,江西1注,重庆1注,河南1注,湖北1注,甘肃3注,共10注。其中复式投注为：浙江1注,江西1注,湖北1注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "zj1": "3",
+      "mj1": "10815990(含派奖5000000)",
+      "zj6": "7930751",
+      "mj6": "10(含派奖5)",
+      "msg": "下期一等奖派奖金额：44999999元。\n六等奖派奖奖金余额：437699130元。",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "10",
+          "typemoney": "5815990"
+        },
+        {
+          "type": 2,
+          "typenum": "94",
+          "typemoney": "108509"
+        },
+        {
+          "type": 3,
+          "typenum": "2291",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "103685",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1696067",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "16848406",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016124",
+      "detailsLink": "/c/2016/10/23/406219.shtml",
+      "videoLink": "",
+      "date": "2016-10-23(日)",
+      "week": "日",
+      "red": "09,15,21,24,27,32",
+      "blue": "10",
+      "blue2": "",
+      "sales": "370331346",
+      "poolmoney": "1144946805",
+      "content": "山东1注,湖北1注,云南1注,西藏1注,陕西1注,共5注。其中复式投注为：0注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "zj1": "0",
+      "mj1": "0(含派奖0)",
+      "zj6": "4529423",
+      "mj6": "10(含派奖5)",
+      "msg": "下期一等奖派奖金额：40000000元。\n六等奖派奖奖金余额：477352885元。",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "5",
+          "typemoney": "8691225"
+        },
+        {
+          "type": 2,
+          "typenum": "120",
+          "typemoney": "192251"
+        },
+        {
+          "type": 3,
+          "typenum": "1393",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "66223",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1205902",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "11939818",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016123",
+      "detailsLink": "/c/2016/10/20/406190.shtml",
+      "videoLink": "",
+      "date": "2016-10-20(四)",
+      "week": "四",
+      "red": "07,09,12,14,20,27",
+      "blue": "16",
+      "blue2": "",
+      "sales": "305299416",
+      "poolmoney": "1119192450",
+      "content": "上海1注,重庆1注,广西1注,共3注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "下期一等奖派奖金额：20000000元。\n六等奖派奖奖金余额：500000000元。",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "3",
+          "typemoney": "10000000"
+        },
+        {
+          "type": 2,
+          "typenum": "191",
+          "typemoney": "104821"
+        },
+        {
+          "type": 3,
+          "typenum": "1554",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "81320",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1482881",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "6751623",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016122",
+      "detailsLink": "/c/2016/10/18/406121.shtml",
+      "videoLink": "",
+      "date": "2016-10-18(二)",
+      "week": "二",
+      "red": "15,22,23,24,28,29",
+      "blue": "08",
+      "blue2": "",
+      "sales": "305059324",
+      "poolmoney": "1089129612",
+      "content": "浙江1注,安徽1注,重庆2注,湖南1注,广东1注,共6注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "6",
+          "typemoney": "7245796"
+        },
+        {
+          "type": 2,
+          "typenum": "96",
+          "typemoney": "175452"
+        },
+        {
+          "type": 3,
+          "typenum": "1233",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "60510",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1148924",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "10962986",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016121",
+      "detailsLink": "/c/2016/10/16/406074.shtml",
+      "videoLink": "",
+      "date": "2016-10-16(日)",
+      "week": "日",
+      "red": "02,03,10,23,25,28",
+      "blue": "09",
+      "blue2": "",
+      "sales": "340006950",
+      "poolmoney": "1082073970",
+      "content": "吉林1注,江苏1注,山东1注,湖南1注,宁夏1注,共5注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "5",
+          "typemoney": "8817083"
+        },
+        {
+          "type": 2,
+          "typenum": "106",
+          "typemoney": "225063"
+        },
+        {
+          "type": 3,
+          "typenum": "1067",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "59886",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1145998",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8907629",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016120",
+      "detailsLink": "/c/2016/10/13/406032.shtml",
+      "videoLink": "",
+      "date": "2016-10-13(四)",
+      "week": "四",
+      "red": "02,05,06,21,25,28",
+      "blue": "09",
+      "blue2": "",
+      "sales": "309329228",
+      "poolmoney": "1054589076",
+      "content": "北京1注,内蒙古1注,辽宁1注,上海1注,湖北1注,云南1注,共6注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "6",
+          "typemoney": "7457159"
+        },
+        {
+          "type": 2,
+          "typenum": "139",
+          "typemoney": "132580"
+        },
+        {
+          "type": 3,
+          "typenum": "1369",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "64234",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1194223",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "9792101",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016119",
+      "detailsLink": "/c/2016/10/11/405986.shtml",
+      "videoLink": "",
+      "date": "2016-10-11(二)",
+      "week": "二",
+      "red": "09,19,21,30,31,32",
+      "blue": "04",
+      "blue2": "",
+      "sales": "302415052",
+      "poolmoney": "1044045944",
+      "content": "河北1注,内蒙古1注,浙江1注,安徽1注,共4注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "4",
+          "typemoney": "9261565"
+        },
+        {
+          "type": 2,
+          "typenum": "353",
+          "typemoney": "60362"
+        },
+        {
+          "type": 3,
+          "typenum": "1233",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "61363",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1161255",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "7073582",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016118",
+      "detailsLink": "/c/2016/10/09/405920.shtml",
+      "videoLink": "",
+      "date": "2016-10-09(日)",
+      "week": "日",
+      "red": "09,14,22,23,31,33",
+      "blue": "14",
+      "blue2": "",
+      "sales": "338792784",
+      "poolmoney": "1017168724",
+      "content": "黑龙江1注,上海1注,浙江1注,安徽1注,共4注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "4",
+          "typemoney": "10000000"
+        },
+        {
+          "type": 2,
+          "typenum": "97",
+          "typemoney": "293175"
+        },
+        {
+          "type": 3,
+          "typenum": "811",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "41136",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "846668",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "6625872",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016117",
+      "detailsLink": "/c/2016/10/06/405850.shtml",
+      "videoLink": "",
+      "date": "2016-10-06(四)",
+      "week": "四",
+      "red": "03,10,14,17,28,33",
+      "blue": "02",
+      "blue2": "",
+      "sales": "281128494",
+      "poolmoney": "971854560",
+      "content": "北京1注,内蒙古2注,上海2注,安徽1注,重庆1注,湖南1注,广东2注,贵州1注,新疆1注,共12注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "12",
+          "typemoney": "6037315"
+        },
+        {
+          "type": 2,
+          "typenum": "167",
+          "typemoney": "93172"
+        },
+        {
+          "type": 3,
+          "typenum": "1921",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "75474",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1201455",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8528336",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016116",
+      "detailsLink": "/c/2016/10/04/405840.shtml",
+      "videoLink": "",
+      "date": "2016-10-04(二)",
+      "week": "二",
+      "red": "07,18,20,23,27,31",
+      "blue": "13",
+      "blue2": "",
+      "sales": "268669114",
+      "poolmoney": "997623156",
+      "content": "江苏1注,重庆1注,湖北1注,甘肃3注,共6注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "6",
+          "typemoney": "7593721"
+        },
+        {
+          "type": 2,
+          "typenum": "52",
+          "typemoney": "374094"
+        },
+        {
+          "type": 3,
+          "typenum": "765",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "42434",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "870071",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "6870742",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016115",
+      "detailsLink": "/c/2016/10/02/405830.shtml",
+      "videoLink": "",
+      "date": "2016-10-02(日)",
+      "week": "日",
+      "red": "06,08,20,22,26,27",
+      "blue": "09",
+      "blue2": "",
+      "sales": "307770194",
+      "poolmoney": "984826752",
+      "content": "辽宁1注,吉林1注,江苏1注,浙江2注,山东3注,河南1注,广东2注,广西1注,陕西1注,共13注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "13",
+          "typemoney": "6239088"
+        },
+        {
+          "type": 2,
+          "typenum": "62",
+          "typemoney": "324761"
+        },
+        {
+          "type": 3,
+          "typenum": "1052",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "59791",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1114741",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8801009",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016114",
+      "detailsLink": "/c/2016/09/29/405769.shtml",
+      "videoLink": "",
+      "date": "2016-09-29(四)",
+      "week": "四",
+      "red": "05,16,20,22,27,29",
+      "blue": "09",
+      "blue2": "",
+      "sales": "300350554",
+      "poolmoney": "1005529350",
+      "content": "北京2注,辽宁1注,上海1注,江苏1注,浙江1注,安徽1注,广东10注,陕西2注,新疆1注,深圳1注,共21注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "21",
+          "typemoney": "5225680"
+        },
+        {
+          "type": 2,
+          "typenum": "103",
+          "typemoney": "57515"
+        },
+        {
+          "type": 3,
+          "typenum": "3277",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "128407",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1900718",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "13791142",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016113",
+      "detailsLink": "/c/2016/09/27/405720.shtml",
+      "videoLink": "",
+      "date": "2016-09-27(二)",
+      "week": "二",
+      "red": "01,11,16,17,20,26",
+      "blue": "14",
+      "blue2": "",
+      "sales": "301675518",
+      "poolmoney": "1097496306",
+      "content": "北京1注,辽宁1注,山东1注,重庆1注,湖北1注,陕西1注,共6注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "6",
+          "typemoney": "7750731"
+        },
+        {
+          "type": 2,
+          "typenum": "95",
+          "typemoney": "217162"
+        },
+        {
+          "type": 3,
+          "typenum": "1293",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "64603",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1227039",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "7245815",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016112",
+      "detailsLink": "/c/2016/09/25/405639.shtml",
+      "videoLink": "",
+      "date": "2016-09-25(日)",
+      "week": "日",
+      "red": "06,12,14,15,18,25",
+      "blue": "12",
+      "blue2": "",
+      "sales": "339124224",
+      "poolmoney": "1082109240",
+      "content": "辽宁1注,吉林1注,黑龙江1注,江苏2注,湖北1注,深圳2注,共8注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "8",
+          "typemoney": "6869523"
+        },
+        {
+          "type": 2,
+          "typenum": "105",
+          "typemoney": "178049"
+        },
+        {
+          "type": 3,
+          "typenum": "1711",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "79274",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1390410",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "11299602",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016111",
+      "detailsLink": "/c/2016/09/22/405596.shtml",
+      "videoLink": "",
+      "date": "2016-09-22(四)",
+      "week": "四",
+      "red": "02,04,07,14,15,32",
+      "blue": "04",
+      "blue2": "",
+      "sales": "310894592",
+      "poolmoney": "1080979719",
+      "content": "黑龙江1注,广西1注,贵州1注,共3注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "3",
+          "typemoney": "10000000"
+        },
+        {
+          "type": 2,
+          "typenum": "68",
+          "typemoney": "362286"
+        },
+        {
+          "type": 3,
+          "typenum": "1057",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "44252",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "879232",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "6596527",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016110",
+      "detailsLink": "/c/2016/09/20/405529.shtml",
+      "videoLink": "",
+      "date": "2016-09-20(二)",
+      "week": "二",
+      "red": "05,07,28,31,32,33",
+      "blue": "08",
+      "blue2": "",
+      "sales": "306664040",
+      "poolmoney": "1037073225",
+      "content": "上海1注,浙江1注,山东1注,湖南1注,贵州1注,共5注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "5",
+          "typemoney": "7249839"
+        },
+        {
+          "type": 2,
+          "typenum": "55",
+          "typemoney": "255663"
+        },
+        {
+          "type": 3,
+          "typenum": "1231",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "62786",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1133745",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "13286347",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016109",
+      "detailsLink": "/c/2016/09/18/405457.shtml",
+      "videoLink": "",
+      "date": "2016-09-18(日)",
+      "week": "日",
+      "red": "09,11,15,16,27,33",
+      "blue": "05",
+      "blue2": "",
+      "sales": "339043452",
+      "poolmoney": "1031137928",
+      "content": "上海1注,福建1注,山东1注,湖北3注,四川1注,深圳1注,共8注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "8",
+          "typemoney": "6719240"
+        },
+        {
+          "type": 2,
+          "typenum": "93",
+          "typemoney": "184864"
+        },
+        {
+          "type": 3,
+          "typenum": "1895",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "83484",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1470824",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "12054330",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016108",
+      "detailsLink": "/c/2016/09/15/405415.shtml",
+      "videoLink": "",
+      "date": "2016-09-15(四)",
+      "week": "四",
+      "red": "02,03,07,08,19,26",
+      "blue": "16",
+      "blue2": "",
+      "sales": "278530656",
+      "poolmoney": "1033314654",
+      "content": "辽宁1注,上海1注,浙江1注,安徽1注,河南2注,共6注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "6",
+          "typemoney": "7828306"
+        },
+        {
+          "type": 2,
+          "typenum": "174",
+          "typemoney": "121909"
+        },
+        {
+          "type": 3,
+          "typenum": "1044",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "59523",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1164049",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "4990750",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016107",
+      "detailsLink": "/c/2016/09/13/405374.shtml",
+      "videoLink": "",
+      "date": "2016-09-13(二)",
+      "week": "二",
+      "red": "06,11,18,26,27,32",
+      "blue": "01",
+      "blue2": "",
+      "sales": "295842288",
+      "poolmoney": "1016647606",
+      "content": "吉林1注,上海1注,江苏1注,安徽1注,广西2注,陕西7注,共13注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "13",
+          "typemoney": "6252404"
+        },
+        {
+          "type": 2,
+          "typenum": "230",
+          "typemoney": "88485"
+        },
+        {
+          "type": 3,
+          "typenum": "1344",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "67680",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1186566",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "6824560",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016106",
+      "detailsLink": "/c/2016/09/11/405316.shtml",
+      "videoLink": "",
+      "date": "2016-09-11(日)",
+      "week": "日",
+      "red": "04,05,13,22,25,30",
+      "blue": "04",
+      "blue2": "",
+      "sales": "329967722",
+      "poolmoney": "1036874166",
+      "content": "北京1注,江苏1注,浙江1注,湖南1注,广西1注,新疆1注,共6注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "6",
+          "typemoney": "8341196"
+        },
+        {
+          "type": 2,
+          "typenum": "119",
+          "typemoney": "210579"
+        },
+        {
+          "type": 3,
+          "typenum": "904",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "52216",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1028518",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "7601579",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016105",
+      "detailsLink": "/c/2016/09/08/405301.shtml",
+      "videoLink": "",
+      "date": "2016-09-08(四)",
+      "week": "四",
+      "red": "08,10,19,27,28,31",
+      "blue": "16",
+      "blue2": "",
+      "sales": "304435234",
+      "poolmoney": "1011744422",
+      "content": "北京1注,辽宁1注,浙江2注,湖北5注,贵州1注,陕西1注,甘肃1注,新疆1注,共13注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "13",
+          "typemoney": "6419550"
+        },
+        {
+          "type": 2,
+          "typenum": "153",
+          "typemoney": "150769"
+        },
+        {
+          "type": 3,
+          "typenum": "1038",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "58194",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1156103",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "6117728",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016104",
+      "detailsLink": "/c/2016/09/06/405236.shtml",
+      "videoLink": "",
+      "date": "2016-09-06(二)",
+      "week": "二",
+      "red": "05,09,11,18,30,31",
+      "blue": "04",
+      "blue2": "",
+      "sales": "304391928",
+      "poolmoney": "1025995488",
+      "content": "安徽1注,福建1注,共2注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "2",
+          "typemoney": "10000000"
+        },
+        {
+          "type": 2,
+          "typenum": "72",
+          "typemoney": "319307"
+        },
+        {
+          "type": 3,
+          "typenum": "849",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "51243",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1051840",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "6775477",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016103",
+      "detailsLink": "/c/2016/09/04/405172.shtml",
+      "videoLink": "",
+      "date": "2016-09-04(日)",
+      "week": "日",
+      "red": "01,05,13,19,24,27",
+      "blue": "11",
+      "blue2": "",
+      "sales": "334526552",
+      "poolmoney": "977024997",
+      "content": "上海1注,福建1注,河南1注,湖北1注,广东1注,贵州1注,陕西6注,甘肃1注,共13注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "13",
+          "typemoney": "5957211"
+        },
+        {
+          "type": 2,
+          "typenum": "116",
+          "typemoney": "134092"
+        },
+        {
+          "type": 3,
+          "typenum": "1750",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "70675",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1228108",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "14006635",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016102",
+      "detailsLink": "/c/2016/09/01/405115.shtml",
+      "videoLink": "",
+      "date": "2016-09-01(四)",
+      "week": "四",
+      "red": "05,08,10,14,17,30",
+      "blue": "13",
+      "blue2": "",
+      "sales": "304528374",
+      "poolmoney": "1007804693",
+      "content": "内蒙古1注,江西1注,湖北1注,湖南1注,广东2注,四川1注,共7注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "7",
+          "typemoney": "6951119"
+        },
+        {
+          "type": 2,
+          "typenum": "339",
+          "typemoney": "50360"
+        },
+        {
+          "type": 3,
+          "typenum": "2536",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "84574",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1305931",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8669519",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016101",
+      "detailsLink": "/c/2016/08/30/405043.shtml",
+      "videoLink": "",
+      "date": "2016-08-30(二)",
+      "week": "二",
+      "red": "01,03,19,24,32,33",
+      "blue": "01",
+      "blue2": "",
+      "sales": "303829992",
+      "poolmoney": "1005245634",
+      "content": "上海1注,海南1注,云南1注,共3注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "3",
+          "typemoney": "10000000"
+        },
+        {
+          "type": 2,
+          "typenum": "45",
+          "typemoney": "555671"
+        },
+        {
+          "type": 3,
+          "typenum": "690",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "40929",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "798856",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "6122308",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016100",
+      "detailsLink": "/c/2016/08/28/404999.shtml",
+      "videoLink": "",
+      "date": "2016-08-28(日)",
+      "week": "日",
+      "red": "03,10,22,23,27,29",
+      "blue": "04",
+      "blue2": "",
+      "sales": "335027586",
+      "poolmoney": "960230040",
+      "content": "天津1注,江西1注,广东1注,贵州1注,共4注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "4",
+          "typemoney": "9565716"
+        },
+        {
+          "type": 2,
+          "typenum": "87",
+          "typemoney": "262397"
+        },
+        {
+          "type": 3,
+          "typenum": "1349",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "66882",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1263132",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8558894",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016099",
+      "detailsLink": "/c/2016/08/25/404960.shtml",
+      "videoLink": "",
+      "date": "2016-08-25(四)",
+      "week": "四",
+      "red": "01,11,21,23,27,33",
+      "blue": "06",
+      "blue2": "",
+      "sales": "300016648",
+      "poolmoney": "930007164",
+      "content": "江苏1注,福建1注,江西1注,四川1注,共4注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "4",
+          "typemoney": "8811192"
+        },
+        {
+          "type": 2,
+          "typenum": "111",
+          "typemoney": "171675"
+        },
+        {
+          "type": 3,
+          "typenum": "1219",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "64088",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1113248",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8635446",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016098",
+      "detailsLink": "/c/2016/08/23/404823.shtml",
+      "videoLink": "",
+      "date": "2016-08-23(二)",
+      "week": "二",
+      "red": "02,08,25,29,31,32",
+      "blue": "06",
+      "blue2": "",
+      "sales": "296350008",
+      "poolmoney": "908084049",
+      "content": "湖南2注,海南1注,共3注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "3",
+          "typemoney": "9434877"
+        },
+        {
+          "type": 2,
+          "typenum": "63",
+          "typemoney": "263980"
+        },
+        {
+          "type": 3,
+          "typenum": "1265",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "60410",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1152579",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "10257110",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016097",
+      "detailsLink": "/c/2016/08/21/404742.shtml",
+      "videoLink": "",
+      "date": "2016-08-21(日)",
+      "week": "日",
+      "red": "06,13,25,26,28,31",
+      "blue": "01",
+      "blue2": "",
+      "sales": "327274678",
+      "poolmoney": "886496310",
+      "content": "山西1注,江西1注,山东2注,湖北1注,湖南1注,广东2注,广西1注,共9注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "9",
+          "typemoney": "6754677"
+        },
+        {
+          "type": 2,
+          "typenum": "101",
+          "typemoney": "195446"
+        },
+        {
+          "type": 3,
+          "typenum": "1287",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "63983",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1203096",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "10543110",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016096",
+      "detailsLink": "/c/2016/08/18/404690.shtml",
+      "videoLink": "",
+      "date": "2016-08-18(四)",
+      "week": "四",
+      "red": "06,13,14,21,22,24",
+      "blue": "16",
+      "blue2": "",
+      "sales": "296887214",
+      "poolmoney": "888068045",
+      "content": "黑龙江1注,福建2注,陕西1注,深圳1注,共5注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "5",
+          "typemoney": "8412890"
+        },
+        {
+          "type": 2,
+          "typenum": "110",
+          "typemoney": "193914"
+        },
+        {
+          "type": 3,
+          "typenum": "993",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "47174",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "925886",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "7695961",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016095",
+      "detailsLink": "/c/2016/08/16/404599.shtml",
+      "videoLink": "",
+      "date": "2016-08-16(二)",
+      "week": "二",
+      "red": "01,05,09,12,18,32",
+      "blue": "12",
+      "blue2": "",
+      "sales": "297413702",
+      "poolmoney": "866140800",
+      "content": "浙江1注,福建1注,广东2注,云南2注,深圳1注,共7注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "7",
+          "typemoney": "7075631"
+        },
+        {
+          "type": 2,
+          "typenum": "73",
+          "typemoney": "248791"
+        },
+        {
+          "type": 3,
+          "typenum": "1409",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "65989",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1186916",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8758330",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016094",
+      "detailsLink": "/c/2016/08/14/404539.shtml",
+      "videoLink": "",
+      "date": "2016-08-14(日)",
+      "week": "日",
+      "red": "06,07,10,12,18,31",
+      "blue": "10",
+      "blue2": "",
+      "sales": "324311584",
+      "poolmoney": "861184896",
+      "content": "安徽1注,广东1注,陕西1注,深圳1注,共4注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "4",
+          "typemoney": "8445845"
+        },
+        {
+          "type": 2,
+          "typenum": "83",
+          "typemoney": "207581"
+        },
+        {
+          "type": 3,
+          "typenum": "1737",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "85930",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1511757",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "10496239",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016093",
+      "detailsLink": "/c/2016/08/11/404483.shtml",
+      "videoLink": "",
+      "date": "2016-08-11(四)",
+      "week": "四",
+      "red": "06,09,15,17,25,27",
+      "blue": "09",
+      "blue2": "",
+      "sales": "298416216",
+      "poolmoney": "843280596",
+      "content": "北京1注,天津2注,山西1注,上海1注,江苏1注,重庆2注,湖南5注,广东1注,广西1注,海南1注,四川1注,云南1注,共18注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "18",
+          "typemoney": "5501160"
+        },
+        {
+          "type": 2,
+          "typenum": "131",
+          "typemoney": "86077"
+        },
+        {
+          "type": 3,
+          "typenum": "2938",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "104722",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1597291",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "11077632",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016092",
+      "detailsLink": "/c/2016/08/09/404444.shtml",
+      "videoLink": "",
+      "date": "2016-08-09(二)",
+      "week": "二",
+      "red": "02,13,15,23,24,29",
+      "blue": "06",
+      "blue2": "",
+      "sales": "299992386",
+      "poolmoney": "908473144",
+      "content": "北京5注,内蒙古1注,辽宁1注,上海1注,江苏1注,浙江3注,安徽1注,江西1注,重庆3注,广东1注,云南1注,共19注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "19",
+          "typemoney": "5173091"
+        },
+        {
+          "type": 2,
+          "typenum": "97",
+          "typemoney": "42380"
+        },
+        {
+          "type": 3,
+          "typenum": "2650",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "107752",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1634614",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "16941205",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016091",
+      "detailsLink": "/c/2016/08/07/404370.shtml",
+      "videoLink": "",
+      "date": "2016-08-07(日)",
+      "week": "日",
+      "red": "04,08,14,22,23,28",
+      "blue": "07",
+      "blue2": "",
+      "sales": "329710234",
+      "poolmoney": "994429110",
+      "content": "北京1注,河北1注,山西1注,上海1注,江苏2注,安徽1注,河南4注,湖北1注,广东2注,四川3注,共17注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "17",
+          "typemoney": "5986530"
+        },
+        {
+          "type": 2,
+          "typenum": "226",
+          "typemoney": "92760"
+        },
+        {
+          "type": 3,
+          "typenum": "1451",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "74116",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1385952",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8933435",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016090",
+      "detailsLink": "/c/2016/08/04/404324.shtml",
+      "videoLink": "",
+      "date": "2016-08-04(四)",
+      "week": "四",
+      "red": "02,13,17,20,21,26",
+      "blue": "07",
+      "blue2": "",
+      "sales": "294008068",
+      "poolmoney": "1033308810",
+      "content": "辽宁1注,江苏5注,浙江1注,安徽6注,江西1注,山东1注,重庆1注,河南1注,广东6注,共23注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "23",
+          "typemoney": "5443624"
+        },
+        {
+          "type": 2,
+          "typenum": "164",
+          "typemoney": "77769"
+        },
+        {
+          "type": 3,
+          "typenum": "2246",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "98229",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1528330",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "10276008",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016089",
+      "detailsLink": "/c/2016/08/02/404248.shtml",
+      "videoLink": "",
+      "date": "2016-08-02(二)",
+      "week": "二",
+      "red": "01,03,14,30,31,32",
+      "blue": "08",
+      "blue2": "",
+      "sales": "288232376",
+      "poolmoney": "1120249570",
+      "content": "河北1注,辽宁2注,浙江5注,广东1注,云南1注,共10注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "10",
+          "typemoney": "5749899"
+        },
+        {
+          "type": 2,
+          "typenum": "48",
+          "typemoney": "195286"
+        },
+        {
+          "type": 3,
+          "typenum": "1249",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "56311",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "967833",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "15810276",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016088",
+      "detailsLink": "/c/2016/07/31/404180.shtml",
+      "videoLink": "",
+      "date": "2016-07-31(日)",
+      "week": "日",
+      "red": "03,14,16,18,25,33",
+      "blue": "15",
+      "blue2": "",
+      "sales": "320354148",
+      "poolmoney": "1149627355",
+      "content": "辽宁1注,江苏2注,河南1注,陕西1注,共5注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "5",
+          "typemoney": "8643396"
+        },
+        {
+          "type": 2,
+          "typenum": "79",
+          "typemoney": "288243"
+        },
+        {
+          "type": 3,
+          "typenum": "1109",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "51374",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1001724",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8453917",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016087",
+      "detailsLink": "/c/2016/07/28/404133.shtml",
+      "videoLink": "",
+      "date": "2016-07-28(四)",
+      "week": "四",
+      "red": "02,03,10,11,14,21",
+      "blue": "12",
+      "blue2": "",
+      "sales": "288396896",
+      "poolmoney": "1124530659",
+      "content": "河北1注,山东1注,海南1注,共3注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "3",
+          "typemoney": "10000000"
+        },
+        {
+          "type": 2,
+          "typenum": "84",
+          "typemoney": "223543"
+        },
+        {
+          "type": 3,
+          "typenum": "893",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "51047",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1010028",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8643046",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016086",
+      "detailsLink": "/c/2016/07/26/404048.shtml",
+      "videoLink": "",
+      "date": "2016-07-26(二)",
+      "week": "二",
+      "red": "09,10,11,12,15,32",
+      "blue": "05",
+      "blue2": "",
+      "sales": "286788850",
+      "poolmoney": "1098197736",
+      "content": "辽宁1注,云南5注,共6注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "6",
+          "typemoney": "7936358"
+        },
+        {
+          "type": 2,
+          "typenum": "62",
+          "typemoney": "355204"
+        },
+        {
+          "type": 3,
+          "typenum": "667",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "44226",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "886647",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "6544622",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016085",
+      "detailsLink": "/c/2016/07/24/403953.shtml",
+      "videoLink": "",
+      "date": "2016-07-24(日)",
+      "week": "日",
+      "red": "01,12,19,20,21,25",
+      "blue": "16",
+      "blue2": "",
+      "sales": "319888112",
+      "poolmoney": "1079747823",
+      "content": "福建1注,山东1注,湖北5注,共7注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "7",
+          "typemoney": "7380661"
+        },
+        {
+          "type": 2,
+          "typenum": "245",
+          "typemoney": "85023"
+        },
+        {
+          "type": 3,
+          "typenum": "1292",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "66369",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1238620",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "8777201",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016084",
+      "detailsLink": "/c/2016/07/21/403898.shtml",
+      "videoLink": "",
+      "date": "2016-07-21(四)",
+      "week": "四",
+      "red": "02,04,12,18,24,26",
+      "blue": "05",
+      "blue2": "",
+      "sales": "288778286",
+      "poolmoney": "1068920080",
+      "content": "山东1注,河南1注,湖南1注,贵州1注,西藏1注,共5注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "5",
+          "typemoney": "7742405"
+        },
+        {
+          "type": 2,
+          "typenum": "101",
+          "typemoney": "169703"
+        },
+        {
+          "type": 3,
+          "typenum": "1199",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "60445",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1099966",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "9251111",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016083",
+      "detailsLink": "/c/2016/07/19/403824.shtml",
+      "videoLink": "",
+      "date": "2016-07-19(二)",
+      "week": "二",
+      "red": "09,16,17,24,30,31",
+      "blue": "04",
+      "blue2": "",
+      "sales": "291921542",
+      "poolmoney": "1056212003",
+      "content": "北京1注,河北1注,黑龙江1注,江苏1注,山东1注,湖北1注,湖南1注,共7注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "7",
+          "typemoney": "7237320"
+        },
+        {
+          "type": 2,
+          "typenum": "99",
+          "typemoney": "197743"
+        },
+        {
+          "type": 3,
+          "typenum": "1190",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "56008",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1010477",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "7971791",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    },
+    {
+      "name": "双色球",
+      "code": "2016082",
+      "detailsLink": "/c/2016/07/17/403768.shtml",
+      "videoLink": "",
+      "date": "2016-07-17(日)",
+      "week": "日",
+      "red": "06,12,14,15,17,20",
+      "blue": "09",
+      "blue2": "",
+      "sales": "323658370",
+      "poolmoney": "1048143580",
+      "content": "吉林5注,江苏1注,重庆1注,广东1注,广西1注,四川1注,共10注。",
+      "addmoney": "",
+      "addmoney2": "",
+      "msg": "",
+      "z2add": "",
+      "m2add": "",
+      "specialRuleInfo": "",
+      "prizeSpecialInfo": "",
+      "compLimitInfo": "",
+      "fyjCount": "",
+      "fyjMoney": "",
+      "prizegrades": [
+        {
+          "type": 1,
+          "typenum": "10",
+          "typemoney": "6151036"
+        },
+        {
+          "type": 2,
+          "typenum": "89",
+          "typemoney": "161662"
+        },
+        {
+          "type": 3,
+          "typenum": "1662",
+          "typemoney": "3000"
+        },
+        {
+          "type": 4,
+          "typenum": "77126",
+          "typemoney": "200"
+        },
+        {
+          "type": 5,
+          "typenum": "1355049",
+          "typemoney": "10"
+        },
+        {
+          "type": 6,
+          "typenum": "13415821",
+          "typemoney": "5"
+        },
+        {
+          "type": 7,
+          "typenum": "",
+          "typemoney": ""
+        }
+      ]
+    }
+  ]
+}

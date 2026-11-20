@@ -1,0 +1,91 @@
+{
+  "source": "中彩网 + 中国福彩官网",
+  "source_page": "https://www.zhcw.com/kjxx/ssq/",
+  "sources": {
+    "zhcw": "https://jc.zhcw.com/port/client_json.php",
+    "cwl": "https://www.cwl.gov.cn/cwl_admin/front/cwlkj/search/kjxx/findDrawNotice"
+  },
+  "requested_start": "2006-01-01",
+  "requested_end": "2026-11-20",
+  "fetched_at_utc": "2026-11-20T02:45:41.317945+00:00",
+  "zhcw_fetch": {
+    "source": "https://jc.zhcw.com/port/client_json.php",
+    "start_issue": "2006001",
+    "end_issue": "2026999",
+    "page_size": 100,
+    "page_count": 32,
+    "reported_total": 3166,
+    "collected": 3166
+  },
+  "cwl_overlap_fetch": {
+    "source": "https://www.cwl.gov.cn/cwl_admin/front/cwlkj/search/kjxx/findDrawNotice",
+    "requested_start": "2013-01-01",
+    "requested_end": "2026-11-20",
+    "page_size": 50,
+    "page_count": 42,
+    "reported_total": 2091,
+    "collected": 2091
+  },
+  "quality": {
+    "ok": true,
+    "rows": 3166,
+    "first_issue": "2006001",
+    "first_date": "2006-01-01",
+    "last_issue": "2026133",
+    "last_date": "2026-11-19",
+    "years": [
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "warnings": []
+  },
+  "overlap_crosscheck": {
+    "ok": true,
+    "overlap_issues": 2091,
+    "zhcw_rows": 3166,
+    "cwl_rows": 2091,
+    "issues_match": true,
+    "winning_numbers_match": true,
+    "first_prize_match_where_cwl_available": true,
+    "cwl_first_prize_missing": 99
+  },
+  "pagination_crosscheck": {
+    "ok": true,
+    "rows": 2091,
+    "issues_match": true,
+    "winning_numbers_match": true,
+    "method": "zhcw 100/page + cwl 50/page"
+  },
+  "csv": {
+    "path": "data/ssq_history.csv",
+    "sha256": "08ed44c4330561459580190acaaef55c909fdbeea5403e419ee88e22149147fd",
+    "rows": 3166
+  },
+  "raw_records": {
+    "path": "data/raw/zhcw_records.json",
+    "sha256": "45389e989c1ab0d168d9c8c3a54ed144ed553738cf4aab52f000608b8ff48ea5"
+  },
+  "cwl_raw_records": {
+    "path": "data/raw/cwl_records.json",
+    "sha256": "d4288b57271ff4fd59fcd7dcf4503078017cb26386dc1aec21f0924b10773e0a"
+  }
+}

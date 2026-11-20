@@ -1,0 +1,393 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-11-20T02:55:15.750565+00:00",
+    "experiment": "pure-prediction ceiling audit",
+    "data_rows": 3166,
+    "data_first_issue": "2006001",
+    "data_last_issue": "2026133",
+    "eval_start": "2008-01-01",
+    "eval_end": "2026-11-19",
+    "warmup_draws": 307,
+    "eval_draws": 2859,
+    "no_lookahead": true,
+    "history_replay_is_not_prediction": true,
+    "target": 0.99
+  },
+  "baselines": {
+    "exact_jackpot_rate": 5.642994380480476e-08,
+    "second_prize_rate": 8.464491570720715e-07,
+    "third_prize_rate": 9.141650896378372e-06,
+    "top3_prize_rate": 1.0044529997255248e-05,
+    "jackpot_one_in": 17721088.0,
+    "top3_prize_one_in": 99556.67415730337,
+    "top10_red_coverage_rate": 0.908857063403782,
+    "top10_five_red_rate": 0.0054226918798665185,
+    "top10_top4_top3_candidate_rate": 0.0013556729699666296,
+    "top6_red_coverage_rate": 0.7327387573494359,
+    "any_prize_rate": 0.06709452602458721,
+    "blue_hit_rate": 0.0625,
+    "expected_red_hits": 1.0909090909090908,
+    "expected_top10_red_hits": 1.8181818181818181,
+    "total_combinations": 17721088
+  },
+  "single_ticket_99pct": {
+    "top3_or_better": {
+      "per_draw_probability": 1.0044529997255248e-05,
+      "one_in": 99556.67415730337,
+      "iid_ticket_attempts": 458474,
+      "random_distinct_tickets": 452594,
+      "cost_yuan": 905188
+    },
+    "jackpot": {
+      "per_draw_probability": 5.642994380480476e-08,
+      "one_in": 17721088.0,
+      "iid_ticket_attempts": 81608624,
+      "random_distinct_tickets": 17543878,
+      "cost_yuan": 35087756
+    }
+  },
+  "candidate_pool_99pct": {
+    "target": 0.99,
+    "all_blues": true,
+    "minimum_red_pool": 32,
+    "minimum_red_pool_rate": 1.0,
+    "rows": [
+      {
+        "red_pool": 10,
+        "blue_pool": 16,
+        "top3_candidate_rate": 0.0054226918798665185,
+        "meets_target": false
+      },
+      {
+        "red_pool": 15,
+        "blue_pool": 16,
+        "top3_candidate_rate": 0.05332313681868743,
+        "meets_target": false
+      },
+      {
+        "red_pool": 20,
+        "blue_pool": 16,
+        "top3_candidate_rate": 0.21697268248992388,
+        "meets_target": false
+      },
+      {
+        "red_pool": 25,
+        "blue_pool": 16,
+        "top3_candidate_rate": 0.5436596218020022,
+        "meets_target": false
+      },
+      {
+        "red_pool": 28,
+        "blue_pool": 16,
+        "top3_candidate_rate": 0.7838254626352513,
+        "meets_target": false
+      },
+      {
+        "red_pool": 30,
+        "blue_pool": 16,
+        "top3_candidate_rate": 0.9221041055718475,
+        "meets_target": false
+      },
+      {
+        "red_pool": 31,
+        "blue_pool": 16,
+        "top3_candidate_rate": 0.9715909090909091,
+        "meets_target": false
+      },
+      {
+        "red_pool": 32,
+        "blue_pool": 16,
+        "top3_candidate_rate": 1.0,
+        "meets_target": true
+      },
+      {
+        "red_pool": 33,
+        "blue_pool": 16,
+        "top3_candidate_rate": 1.0,
+        "meets_target": true
+      }
+    ]
+  },
+  "models": [
+    {
+      "key": "random",
+      "label": "随机基线",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 0,
+      "top3_rate": 0.0,
+      "top3_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top10_top4_candidate_count": 3,
+      "top10_top4_candidate_rate": 0.001049317943336831,
+      "top10_top4_candidate_wilson_95": [
+        0.0003569190702604867,
+        0.003080784224256402
+      ],
+      "any_prize_count": 192,
+      "any_prize_rate": 0.06715634837355719,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 13,
+        "6": 178
+      },
+      "roi": -0.7866386848548443
+    },
+    {
+      "key": "frequency",
+      "label": "历史频率",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 0,
+      "top3_rate": 0.0,
+      "top3_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top10_top4_candidate_count": 5,
+      "top10_top4_candidate_rate": 0.0017488632388947185,
+      "top10_top4_candidate_wilson_95": [
+        0.0007472229611478226,
+        0.004087693507859754
+      ],
+      "any_prize_count": 188,
+      "any_prize_rate": 0.06575725778244142,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 22,
+        "6": 165
+      },
+      "roi": -0.7822665267576075
+    },
+    {
+      "key": "recency",
+      "label": "近因加权",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 0,
+      "top3_rate": 0.0,
+      "top3_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top10_top4_candidate_count": 11,
+      "top10_top4_candidate_rate": 0.0038474991255683807,
+      "top10_top4_candidate_wilson_95": [
+        0.0021497439924951563,
+        0.006876811999984484
+      ],
+      "any_prize_count": 220,
+      "any_prize_rate": 0.07694998251136762,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 2,
+        "5": 27,
+        "6": 191
+      },
+      "roi": -0.7158097236796083
+    },
+    {
+      "key": "gap",
+      "label": "遗漏回补",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 0,
+      "top3_rate": 0.0,
+      "top3_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top10_top4_candidate_count": 5,
+      "top10_top4_candidate_rate": 0.0017488632388947185,
+      "top10_top4_candidate_wilson_95": [
+        0.0007472229611478226,
+        0.004087693507859754
+      ],
+      "any_prize_count": 172,
+      "any_prize_rate": 0.06016089541797831,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 17,
+        "6": 154
+      },
+      "roi": -0.8006295907660022
+    },
+    {
+      "key": "markov",
+      "label": "一阶转移",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 0,
+      "top3_rate": 0.0,
+      "top3_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top10_top4_candidate_count": 1,
+      "top10_top4_candidate_rate": 0.0003497726477789437,
+      "top10_top4_candidate_wilson_95": [
+        6.174454118547509e-05,
+        0.0019787455788407254
+      ],
+      "any_prize_count": 185,
+      "any_prize_rate": 0.06470793983910458,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 26,
+        "6": 159
+      },
+      "roi": -0.8154949282966072
+    },
+    {
+      "key": "ensemble",
+      "label": "多因子集成",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 0,
+      "top3_rate": 0.0,
+      "top3_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top10_top4_candidate_count": 5,
+      "top10_top4_candidate_rate": 0.0017488632388947185,
+      "top10_top4_candidate_wilson_95": [
+        0.0007472229611478226,
+        0.004087693507859754
+      ],
+      "any_prize_count": 209,
+      "any_prize_rate": 0.07310248338579924,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 29,
+        "6": 180
+      },
+      "roi": -0.7918852745715285
+    },
+    {
+      "key": "logistic",
+      "label": "在线逻辑回归",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 1,
+      "top3_rate": 0.0003497726477789437,
+      "top3_wilson_95": [
+        6.174454118547509e-05,
+        0.0019787455788407254
+      ],
+      "top10_top4_candidate_count": 5,
+      "top10_top4_candidate_rate": 0.0017488632388947185,
+      "top10_top4_candidate_wilson_95": [
+        0.0007472229611478226,
+        0.004087693507859754
+      ],
+      "any_prize_count": 212,
+      "any_prize_rate": 0.07415180132913606,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 21,
+        "6": 190
+      },
+      "roi": -0.2724728926197971
+    },
+    {
+      "key": "logistic_fast",
+      "label": "在线逻辑回归",
+      "n": 2859,
+      "jackpot_count": 0,
+      "jackpot_rate": 0.0,
+      "jackpot_wilson_95": [
+        0.0,
+        0.0013418835327808566
+      ],
+      "top3_count": 1,
+      "top3_rate": 0.0003497726477789437,
+      "top3_wilson_95": [
+        6.174454118547509e-05,
+        0.0019787455788407254
+      ],
+      "top10_top4_candidate_count": 5,
+      "top10_top4_candidate_rate": 0.0017488632388947185,
+      "top10_top4_candidate_wilson_95": [
+        0.0007472229611478226,
+        0.004087693507859754
+      ],
+      "any_prize_count": 212,
+      "any_prize_rate": 0.07415180132913606,
+      "tier_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 21,
+        "6": 190
+      },
+      "roi": -0.2724728926197971
+    }
+  ],
+  "observed_ceiling": {
+    "best_top3_model": "logistic_fast",
+    "best_top3_rate": 0.0003497726477789437,
+    "best_top10_top4_candidate_model": "recency",
+    "best_top10_top4_candidate_rate": 0.0038474991255683807,
+    "best_jackpot_count": 0
+  },
+  "conclusion": "在公平独立开奖假设下，单注每期前三等奖概率固定为 178/17,721,088；历史飞轮只能估计该概率，不能把单注每期准确率推到 99%。达到 99% 的单次命中保证需要多票组合、候选空间扩张，或使用未来信息；后者属于作弊，未纳入本审计。"
+}

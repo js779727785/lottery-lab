@@ -1,0 +1,2518 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-11-20T02:50:32.937570+00:00",
+    "experiment": "2015 time-out",
+    "seed": 20261120,
+    "random_count": 10,
+    "selected_issues": [
+      "2015028",
+      "2015036",
+      "2015055",
+      "2015076",
+      "2015099",
+      "2015107",
+      "2015109",
+      "2015114",
+      "2015133",
+      "2015150"
+    ],
+    "validation_start": "2013-01-01",
+    "validation_end": "2014-12-31",
+    "test_start": "2015-01-01",
+    "test_end": "2015-12-31",
+    "champion_key": "random",
+    "champion_label": "随机基线",
+    "champion_reason": "2013–2014 验证段没有任何候选模型显著优于随机基线；按同一门槛回退随机基线。",
+    "data_rows": 3166,
+    "data_first_issue": "2006001",
+    "data_last_issue": "2026133",
+    "no_lookahead": true,
+    "selection_rule": "2013–2014 NDCG@10 配对 bootstrap 95% 下界 > 0；否则回退随机"
+  },
+  "models_validation": {
+    "random": {
+      "label": "随机基线",
+      "summary": {
+        "n": 306,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 22,
+        "any_prize_rate": 0.0718954248366013,
+        "any_prize_wilson_95": [
+          0.047954590424736834,
+          0.10645204832228745
+        ],
+        "top10_coverage_count": 274,
+        "top10_coverage_rate": 0.8954248366013072,
+        "top10_coverage_wilson_95": [
+          0.8560978466891866,
+          0.9249464030177605
+        ],
+        "avg_top10_hits": 1.7941176470588236,
+        "avg_red_hits": 0.9836601307189542,
+        "blue_hit_rate": 0.0718954248366013,
+        "mean_ndcg_at_10": 0.23923927016594326,
+        "mean_actual_rank": 17.093681917211324,
+        "brier_red": 0.14876033057851162,
+        "brier_blue": 0.05859375,
+        "logloss_red": 0.4741393130578355,
+        "logloss_blue": 0.23379165870645932,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 1,
+          "6": 21
+        },
+        "red_hits_distribution": {
+          "0": 99,
+          "1": 130,
+          "2": 60,
+          "3": 17,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 612,
+        "total_payout": 115,
+        "net": -497,
+        "roi": -0.8120915032679739,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        }
+      },
+      "vs_random": null,
+      "selected": true
+    },
+    "frequency": {
+      "label": "历史频率",
+      "summary": {
+        "n": 306,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 26,
+        "any_prize_rate": 0.08496732026143791,
+        "any_prize_wilson_95": [
+          0.05864182520866364,
+          0.12158445815677214
+        ],
+        "top10_coverage_count": 272,
+        "top10_coverage_rate": 0.8888888888888888,
+        "top10_coverage_wilson_95": [
+          0.8487429871560429,
+          0.9193914402416984
+        ],
+        "avg_top10_hits": 1.8202614379084967,
+        "avg_red_hits": 1.0620915032679739,
+        "blue_hit_rate": 0.0784313725490196,
+        "mean_ndcg_at_10": 0.24719435954497476,
+        "mean_actual_rank": 16.98257080610022,
+        "brier_red": 0.15190609824821416,
+        "brier_blue": 0.05917665387995853,
+        "logloss_red": 0.485248681837061,
+        "logloss_blue": 0.24231704552098898,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 3,
+          "6": 23
+        },
+        "red_hits_distribution": {
+          "0": 94,
+          "1": 119,
+          "2": 75,
+          "3": 16,
+          "4": 2,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 612,
+        "total_payout": 145,
+        "net": -467,
+        "roi": -0.7630718954248366,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        }
+      },
+      "vs_random": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.007955089379031421,
+        "ci95_low": -0.01806349177767907,
+        "ci95_high": 0.03473117661332589,
+        "significant_improvement": false
+      },
+      "selected": false
+    },
+    "recency": {
+      "label": "近因加权",
+      "summary": {
+        "n": 306,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 21,
+        "any_prize_rate": 0.06862745098039216,
+        "any_prize_wilson_95": [
+          0.04532110177451662,
+          0.1026306258179048
+        ],
+        "top10_coverage_count": 280,
+        "top10_coverage_rate": 0.9150326797385621,
+        "top10_coverage_wilson_95": [
+          0.8784155418432279,
+          0.9413581747913363
+        ],
+        "avg_top10_hits": 1.8071895424836601,
+        "avg_red_hits": 1.0816993464052287,
+        "blue_hit_rate": 0.06535947712418301,
+        "mean_ndcg_at_10": 0.24803118630954912,
+        "mean_actual_rank": 17.088779956427,
+        "brier_red": 0.15200764718166807,
+        "brier_blue": 0.059121321010130234,
+        "logloss_red": 0.48625279202057486,
+        "logloss_blue": 0.23939668130756744,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 4,
+          "6": 17
+        },
+        "red_hits_distribution": {
+          "0": 85,
+          "1": 132,
+          "2": 69,
+          "3": 19,
+          "4": 1,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 612,
+        "total_payout": 125,
+        "net": -487,
+        "roi": -0.795751633986928,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        }
+      },
+      "vs_random": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.00879191614360569,
+        "ci95_low": -0.01783254263986679,
+        "ci95_high": 0.03531657727984064,
+        "significant_improvement": false
+      },
+      "selected": false
+    },
+    "gap": {
+      "label": "遗漏回补",
+      "summary": {
+        "n": 306,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 23,
+        "any_prize_rate": 0.07516339869281045,
+        "any_prize_wilson_95": [
+          0.05060428736297573,
+          0.11025726253865142
+        ],
+        "top10_coverage_count": 283,
+        "top10_coverage_rate": 0.9248366013071896,
+        "top10_coverage_wilson_95": [
+          0.8897427374613487,
+          0.9493957126370243
+        ],
+        "avg_top10_hits": 1.8888888888888888,
+        "avg_red_hits": 1.1797385620915033,
+        "blue_hit_rate": 0.07516339869281045,
+        "mean_ndcg_at_10": 0.26225778024466806,
+        "mean_actual_rank": 16.86111111111111,
+        "brier_red": 0.15142428711987813,
+        "brier_blue": 0.05931781602585545,
+        "logloss_red": 0.482203301093227,
+        "logloss_blue": 0.23958796190307957,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 23
+        },
+        "red_hits_distribution": {
+          "0": 71,
+          "1": 131,
+          "2": 82,
+          "3": 22,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 612,
+        "total_payout": 115,
+        "net": -497,
+        "roi": -0.8120915032679739,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        }
+      },
+      "vs_random": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.023018510078724755,
+        "ci95_low": -0.002133512124988588,
+        "ci95_high": 0.05002759143227228,
+        "significant_improvement": false
+      },
+      "selected": false
+    },
+    "markov": {
+      "label": "一阶转移",
+      "summary": {
+        "n": 306,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 20,
+        "any_prize_rate": 0.06535947712418301,
+        "any_prize_wilson_95": [
+          0.04270485127563921,
+          0.09879196516217935
+        ],
+        "top10_coverage_count": 276,
+        "top10_coverage_rate": 0.9019607843137255,
+        "top10_coverage_wilson_95": [
+          0.8634924917248785,
+          0.9304615802912743
+        ],
+        "avg_top10_hits": 1.8202614379084967,
+        "avg_red_hits": 1.088235294117647,
+        "blue_hit_rate": 0.058823529411764705,
+        "mean_ndcg_at_10": 0.25012823365723125,
+        "mean_actual_rank": 16.992919389978205,
+        "brier_red": 0.15172925163724207,
+        "brier_blue": 0.05918048275090079,
+        "logloss_red": 0.4849145281685416,
+        "logloss_blue": 0.23968493586050052,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 2,
+          "6": 18
+        },
+        "red_hits_distribution": {
+          "0": 78,
+          "1": 138,
+          "2": 77,
+          "3": 11,
+          "4": 2,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 612,
+        "total_payout": 110,
+        "net": -502,
+        "roi": -0.8202614379084967,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        }
+      },
+      "vs_random": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.01088896349128801,
+        "ci95_low": -0.016167951002575544,
+        "ci95_high": 0.037454256012719095,
+        "significant_improvement": false
+      },
+      "selected": false
+    },
+    "ensemble": {
+      "label": "多因子集成",
+      "summary": {
+        "n": 306,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 23,
+        "any_prize_rate": 0.07516339869281045,
+        "any_prize_wilson_95": [
+          0.05060428736297573,
+          0.11025726253865142
+        ],
+        "top10_coverage_count": 267,
+        "top10_coverage_rate": 0.8725490196078431,
+        "top10_coverage_wilson_95": [
+          0.8305113691367473,
+          0.9053485024879798
+        ],
+        "avg_top10_hits": 1.7875816993464053,
+        "avg_red_hits": 1.1045751633986929,
+        "blue_hit_rate": 0.06862745098039216,
+        "mean_ndcg_at_10": 0.24648470965507682,
+        "mean_actual_rank": 17.03267973856209,
+        "brier_red": 0.15181343891303695,
+        "brier_blue": 0.05915833038672999,
+        "logloss_red": 0.48553541356358904,
+        "logloss_blue": 0.24026229015956635,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 5,
+          "6": 18
+        },
+        "red_hits_distribution": {
+          "0": 89,
+          "1": 118,
+          "2": 79,
+          "3": 18,
+          "4": 2,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 612,
+        "total_payout": 140,
+        "net": -472,
+        "roi": -0.7712418300653595,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        }
+      },
+      "vs_random": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.00724543948913364,
+        "ci95_low": -0.01904924887841072,
+        "ci95_high": 0.03321919361873993,
+        "significant_improvement": false
+      },
+      "selected": false
+    },
+    "logistic": {
+      "label": "在线逻辑回归",
+      "summary": {
+        "n": 306,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 21,
+        "any_prize_rate": 0.06862745098039216,
+        "any_prize_wilson_95": [
+          0.04532110177451662,
+          0.1026306258179048
+        ],
+        "top10_coverage_count": 273,
+        "top10_coverage_rate": 0.8921568627450981,
+        "top10_coverage_wilson_95": [
+          0.8524156394023948,
+          0.9221736991499495
+        ],
+        "avg_top10_hits": 1.803921568627451,
+        "avg_red_hits": 1.0784313725490196,
+        "blue_hit_rate": 0.06209150326797386,
+        "mean_ndcg_at_10": 0.24721502011452945,
+        "mean_actual_rank": 17.083877995642705,
+        "brier_red": 0.15186296551214545,
+        "brier_blue": 0.05913074565353451,
+        "logloss_red": 0.4830585219292004,
+        "logloss_blue": 0.23691123179852347,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 0,
+          "5": 2,
+          "6": 18
+        },
+        "red_hits_distribution": {
+          "0": 88,
+          "1": 129,
+          "2": 70,
+          "3": 16,
+          "4": 2,
+          "5": 1,
+          "6": 0
+        },
+        "total_cost": 612,
+        "total_payout": 3110,
+        "net": 2498,
+        "roi": 4.0816993464052285,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        }
+      },
+      "vs_random": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.007975749948586295,
+        "ci95_low": -0.018715575071760113,
+        "ci95_high": 0.03507805930751251,
+        "significant_improvement": false
+      },
+      "selected": false
+    },
+    "logistic_fast": {
+      "label": "在线逻辑回归",
+      "summary": {
+        "n": 306,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 21,
+        "any_prize_rate": 0.06862745098039216,
+        "any_prize_wilson_95": [
+          0.04532110177451662,
+          0.1026306258179048
+        ],
+        "top10_coverage_count": 273,
+        "top10_coverage_rate": 0.8921568627450981,
+        "top10_coverage_wilson_95": [
+          0.8524156394023948,
+          0.9221736991499495
+        ],
+        "avg_top10_hits": 1.803921568627451,
+        "avg_red_hits": 1.0784313725490196,
+        "blue_hit_rate": 0.06209150326797386,
+        "mean_ndcg_at_10": 0.24721502011452945,
+        "mean_actual_rank": 17.083877995642705,
+        "brier_red": 0.15186296551219663,
+        "brier_blue": 0.05913075328699927,
+        "logloss_red": 0.4830585219292978,
+        "logloss_blue": 0.23691134095428415,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 0,
+          "5": 2,
+          "6": 18
+        },
+        "red_hits_distribution": {
+          "0": 88,
+          "1": 129,
+          "2": 70,
+          "3": 16,
+          "4": 2,
+          "5": 1,
+          "6": 0
+        },
+        "total_cost": 612,
+        "total_payout": 3110,
+        "net": 2498,
+        "roi": 4.0816993464052285,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        }
+      },
+      "vs_random": {
+        "metric": "mean_ndcg_at_10",
+        "difference": 0.007975749948586295,
+        "ci95_low": -0.018715575071760113,
+        "ci95_high": 0.03507805930751251,
+        "significant_improvement": false
+      },
+      "selected": false
+    }
+  },
+  "random10": {
+    "summaries": {
+      "random": {
+        "n": 10,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 0,
+        "any_prize_rate": 0.0,
+        "any_prize_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ],
+        "top10_coverage_count": 9,
+        "top10_coverage_rate": 0.9,
+        "top10_coverage_wilson_95": [
+          0.5958436145024278,
+          0.9821242504842788
+        ],
+        "avg_top10_hits": 2.0,
+        "avg_red_hits": 1.8,
+        "blue_hit_rate": 0.0,
+        "mean_ndcg_at_10": 0.32469107219776927,
+        "mean_actual_rank": 15.95,
+        "brier_red": 0.14876033057851232,
+        "brier_blue": 0.05859375,
+        "logloss_red": 0.47413931305783724,
+        "logloss_blue": 0.23379165870645924,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "red_hits_distribution": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 3,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 20,
+        "total_payout": 0,
+        "net": -20,
+        "roi": -1.0,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.5958436145024278,
+        "meets_90pct_lower_bound": false
+      },
+      "frequency": {
+        "n": 10,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 2,
+        "any_prize_rate": 0.2,
+        "any_prize_wilson_95": [
+          0.05668094798069326,
+          0.5098431532792767
+        ],
+        "top10_coverage_count": 10,
+        "top10_coverage_rate": 1.0,
+        "top10_coverage_wilson_95": [
+          0.7224598312333834,
+          1.0
+        ],
+        "avg_top10_hits": 2.1,
+        "avg_red_hits": 1.1,
+        "blue_hit_rate": 0.2,
+        "mean_ndcg_at_10": 0.2623168306700915,
+        "mean_actual_rank": 15.866666666666665,
+        "brier_red": 0.15036525978768261,
+        "brier_blue": 0.05856422870261459,
+        "logloss_red": 0.48008020709174143,
+        "logloss_blue": 0.23368337951189289,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 2
+        },
+        "red_hits_distribution": {
+          "0": 1,
+          "1": 7,
+          "2": 2,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 20,
+        "total_payout": 10,
+        "net": -10,
+        "roi": -0.5,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.7224598312333834,
+        "meets_90pct_lower_bound": false
+      },
+      "recency": {
+        "n": 10,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 0,
+        "any_prize_rate": 0.0,
+        "any_prize_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ],
+        "top10_coverage_count": 10,
+        "top10_coverage_rate": 1.0,
+        "top10_coverage_wilson_95": [
+          0.7224598312333834,
+          1.0
+        ],
+        "avg_top10_hits": 2.5,
+        "avg_red_hits": 1.4,
+        "blue_hit_rate": 0.0,
+        "mean_ndcg_at_10": 0.3545138938423499,
+        "mean_actual_rank": 16.45,
+        "brier_red": 0.1500528053643841,
+        "brier_blue": 0.05938798401256682,
+        "logloss_red": 0.48017189431363505,
+        "logloss_blue": 0.23895635331700923,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "red_hits_distribution": {
+          "0": 1,
+          "1": 5,
+          "2": 3,
+          "3": 1,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 20,
+        "total_payout": 0,
+        "net": -20,
+        "roi": -1.0,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.7224598312333834,
+        "meets_90pct_lower_bound": false
+      },
+      "gap": {
+        "n": 10,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 0,
+        "any_prize_rate": 0.0,
+        "any_prize_wilson_95": [
+          0.0,
+          0.2775401687666165
+        ],
+        "top10_coverage_count": 9,
+        "top10_coverage_rate": 0.9,
+        "top10_coverage_wilson_95": [
+          0.5958436145024278,
+          0.9821242504842788
+        ],
+        "avg_top10_hits": 2.6,
+        "avg_red_hits": 1.0,
+        "blue_hit_rate": 0.0,
+        "mean_ndcg_at_10": 0.31738608302516297,
+        "mean_actual_rank": 15.116666666666665,
+        "brier_red": 0.14860944524390146,
+        "brier_blue": 0.060244454733557995,
+        "logloss_red": 0.472437895668609,
+        "logloss_blue": 0.24532732166377272,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "red_hits_distribution": {
+          "0": 2,
+          "1": 6,
+          "2": 2,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 20,
+        "total_payout": 0,
+        "net": -20,
+        "roi": -1.0,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.5958436145024278,
+        "meets_90pct_lower_bound": false
+      },
+      "markov": {
+        "n": 10,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 1,
+        "any_prize_rate": 0.1,
+        "any_prize_wilson_95": [
+          0.01787574951572113,
+          0.4041563854975721
+        ],
+        "top10_coverage_count": 10,
+        "top10_coverage_rate": 1.0,
+        "top10_coverage_wilson_95": [
+          0.7224598312333834,
+          1.0
+        ],
+        "avg_top10_hits": 2.1,
+        "avg_red_hits": 1.2,
+        "blue_hit_rate": 0.1,
+        "mean_ndcg_at_10": 0.27975015135406345,
+        "mean_actual_rank": 16.533333333333335,
+        "brier_red": 0.1503073952697352,
+        "brier_blue": 0.058182608913943556,
+        "logloss_red": 0.4796112892008176,
+        "logloss_blue": 0.23039507906153567,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 1
+        },
+        "red_hits_distribution": {
+          "0": 3,
+          "1": 4,
+          "2": 1,
+          "3": 2,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 20,
+        "total_payout": 5,
+        "net": -15,
+        "roi": -0.75,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.7224598312333834,
+        "meets_90pct_lower_bound": false
+      },
+      "ensemble": {
+        "n": 10,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 1,
+        "any_prize_rate": 0.1,
+        "any_prize_wilson_95": [
+          0.01787574951572113,
+          0.4041563854975721
+        ],
+        "top10_coverage_count": 10,
+        "top10_coverage_rate": 1.0,
+        "top10_coverage_wilson_95": [
+          0.7224598312333834,
+          1.0
+        ],
+        "avg_top10_hits": 2.2,
+        "avg_red_hits": 1.1,
+        "blue_hit_rate": 0.1,
+        "mean_ndcg_at_10": 0.3093705124716279,
+        "mean_actual_rank": 15.866666666666669,
+        "brier_red": 0.14935208459910304,
+        "brier_blue": 0.05852802484528866,
+        "logloss_red": 0.4763585730022572,
+        "logloss_blue": 0.23388899622970136,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 1
+        },
+        "red_hits_distribution": {
+          "0": 2,
+          "1": 5,
+          "2": 3,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 20,
+        "total_payout": 5,
+        "net": -15,
+        "roi": -0.75,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.7224598312333834,
+        "meets_90pct_lower_bound": false
+      },
+      "logistic": {
+        "n": 10,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 1,
+        "any_prize_rate": 0.1,
+        "any_prize_wilson_95": [
+          0.01787574951572113,
+          0.4041563854975721
+        ],
+        "top10_coverage_count": 9,
+        "top10_coverage_rate": 0.9,
+        "top10_coverage_wilson_95": [
+          0.5958436145024278,
+          0.9821242504842788
+        ],
+        "avg_top10_hits": 1.6,
+        "avg_red_hits": 0.9,
+        "blue_hit_rate": 0.1,
+        "mean_ndcg_at_10": 0.21709816863025808,
+        "mean_actual_rank": 18.083333333333332,
+        "brier_red": 0.1536954095359611,
+        "brier_blue": 0.05799929568145219,
+        "logloss_red": 0.48876017192140403,
+        "logloss_blue": 0.22778122059642084,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 1
+        },
+        "red_hits_distribution": {
+          "0": 3,
+          "1": 5,
+          "2": 2,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 20,
+        "total_payout": 5,
+        "net": -15,
+        "roi": -0.75,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.5958436145024278,
+        "meets_90pct_lower_bound": false
+      },
+      "logistic_fast": {
+        "n": 10,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 1,
+        "any_prize_rate": 0.1,
+        "any_prize_wilson_95": [
+          0.01787574951572113,
+          0.4041563854975721
+        ],
+        "top10_coverage_count": 9,
+        "top10_coverage_rate": 0.9,
+        "top10_coverage_wilson_95": [
+          0.5958436145024278,
+          0.9821242504842788
+        ],
+        "avg_top10_hits": 1.6,
+        "avg_red_hits": 0.9,
+        "blue_hit_rate": 0.1,
+        "mean_ndcg_at_10": 0.21709816863025808,
+        "mean_actual_rank": 18.083333333333332,
+        "brier_red": 0.15369540953595948,
+        "brier_blue": 0.057999296989445226,
+        "logloss_red": 0.48876017192140325,
+        "logloss_blue": 0.22778123316059898,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 1
+        },
+        "red_hits_distribution": {
+          "0": 3,
+          "1": 5,
+          "2": 2,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 20,
+        "total_payout": 5,
+        "net": -15,
+        "roi": -0.75,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.5958436145024278,
+        "meets_90pct_lower_bound": false
+      }
+    },
+    "cases": {
+      "2015028": {
+        "random": {
+          "issue": "2015028",
+          "date": "2015-03-12",
+          "actual_reds": [
+            4,
+            7,
+            10,
+            26,
+            27,
+            28
+          ],
+          "actual_blue": 14,
+          "top10_reds": [
+            30,
+            21,
+            6,
+            26,
+            19,
+            13,
+            3,
+            20,
+            2,
+            14
+          ],
+          "top4_blues": [
+            9,
+            5,
+            14,
+            1
+          ],
+          "single_reds": [
+            30,
+            21,
+            6,
+            26,
+            19,
+            13
+          ],
+          "single_blue": 9,
+          "top10_hits": 1,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.13032376591037062,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015028",
+          "date": "2015-03-12",
+          "actual_reds": [
+            4,
+            7,
+            10,
+            26,
+            27,
+            28
+          ],
+          "actual_blue": 14,
+          "top10_reds": [
+            17,
+            1,
+            6,
+            3,
+            13,
+            29,
+            22,
+            16,
+            18,
+            10
+          ],
+          "top4_blues": [
+            14,
+            10,
+            8,
+            1
+          ],
+          "single_reds": [
+            17,
+            1,
+            6,
+            3,
+            13,
+            29
+          ],
+          "single_blue": 14,
+          "top10_hits": 1,
+          "red_hits": 0,
+          "blue_hit": true,
+          "tier": 6,
+          "any_prize": true,
+          "top10_coverage": true,
+          "ndcg10": 0.0874717141014082,
+          "payout": 5
+        }
+      },
+      "2015036": {
+        "random": {
+          "issue": "2015036",
+          "date": "2015-03-31",
+          "actual_reds": [
+            4,
+            6,
+            16,
+            17,
+            26,
+            33
+          ],
+          "actual_blue": 3,
+          "top10_reds": [
+            24,
+            13,
+            27,
+            2,
+            20,
+            25,
+            29,
+            32,
+            31,
+            21
+          ],
+          "top4_blues": [
+            1,
+            13,
+            4,
+            8
+          ],
+          "single_reds": [
+            24,
+            13,
+            27,
+            2,
+            20,
+            25
+          ],
+          "single_blue": 1,
+          "top10_hits": 0,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": false,
+          "ndcg10": 0.0,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015036",
+          "date": "2015-03-31",
+          "actual_reds": [
+            4,
+            6,
+            16,
+            17,
+            26,
+            33
+          ],
+          "actual_blue": 3,
+          "top10_reds": [
+            17,
+            22,
+            14,
+            1,
+            10,
+            2,
+            3,
+            16,
+            4,
+            15
+          ],
+          "top4_blues": [
+            9,
+            13,
+            11,
+            14
+          ],
+          "single_reds": [
+            17,
+            22,
+            14,
+            1,
+            10,
+            2
+          ],
+          "single_blue": 9,
+          "top10_hits": 3,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.48915524981173886,
+          "payout": 0
+        }
+      },
+      "2015055": {
+        "random": {
+          "issue": "2015055",
+          "date": "2015-05-14",
+          "actual_reds": [
+            1,
+            10,
+            15,
+            18,
+            19,
+            28
+          ],
+          "actual_blue": 2,
+          "top10_reds": [
+            19,
+            18,
+            16,
+            4,
+            1,
+            33,
+            31,
+            13,
+            26,
+            14
+          ],
+          "top4_blues": [
+            10,
+            4,
+            1,
+            12
+          ],
+          "single_reds": [
+            19,
+            18,
+            16,
+            4,
+            1,
+            33
+          ],
+          "single_blue": 10,
+          "top10_hits": 3,
+          "red_hits": 3,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.6105858728157117,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015055",
+          "date": "2015-05-14",
+          "actual_reds": [
+            1,
+            10,
+            15,
+            18,
+            19,
+            28
+          ],
+          "actual_blue": 2,
+          "top10_reds": [
+            17,
+            16,
+            13,
+            26,
+            22,
+            14,
+            1,
+            7,
+            4,
+            32
+          ],
+          "top4_blues": [
+            14,
+            10,
+            11,
+            1
+          ],
+          "single_reds": [
+            17,
+            16,
+            13,
+            26,
+            22,
+            14
+          ],
+          "single_blue": 14,
+          "top10_hits": 1,
+          "red_hits": 0,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.10086747116627115,
+          "payout": 0
+        }
+      },
+      "2015076": {
+        "random": {
+          "issue": "2015076",
+          "date": "2015-07-02",
+          "actual_reds": [
+            1,
+            9,
+            10,
+            19,
+            23,
+            27
+          ],
+          "actual_blue": 9,
+          "top10_reds": [
+            9,
+            28,
+            13,
+            17,
+            16,
+            1,
+            2,
+            7,
+            3,
+            24
+          ],
+          "top4_blues": [
+            8,
+            1,
+            7,
+            10
+          ],
+          "single_reds": [
+            9,
+            28,
+            13,
+            17,
+            16,
+            1
+          ],
+          "single_blue": 8,
+          "top10_hits": 2,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.4103915680233244,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015076",
+          "date": "2015-07-02",
+          "actual_reds": [
+            1,
+            9,
+            10,
+            19,
+            23,
+            27
+          ],
+          "actual_blue": 9,
+          "top10_reds": [
+            17,
+            1,
+            16,
+            18,
+            14,
+            7,
+            22,
+            13,
+            26,
+            21
+          ],
+          "top4_blues": [
+            14,
+            9,
+            8,
+            5
+          ],
+          "single_reds": [
+            17,
+            1,
+            16,
+            18,
+            14,
+            7
+          ],
+          "single_blue": 14,
+          "top10_hits": 1,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.19092086617893467,
+          "payout": 0
+        }
+      },
+      "2015099": {
+        "random": {
+          "issue": "2015099",
+          "date": "2015-08-25",
+          "actual_reds": [
+            6,
+            7,
+            10,
+            11,
+            14,
+            22
+          ],
+          "actual_blue": 9,
+          "top10_reds": [
+            14,
+            23,
+            11,
+            18,
+            10,
+            5,
+            4,
+            12,
+            17,
+            16
+          ],
+          "top4_blues": [
+            15,
+            8,
+            4,
+            16
+          ],
+          "single_reds": [
+            14,
+            23,
+            11,
+            18,
+            10,
+            5
+          ],
+          "single_blue": 15,
+          "top10_hits": 3,
+          "red_hits": 3,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.5709662133861837,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015099",
+          "date": "2015-08-25",
+          "actual_reds": [
+            6,
+            7,
+            10,
+            11,
+            14,
+            22
+          ],
+          "actual_blue": 9,
+          "top10_reds": [
+            17,
+            26,
+            22,
+            1,
+            16,
+            29,
+            32,
+            13,
+            7,
+            14
+          ],
+          "top4_blues": [
+            14,
+            9,
+            10,
+            1
+          ],
+          "single_reds": [
+            17,
+            26,
+            22,
+            1,
+            16,
+            29
+          ],
+          "single_blue": 14,
+          "top10_hits": 3,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.329865324074273,
+          "payout": 0
+        }
+      },
+      "2015107": {
+        "random": {
+          "issue": "2015107",
+          "date": "2015-09-13",
+          "actual_reds": [
+            7,
+            14,
+            16,
+            18,
+            21,
+            25
+          ],
+          "actual_blue": 8,
+          "top10_reds": [
+            1,
+            22,
+            20,
+            14,
+            32,
+            6,
+            31,
+            9,
+            4,
+            15
+          ],
+          "top4_blues": [
+            3,
+            12,
+            4,
+            11
+          ],
+          "single_reds": [
+            1,
+            22,
+            20,
+            14,
+            32,
+            6
+          ],
+          "single_blue": 3,
+          "top10_hits": 1,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.13032376591037062,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015107",
+          "date": "2015-09-13",
+          "actual_reds": [
+            7,
+            14,
+            16,
+            18,
+            21,
+            25
+          ],
+          "actual_blue": 8,
+          "top10_reds": [
+            17,
+            26,
+            14,
+            22,
+            18,
+            13,
+            16,
+            1,
+            27,
+            9
+          ],
+          "top4_blues": [
+            13,
+            10,
+            9,
+            8
+          ],
+          "single_reds": [
+            17,
+            26,
+            14,
+            22,
+            18,
+            13
+          ],
+          "single_blue": 13,
+          "top10_hits": 3,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.3692312710536414,
+          "payout": 0
+        }
+      },
+      "2015109": {
+        "random": {
+          "issue": "2015109",
+          "date": "2015-09-17",
+          "actual_reds": [
+            1,
+            8,
+            9,
+            16,
+            32,
+            33
+          ],
+          "actual_blue": 13,
+          "top10_reds": [
+            28,
+            10,
+            8,
+            9,
+            32,
+            4,
+            30,
+            5,
+            20,
+            19
+          ],
+          "top4_blues": [
+            16,
+            15,
+            7,
+            1
+          ],
+          "single_reds": [
+            28,
+            10,
+            8,
+            9,
+            32,
+            4
+          ],
+          "single_blue": 16,
+          "top10_hits": 3,
+          "red_hits": 3,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.3986875657977409,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015109",
+          "date": "2015-09-17",
+          "actual_reds": [
+            1,
+            8,
+            9,
+            16,
+            32,
+            33
+          ],
+          "actual_blue": 13,
+          "top10_reds": [
+            17,
+            26,
+            14,
+            13,
+            16,
+            1,
+            22,
+            32,
+            7,
+            18
+          ],
+          "top4_blues": [
+            4,
+            9,
+            2,
+            12
+          ],
+          "single_reds": [
+            17,
+            26,
+            14,
+            13,
+            16,
+            1
+          ],
+          "single_blue": 4,
+          "top10_hits": 3,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.32031218075194173,
+          "payout": 0
+        }
+      },
+      "2015114": {
+        "random": {
+          "issue": "2015114",
+          "date": "2015-09-29",
+          "actual_reds": [
+            4,
+            7,
+            9,
+            13,
+            21,
+            26
+          ],
+          "actual_blue": 1,
+          "top10_reds": [
+            26,
+            30,
+            28,
+            14,
+            19,
+            32,
+            25,
+            11,
+            13,
+            29
+          ],
+          "top4_blues": [
+            16,
+            6,
+            2,
+            4
+          ],
+          "single_reds": [
+            26,
+            30,
+            28,
+            14,
+            19,
+            32
+          ],
+          "single_blue": 16,
+          "top10_hits": 2,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.3936948167222715,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015114",
+          "date": "2015-09-29",
+          "actual_reds": [
+            4,
+            7,
+            9,
+            13,
+            21,
+            26
+          ],
+          "actual_blue": 1,
+          "top10_reds": [
+            26,
+            17,
+            1,
+            13,
+            16,
+            22,
+            7,
+            14,
+            18,
+            9
+          ],
+          "top4_blues": [
+            9,
+            11,
+            16,
+            8
+          ],
+          "single_reds": [
+            26,
+            17,
+            1,
+            13,
+            16,
+            22
+          ],
+          "single_blue": 9,
+          "top10_hits": 4,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.6212653646768634,
+          "payout": 0
+        }
+      },
+      "2015133": {
+        "random": {
+          "issue": "2015133",
+          "date": "2015-11-12",
+          "actual_reds": [
+            2,
+            3,
+            13,
+            20,
+            22,
+            24
+          ],
+          "actual_blue": 15,
+          "top10_reds": [
+            9,
+            6,
+            25,
+            13,
+            19,
+            24,
+            30,
+            22,
+            11,
+            5
+          ],
+          "top4_blues": [
+            1,
+            14,
+            4,
+            6
+          ],
+          "single_reds": [
+            9,
+            6,
+            25,
+            13,
+            19,
+            24
+          ],
+          "single_blue": 1,
+          "top10_hits": 3,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.3335733535243489,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015133",
+          "date": "2015-11-12",
+          "actual_reds": [
+            2,
+            3,
+            13,
+            20,
+            22,
+            24
+          ],
+          "actual_blue": 15,
+          "top10_reds": [
+            22,
+            26,
+            1,
+            27,
+            14,
+            17,
+            16,
+            9,
+            8,
+            5
+          ],
+          "top4_blues": [
+            9,
+            10,
+            12,
+            14
+          ],
+          "single_reds": [
+            22,
+            26,
+            1,
+            27,
+            14,
+            17
+          ],
+          "single_blue": 9,
+          "top10_hits": 1,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.30260241349881345,
+          "payout": 0
+        }
+      },
+      "2015150": {
+        "random": {
+          "issue": "2015150",
+          "date": "2015-12-22",
+          "actual_reds": [
+            1,
+            3,
+            8,
+            11,
+            29,
+            31
+          ],
+          "actual_blue": 13,
+          "top10_reds": [
+            19,
+            27,
+            3,
+            7,
+            8,
+            13,
+            24,
+            30,
+            17,
+            23
+          ],
+          "top4_blues": [
+            2,
+            13,
+            4,
+            11
+          ],
+          "single_reds": [
+            19,
+            27,
+            3,
+            7,
+            8,
+            13
+          ],
+          "single_blue": 2,
+          "top10_hits": 2,
+          "red_hits": 2,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.26836379988737025,
+          "payout": 0
+        },
+        "ensemble": {
+          "issue": "2015150",
+          "date": "2015-12-22",
+          "actual_reds": [
+            1,
+            3,
+            8,
+            11,
+            29,
+            31
+          ],
+          "actual_blue": 13,
+          "top10_reds": [
+            22,
+            1,
+            17,
+            26,
+            32,
+            18,
+            16,
+            5,
+            8,
+            13
+          ],
+          "top4_blues": [
+            12,
+            16,
+            8,
+            11
+          ],
+          "single_reds": [
+            22,
+            1,
+            17,
+            26,
+            32,
+            18
+          ],
+          "single_blue": 12,
+          "top10_hits": 2,
+          "red_hits": 1,
+          "blue_hit": false,
+          "tier": null,
+          "any_prize": false,
+          "top10_coverage": true,
+          "ndcg10": 0.28201326940239274,
+          "payout": 0
+        }
+      }
+    },
+    "ensemble_vs_random_ndcg10": {
+      "difference": -0.015320559726141408,
+      "ci95_low": -0.178920121768137,
+      "ci95_high": 0.15237048943580175
+    },
+    "ensemble_vs_random_coverage": {
+      "difference": 0.1,
+      "ci95_low": 0.0,
+      "ci95_high": 0.3
+    }
+  },
+  "full_2015": {
+    "summaries": {
+      "random": {
+        "n": 154,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 12,
+        "any_prize_rate": 0.07792207792207792,
+        "any_prize_wilson_95": [
+          0.04513383849469349,
+          0.13125565578311413
+        ],
+        "top10_coverage_count": 144,
+        "top10_coverage_rate": 0.935064935064935,
+        "top10_coverage_wilson_95": [
+          0.8846025303151187,
+          0.9643498371216025
+        ],
+        "avg_top10_hits": 1.7727272727272727,
+        "avg_red_hits": 1.103896103896104,
+        "blue_hit_rate": 0.07792207792207792,
+        "mean_ndcg_at_10": 0.2517567113175438,
+        "mean_actual_rank": 17.113636363636367,
+        "brier_red": 0.14876033057851176,
+        "brier_blue": 0.05859375,
+        "logloss_red": 0.4741393130578378,
+        "logloss_blue": 0.23379165870645882,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 1,
+          "6": 11
+        },
+        "red_hits_distribution": {
+          "0": 44,
+          "1": 60,
+          "2": 40,
+          "3": 10,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 308,
+        "total_payout": 65,
+        "net": -243,
+        "roi": -0.788961038961039,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.8846025303151187,
+        "meets_90pct_lower_bound": false
+      },
+      "frequency": {
+        "n": 154,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 9,
+        "any_prize_rate": 0.05844155844155844,
+        "any_prize_wilson_95": [
+          0.031047327848349175,
+          0.10732937385766492
+        ],
+        "top10_coverage_count": 142,
+        "top10_coverage_rate": 0.922077922077922,
+        "top10_coverage_wilson_95": [
+          0.8687443442168858,
+          0.9548661615053065
+        ],
+        "avg_top10_hits": 1.8766233766233766,
+        "avg_red_hits": 1.1363636363636365,
+        "blue_hit_rate": 0.05844155844155844,
+        "mean_ndcg_at_10": 0.2535129060576815,
+        "mean_actual_rank": 16.82034632034632,
+        "brier_red": 0.1512348234379371,
+        "brier_blue": 0.059648968566425986,
+        "logloss_red": 0.48260958194603926,
+        "logloss_blue": 0.24605883817220303,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 9
+        },
+        "red_hits_distribution": {
+          "0": 37,
+          "1": 69,
+          "2": 38,
+          "3": 10,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 308,
+        "total_payout": 45,
+        "net": -263,
+        "roi": -0.8538961038961039,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.8687443442168858,
+        "meets_90pct_lower_bound": false
+      },
+      "recency": {
+        "n": 154,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 12,
+        "any_prize_rate": 0.07792207792207792,
+        "any_prize_wilson_95": [
+          0.04513383849469349,
+          0.13125565578311413
+        ],
+        "top10_coverage_count": 141,
+        "top10_coverage_rate": 0.9155844155844156,
+        "top10_coverage_wilson_95": [
+          0.8609343535519216,
+          0.9500052213130064
+        ],
+        "avg_top10_hits": 1.922077922077922,
+        "avg_red_hits": 1.1363636363636365,
+        "blue_hit_rate": 0.07142857142857142,
+        "mean_ndcg_at_10": 0.25730058251843174,
+        "mean_actual_rank": 16.58658008658008,
+        "brier_red": 0.15094506488950263,
+        "brier_blue": 0.05939920041901137,
+        "logloss_red": 0.48226597516943287,
+        "logloss_blue": 0.24265683285547376,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 2,
+          "6": 10
+        },
+        "red_hits_distribution": {
+          "0": 41,
+          "1": 61,
+          "2": 43,
+          "3": 8,
+          "4": 1,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 308,
+        "total_payout": 70,
+        "net": -238,
+        "roi": -0.7727272727272727,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.8609343535519216,
+        "meets_90pct_lower_bound": false
+      },
+      "gap": {
+        "n": 154,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 11,
+        "any_prize_rate": 0.07142857142857142,
+        "any_prize_wilson_95": [
+          0.04034932738367344,
+          0.12336923603686967
+        ],
+        "top10_coverage_count": 140,
+        "top10_coverage_rate": 0.9090909090909091,
+        "top10_coverage_wilson_95": [
+          0.8531934321432111,
+          0.9450752118644521
+        ],
+        "avg_top10_hits": 1.8831168831168832,
+        "avg_red_hits": 1.0584415584415585,
+        "blue_hit_rate": 0.06493506493506493,
+        "mean_ndcg_at_10": 0.2584457287375096,
+        "mean_actual_rank": 16.96753246753246,
+        "brier_red": 0.1515046446253648,
+        "brier_blue": 0.05893186864236079,
+        "logloss_red": 0.48246234754276246,
+        "logloss_blue": 0.2359834406127234,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 1,
+          "6": 10
+        },
+        "red_hits_distribution": {
+          "0": 46,
+          "1": 64,
+          "2": 34,
+          "3": 9,
+          "4": 1,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 308,
+        "total_payout": 60,
+        "net": -248,
+        "roi": -0.8051948051948052,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.8531934321432111,
+        "meets_90pct_lower_bound": false
+      },
+      "markov": {
+        "n": 154,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 9,
+        "any_prize_rate": 0.05844155844155844,
+        "any_prize_wilson_95": [
+          0.031047327848349175,
+          0.10732937385766492
+        ],
+        "top10_coverage_count": 142,
+        "top10_coverage_rate": 0.922077922077922,
+        "top10_coverage_wilson_95": [
+          0.8687443442168858,
+          0.9548661615053065
+        ],
+        "avg_top10_hits": 1.896103896103896,
+        "avg_red_hits": 1.1428571428571428,
+        "blue_hit_rate": 0.05194805194805195,
+        "mean_ndcg_at_10": 0.2600981068775845,
+        "mean_actual_rank": 16.611471861471866,
+        "brier_red": 0.1511128646476053,
+        "brier_blue": 0.05930513567619335,
+        "logloss_red": 0.48306367045299675,
+        "logloss_blue": 0.24078495447624196,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 1,
+          "6": 8
+        },
+        "red_hits_distribution": {
+          "0": 40,
+          "1": 62,
+          "2": 43,
+          "3": 8,
+          "4": 1,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 308,
+        "total_payout": 50,
+        "net": -258,
+        "roi": -0.8376623376623377,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.8687443442168858,
+        "meets_90pct_lower_bound": false
+      },
+      "ensemble": {
+        "n": 154,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 8,
+        "any_prize_rate": 0.05194805194805195,
+        "any_prize_wilson_95": [
+          0.02655461399781532,
+          0.09915115685093433
+        ],
+        "top10_coverage_count": 140,
+        "top10_coverage_rate": 0.9090909090909091,
+        "top10_coverage_wilson_95": [
+          0.8531934321432111,
+          0.9450752118644521
+        ],
+        "avg_top10_hits": 1.896103896103896,
+        "avg_red_hits": 1.1363636363636365,
+        "blue_hit_rate": 0.03896103896103896,
+        "mean_ndcg_at_10": 0.2698652291054892,
+        "mean_actual_rank": 16.609307359307355,
+        "brier_red": 0.15088432102469293,
+        "brier_blue": 0.05947728474619187,
+        "logloss_red": 0.4820895426110432,
+        "logloss_blue": 0.24298372812619537,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 2,
+          "6": 6
+        },
+        "red_hits_distribution": {
+          "0": 36,
+          "1": 70,
+          "2": 41,
+          "3": 5,
+          "4": 2,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 308,
+        "total_payout": 50,
+        "net": -258,
+        "roi": -0.8376623376623377,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.8531934321432111,
+        "meets_90pct_lower_bound": false
+      },
+      "logistic": {
+        "n": 154,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 8,
+        "any_prize_rate": 0.05194805194805195,
+        "any_prize_wilson_95": [
+          0.02655461399781532,
+          0.09915115685093433
+        ],
+        "top10_coverage_count": 141,
+        "top10_coverage_rate": 0.9155844155844156,
+        "top10_coverage_wilson_95": [
+          0.8609343535519216,
+          0.9500052213130064
+        ],
+        "avg_top10_hits": 1.8051948051948052,
+        "avg_red_hits": 1.1168831168831168,
+        "blue_hit_rate": 0.05194805194805195,
+        "mean_ndcg_at_10": 0.2526557339362721,
+        "mean_actual_rank": 17.055194805194812,
+        "brier_red": 0.15161453137940176,
+        "brier_blue": 0.05933480223089355,
+        "logloss_red": 0.48253200436196014,
+        "logloss_blue": 0.23882716676526786,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 8
+        },
+        "red_hits_distribution": {
+          "0": 41,
+          "1": 60,
+          "2": 47,
+          "3": 6,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 308,
+        "total_payout": 40,
+        "net": -268,
+        "roi": -0.8701298701298701,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.8609343535519216,
+        "meets_90pct_lower_bound": false
+      },
+      "logistic_fast": {
+        "n": 154,
+        "exact_jackpot_count": 0,
+        "exact_jackpot_rate": 0.0,
+        "any_prize_count": 8,
+        "any_prize_rate": 0.05194805194805195,
+        "any_prize_wilson_95": [
+          0.02655461399781532,
+          0.09915115685093433
+        ],
+        "top10_coverage_count": 141,
+        "top10_coverage_rate": 0.9155844155844156,
+        "top10_coverage_wilson_95": [
+          0.8609343535519216,
+          0.9500052213130064
+        ],
+        "avg_top10_hits": 1.8051948051948052,
+        "avg_red_hits": 1.1168831168831168,
+        "blue_hit_rate": 0.05194805194805195,
+        "mean_ndcg_at_10": 0.2526557339362721,
+        "mean_actual_rank": 17.055194805194812,
+        "brier_red": 0.15161453137940253,
+        "brier_blue": 0.05933480146888147,
+        "logloss_red": 0.48253200436196186,
+        "logloss_blue": 0.23882715236586824,
+        "tier_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 8
+        },
+        "red_hits_distribution": {
+          "0": 41,
+          "1": 60,
+          "2": 47,
+          "3": 6,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "total_cost": 308,
+        "total_payout": 40,
+        "net": -268,
+        "roi": -0.8701298701298701,
+        "baseline": {
+          "exact_jackpot_rate": 5.642994380480476e-08,
+          "top10_red_coverage_rate": 0.908857063403782,
+          "top6_red_coverage_rate": 0.7327387573494359,
+          "any_prize_rate": 0.06709452602458721,
+          "blue_hit_rate": 0.0625,
+          "expected_red_hits": 1.0909090909090908,
+          "expected_top10_red_hits": 1.8181818181818181,
+          "total_combinations": 17721088
+        },
+        "top10_coverage_lower_bound_95": 0.8609343535519216,
+        "meets_90pct_lower_bound": false
+      }
+    },
+    "n": 154
+  },
+  "disclaimer": "Top-10 覆盖率是候选池覆盖指标，不是单注中奖率。10 期样本的 95% 置信区间很宽；即使 10/10 覆盖，也不能证明未来 90% 下限。"
+}

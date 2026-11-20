@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <title>双色球盲测实验室 · SSQ Lab</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23f5c451'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='34' font-weight='800' fill='%2307111f'%3ESSQ%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">SSQ</div>
+        <div>
+          <div class="brand-title">双色球盲测实验室</div>
+          <div class="brand-sub">Leakage-free lottery lab</div>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="主导航">
+        <button class="tab active" data-view="home">首页</button>
+        <button class="tab" data-view="backtest">5年盲测</button>
+        <button class="tab" data-view="holdout2015">2015盲测</button>
+        <button class="tab" data-view="extreme">99%审计</button>
+        <button class="tab" data-view="models">模型对比</button>
+        <button class="tab" data-view="data">数据与方法</button>
+      </nav>
+      <div class="data-badge" id="dataBadge">加载中…</div>
+    </header>
+
+    <main>
+      <section class="view active" id="view-home">
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow">OFFICIAL DATA · STRICT WALK-FORWARD</div>
+            <h1>把“预测”放进<span>5 年盲测</span>里验证。</h1>
+            <p class="hero-lede">
+              官方历史数据、严格时间顺序、无未来数据泄漏。系统同时报告单注真实命中率、
+              Top-10 红球覆盖率和相对随机基线的统计置信区间。
+            </p>
+            <div class="hero-pills">
+              <span class="pill good" id="pillRows">官方数据</span>
+              <span class="pill good" id="pillCrosscheck">双分页复核</span>
+              <span class="pill" id="pillNoLookahead">无前视</span>
+              <span class="pill" id="pillChampion">严格门槛</span>
+            </div>
+          </div>
+          <div class="hero-orbit" aria-hidden="true">
+            <div class="orbit-ring ring-a"></div>
+            <div class="orbit-ring ring-b"></div>
+            <div class="orbit-core">
+              <span class="red-dot"></span>
+              <span>754</span>
+              <small>期盲测</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-grid" id="statsGrid"></section>
+
+        <div class="prediction-grid">
+          <section class="panel strict-panel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-kicker">STRICT MODE</div>
+                <h2>严格模式</h2>
+              </div>
+              <span class="status-chip" id="strictChip">—</span>
+            </div>
+            <p class="panel-note" id="strictNote"></p>
+            <div class="prediction-block">
+              <div class="block-label" id="strictIssueLabel">单注候选</div>
+              <div class="ball-line" id="strictSingle"></div>
+            </div>
+            <div class="prediction-block">
+              <div class="block-label">Top-10 红球池</div>
+              <div class="ball-line pool" id="strictPool"></div>
+            </div>
+            <button class="btn ghost" id="strictResample">重新抽样</button>
+          </section>
+
+          <section class="panel experimental-panel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-kicker">EXPERIMENTAL</div>
+                <h2>多因子候选</h2>
+              </div>
+              <span class="status-chip warn" id="expChip">未通过门槛</span>
+            </div>
+            <p class="panel-note" id="expNote"></p>
+            <div class="prediction-block">
+              <div class="block-label" id="expIssueLabel">单注候选</div>
+              <div class="ball-line" id="expSingle"></div>
+            </div>
+            <div class="prediction-block">
+              <div class="block-label">Top-10 红球 / Top-4 蓝球</div>
+              <div class="ball-line pool" id="expPool"></div>
+            </div>
+            <p class="micro-note">排序来自多因子集成，仅用于游戏展示；5 年盲测未证明优于随机。</p>
+          </section>
+        </div>
+
+        <section class="panel game-panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-kicker">CASE CHALLENGE</div>
+              <h2>盲测闯关</h2>
+            </div>
+            <div class="game-score">
+              <span>积分 <b id="coins">0</b></span>
+              <span>覆盖连击 <b id="streak">0</b></span>
+            </div>
+          </div>
+          <div class="challenge" id="challenge">
+            <div class="challenge-empty">正在准备盲测案例…</div>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="view-backtest">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">ROLLING ORIGIN · 5 YEARS</div>
+            <h1>754 期逐期回测</h1>
+            <p>每一期只使用它之前的数据。这里展示的是案例回放，不是事后拟合。</p>
+          </div>
+          <div class="segmented" id="modeSwitch">
+            <button class="seg active" data-mode="experimental">实验集成</button>
+            <button class="seg" data-mode="strict">严格基线</button>
+          </div>
+        </div>
+
+        <div class="mini-stats" id="backtestStats"></div>
+
+        <div class="chart-grid">
+          <section class="chart-card">
+            <div class="chart-head">
+              <div>
+                <div class="block-label">Top-10 红球覆盖</div>
+                <div class="chart-value" id="coverageValue">—</div>
+              </div>
+              <span class="chart-legend"><i class="legend-line"></i> 滚动 50 期</span>
+            </div>
+            <canvas id="coverageChart" height="220"></canvas>
+          </section>
+          <section class="chart-card">
+            <div class="chart-head">
+              <div>
+                <div class="block-label">单注任意奖级</div>
+                <div class="chart-value" id="prizeValue">—</div>
+              </div>
+              <span class="chart-legend"><i class="legend-line blue"></i> 滚动 50 期</span>
+            </div>
+            <canvas id="prizeChart" height="220"></canvas>
+          </section>
+        </div>
+
+        <section class="panel table-panel">
+          <div class="table-toolbar">
+            <div class="block-label">逐期案例</div>
+            <div class="toolbar-right">
+              <select id="yearFilter" aria-label="按年份筛选">
+                <option value="all">全部年份</option>
+              </select>
+              <span class="table-count" id="tableCount">—</span>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="case-table">
+              <thead>
+                <tr>
+                  <th>期号</th>
+                  <th>日期</th>
+                  <th>实际开奖</th>
+                  <th>系统 Top-10 红球</th>
+                  <th>覆盖</th>
+                  <th>单注红中</th>
+                  <th>蓝中</th>
+                  <th>奖级</th>
+                </tr>
+              </thead>
+              <tbody id="caseTableBody"></tbody>
+            </table>
+          </div>
+          <div class="pager">
+            <button class="btn ghost small" id="prevPage">上一页</button>
+            <span id="pageInfo">—</span>
+            <button class="btn ghost small" id="nextPage">下一页</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="view-holdout2015">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">TIME-OUT HOLDOUT · 2015</div>
+            <h1>2015 时间外盲测</h1>
+            <p>只用 2013–2014 选模，冻结后在 2015 年逐期盲测。随机 10 期由固定种子抽取；2015 结果未参与模型选择或调参。</p>
+          </div>
+        </div>
+
+        <div class="mini-stats" id="holdoutStats"></div>
+
+        <section class="panel verdict-panel">
+          <div class="verdict-icon">!</div>
+          <div>
+            <h2 id="holdoutVerdictTitle">正在读取 2015 盲测结果…</h2>
+            <p id="holdoutVerdictText"></p>
+          </div>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="table-toolbar">
+            <div class="block-label">随机 10 期真实结果对照</div>
+            <span class="table-count" id="holdoutCount">—</span>
+          </div>
+          <div class="table-wrap">
+            <table class="case-table">
+              <thead>
+                <tr>
+                  <th>期号</th>
+                  <th>日期</th>
+                  <th>实际开奖</th>
+                  <th>实验集成 Top-10 红球</th>
+                  <th>覆盖</th>
+                  <th>单注 6+1</th>
+                  <th>红中 / 蓝中</th>
+                  <th>奖级</th>
+                </tr>
+              </thead>
+              <tbody id="holdoutTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="method-grid">
+          <article class="panel method-card">
+            <h3>10/10 不等于 90% 下限</h3>
+            <p>10 期全部覆盖时，Wilson 95% 区间约为 72.25%–100%。样本太小，无法把“未来每期至少 90%”作为已证明结论。</p>
+          </article>
+          <article class="panel method-card">
+            <h3>覆盖不是单注命中</h3>
+            <p>Top-10 是候选池：只要开奖 6 个红球中有一个落在池内就算覆盖。单注 6+1 的真实命中另列，头奖概率仍固定为 1/17,721,088。</p>
+          </article>
+          <article class="panel method-card">
+            <h3>没有用答案反调参</h3>
+            <p>2015 只做最终评估；模型门槛仍由 2013–2014 的 NDCG@10 配对 bootstrap 决定。若不能显著超过随机，就保留随机基线。</p>
+          </article>
+        </section>
+      </section>
+
+      <section class="view" id="view-extreme">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">PURE-PREDICTION CEILING · 99%</div>
+            <h1>99% 极限审计</h1>
+            <p>只允许使用当期开奖前的信息。检查单注头奖、前三等奖，以及候选池覆盖在 20 年 walk-forward 中的真实上限。</p>
+          </div>
+        </div>
+
+        <div class="mini-stats" id="extremeStats"></div>
+
+        <section class="panel verdict-panel">
+          <div class="verdict-icon">!</div>
+          <div>
+            <h2 id="extremeVerdictTitle">正在读取 99% 极限审计…</h2>
+            <p id="extremeVerdictText"></p>
+          </div>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="table-toolbar">
+            <div class="block-label">20 年无泄漏回放</div>
+            <span class="table-count" id="extremeCount">—</span>
+          </div>
+          <div class="table-wrap">
+            <table class="model-table">
+              <thead>
+                <tr>
+                  <th>模型</th>
+                  <th>期数</th>
+                  <th>单注头奖</th>
+                  <th>前三等奖</th>
+                  <th>前三等奖率 / 95% 区间</th>
+                  <th>Top-10+4 候选命中</th>
+                  <th>候选命中率 / 95% 区间</th>
+                </tr>
+              </thead>
+              <tbody id="extremeTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="method-grid">
+          <article class="panel method-card">
+            <h3>单注前三等奖 1/99,557</h3>
+            <p>一等奖 1 种、二等奖 15 种、三等奖 162 种，共 178 个中奖组合，除以 17,721,088 个 6+1 组合。纯预测不能改变这个分母。</p>
+          </article>
+          <article class="panel method-card">
+            <h3>99% 需要组合覆盖</h3>
+            <p>单注独立尝试达到 99% 至少一次前三等奖约需 458,474 期；随机不同票约需 452,594 张。它增加的是覆盖，不是预测力。</p>
+          </article>
+          <article class="panel method-card">
+            <h3>回放不是预测</h3>
+            <p>用真实结果回填、缓存答案或事后修正可以获得 100% 回放准确率，但不属于预测，已明确排除在本审计之外。</p>
+          </article>
+        </section>
+      </section>
+
+      <section class="view" id="view-models">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">MODEL SELECTION</div>
+            <h1>模型对比</h1>
+            <p>先用验证段选择模型，再在完全未参与选择的 5 年测试段评估。</p>
+          </div>
+        </div>
+
+        <section class="panel verdict-panel">
+          <div class="verdict-icon">!</div>
+          <div>
+            <h2 id="verdictTitle">严格结论</h2>
+            <p id="verdictText"></p>
+          </div>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="table-wrap">
+            <table class="model-table">
+              <thead>
+                <tr>
+                  <th>模型</th>
+                  <th>验证 NDCG@10</th>
+                  <th>测试 NDCG@10</th>
+                  <th>测试 Top-10 覆盖</th>
+                  <th>测试任意奖级</th>
+                  <th>平均红中</th>
+                  <th>测试 ROI</th>
+                  <th>相对随机</th>
+                </tr>
+              </thead>
+              <tbody id="modelTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel chart-card wide">
+          <div class="chart-head">
+            <div>
+              <div class="block-label">年度盲测</div>
+              <div class="chart-value">覆盖率与单注任意奖级</div>
+            </div>
+          </div>
+          <canvas id="yearlyChart" height="260"></canvas>
+        </section>
+
+        <section class="method-grid">
+          <article class="panel method-card">
+            <h3>选择规则</h3>
+            <p>验证段 NDCG@10 相对随机基线的配对 bootstrap 95% 下界必须大于 0，否则回退随机基线。测试段不参与调参或选择。</p>
+          </article>
+          <article class="panel method-card">
+            <h3>为什么不是 90% 中奖率</h3>
+            <p>单注 6+1 头奖概率固定为 1/17,721,088。Top-10 红球覆盖约 90.9% 是候选池覆盖属性，任何固定 10 个红球都接近这个值。</p>
+          </article>
+          <article class="panel method-card">
+            <h3>数据飞轮做了什么</h3>
+            <p>每期先预测、再观察、再更新统计状态；在线模型只在事后学习。飞轮改善的是流程与校准记录，不会制造真实随机开奖的额外信息。</p>
+          </article>
+        </section>
+      </section>
+
+      <section class="view" id="view-data">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">DATA INTEGRITY</div>
+            <h1>数据与方法</h1>
+            <p>数据底座优先：官方来源、完整期号、双分页复核、可复现哈希。</p>
+          </div>
+          <a class="btn" href="data/ssq_history.csv" download>下载规范化 CSV</a>
+        </div>
+
+        <div class="data-grid">
+          <section class="panel data-card">
+            <div class="panel-kicker">SOURCE</div>
+            <h2>中彩网 + 中国福彩官网</h2>
+            <p id="sourceLink"></p>
+            <div class="kv"><span>抓取时间</span><b id="fetchedAt">—</b></div>
+            <div class="kv"><span>数据期数</span><b id="dataRows">—</b></div>
+            <div class="kv"><span>首期</span><b id="firstIssue">—</b></div>
+            <div class="kv"><span>末期</span><b id="lastIssue">—</b></div>
+          </section>
+
+          <section class="panel data-card">
+            <div class="panel-kicker">VALIDATION</div>
+            <h2>完整性校验</h2>
+            <div class="check-list" id="checkList"></div>
+          </section>
+
+          <section class="panel data-card wide-card">
+            <div class="panel-kicker">REPRODUCIBILITY</div>
+            <h2>数据指纹</h2>
+            <div class="hash-block">
+              <span>规范化 CSV SHA-256</span>
+              <code id="csvHash">—</code>
+            </div>
+            <div class="hash-block">
+              <span>原始响应 SHA-256</span>
+              <code id="rawHash">—</code>
+            </div>
+            <p class="micro-note">重新运行采集脚本会重新校验期号连续性与红蓝球范围，并对 2091 期双源重叠段逐期复核；哈希变化会直接暴露数据漂移。</p>
+          </section>
+
+          <section class="panel data-card wide-card">
+            <div class="panel-kicker">BOUNDARY</div>
+            <h2>能力边界</h2>
+            <p id="disclaimerText"></p>
+            <div class="rules-grid">
+              <div><span>一等奖</span><b>6 红 + 1 蓝</b></div>
+              <div><span>二等奖</span><b>6 红 + 0 蓝</b></div>
+              <div><span>三等奖</span><b>5 红 + 1 蓝</b></div>
+              <div><span>四等奖</span><b>5+0 / 4+1</b></div>
+              <div><span>五等奖</span><b>4+0 / 3+1</b></div>
+              <div><span>六等奖</span><b>0/1/2 红 + 1 蓝</b></div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>SSQ Lab · 概率教育 / 回测游戏</span>
+      <span>不构成投注建议 · 不接真实支付</span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
