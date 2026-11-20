@@ -32,6 +32,7 @@ DEFAULT_DATA_DIR = PROJECT_ROOT / "data"
 DEFAULT_CSV = DEFAULT_DATA_DIR / "ssq_history.csv"
 DEFAULT_RAW_DIR = DEFAULT_DATA_DIR / "raw"
 DEFAULT_MANIFEST = DEFAULT_DATA_DIR / "manifest.json"
+DEFAULT_PROVENANCE = DEFAULT_DATA_DIR / "provenance.json"
 
 CSV_FIELDS = [
     "issue",
@@ -63,6 +64,13 @@ def _sha256(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def _canonical_sha256(value: Any) -> str:
+    payload = json.dumps(
+        value, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
 
 
 def _request_json(url: str, retries: int = 4, timeout: int = 30) -> Dict[str, Any]:
@@ -435,6 +443,100 @@ def crosscheck_sources(
     }
 
 
+def build_provenance(
+    zhcw_records: Sequence[Dict[str, Any]],
+    cwl_records: Sequence[Dict[str, Any]],
+) -> Dict[str, Any]:
+    """Build per-issue source evidence without overstating single-source rows."""
+
+    zhcw_by_issue = {str(record.get("issue", "")): record for record in zhcw_records}
+    cwl_by_issue = {str(record.get("code", "")): record for record in cwl_records}
+    if len(zhcw_by_issue) != len(zhcw_records):
+        raise RuntimeError("duplicate issue in zhcw raw records")
+    if len(cwl_by_issue) != len(cwl_records):
+        raise RuntimeError("duplicate issue in cwl raw records")
+    unexpected_cwl = sorted(set(cwl_by_issue) - set(zhcw_by_issue))
+    if unexpected_cwl:
+        raise RuntimeError(f"cwl issues absent from canonical history: {unexpected_cwl[:10]}")
+
+    records: List[Dict[str, Any]] = []
+    counts = {
+        "dual_source_verified": 0,
+        "single_source_structurally_validated": 0,
+    }
+    for issue in sorted(zhcw_by_issue, key=int):
+        zhcw_record = zhcw_by_issue[issue]
+        canonical = draw_from_zhcw(zhcw_record)
+        canonical_payload = {
+            "issue": canonical.issue,
+            "date": canonical.draw_date.isoformat(),
+            "reds": list(canonical.reds),
+            "blue": canonical.blue,
+            "first_prize_count": canonical.first_prize_count,
+            "first_prize_amount": canonical.first_prize_amount,
+        }
+        sources = [
+            {
+                "source": "zhcw",
+                "raw_record_sha256": _canonical_sha256(zhcw_record),
+                "numbers_match_canonical": True,
+                "first_prize_match_where_available": True,
+            }
+        ]
+        cwl_record = cwl_by_issue.get(issue)
+        if cwl_record is None:
+            confidence = "single_source_structurally_validated"
+        else:
+            official = draw_from_official(cwl_record)
+            numbers_match = (
+                canonical.draw_date == official.draw_date
+                and canonical.reds == official.reds
+                and canonical.blue == official.blue
+            )
+            prize_match = (
+                official.first_prize_count is None
+                or canonical.first_prize_count == official.first_prize_count
+            ) and (
+                official.first_prize_amount is None
+                or canonical.first_prize_amount == official.first_prize_amount
+            )
+            if not numbers_match or not prize_match:
+                raise RuntimeError(
+                    f"source provenance mismatch for {issue}: "
+                    f"numbers_match={numbers_match}, prize_match={prize_match}"
+                )
+            sources.append(
+                {
+                    "source": "cwl",
+                    "raw_record_sha256": _canonical_sha256(cwl_record),
+                    "numbers_match_canonical": numbers_match,
+                    "first_prize_match_where_available": prize_match,
+                }
+            )
+            confidence = "dual_source_verified"
+        counts[confidence] += 1
+        records.append(
+            {
+                **canonical_payload,
+                "canonical_draw_sha256": _canonical_sha256(canonical_payload),
+                "confidence": confidence,
+                "source_count": len(sources),
+                "sources": sources,
+            }
+        )
+    return {
+        "schema_version": 1,
+        "evidence_policy": {
+            "dual_source_verified": "中彩网与中国福彩官网红蓝球逐期一致",
+            "single_source_structurally_validated": (
+                "仅中彩网可用；已做格式、范围、期号、日期与完整性校验，不宣称双源确认"
+            ),
+        },
+        "summary": {"rows": len(records), **counts},
+        "records": records,
+    }
+
+
 def collect_20y(
     start: date,
     end: date,
@@ -492,6 +594,12 @@ def collect_20y(
         encoding="utf-8",
     )
 
+    provenance_path = data_dir / "provenance.json"
+    provenance = build_provenance(zhcw_records, cwl_records)
+    provenance_path.write_text(
+        json.dumps(provenance, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
     csv_path = data_dir / "ssq_history.csv"
     write_csv(zhcw_draws, csv_path)
     manifest = {
@@ -527,6 +635,12 @@ def collect_20y(
         "cwl_raw_records": {
             "path": str(cwl_raw.relative_to(PROJECT_ROOT)),
             "sha256": _sha256(cwl_raw),
+        },
+        "provenance": {
+            "path": str(provenance_path.relative_to(PROJECT_ROOT)),
+            "sha256": _sha256(provenance_path),
+            "rows": provenance["summary"]["rows"],
+            "confidence": provenance["summary"],
         },
     }
     (data_dir / "manifest.json").write_text(

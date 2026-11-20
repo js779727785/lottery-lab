@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "protocol": "future frozen forecasts only",
+    "forecast_dir": "/Users/jingshuai/aigame/lottery-lab/forecasts",
+    "settled_forecasts": 0,
+    "minimum_draws": 104,
+    "historical_replay_included": false,
+    "tamper_checks_required": true
+  },
+  "models": {},
+  "promotion": {
+    "eligible_for_manual_review": [],
+    "promoted_automatically": false,
+    "reason": "即使达到预设门槛，也只进入人工复核；严格模型切换必须单独修改并留下新的开奖前冻结证据。"
+  }
+}

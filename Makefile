@@ -4,20 +4,33 @@ START ?= 2026-01-01
 END ?= 2026-01-31
 VALIDATION_START ?= 2024-01-01
 VALIDATION_END ?= 2025-12-31
+TICKETS ?= 10
 
-.PHONY: collect backtest holdout extreme signal review test serve all
+.PHONY: collect challenge backtest forecast future-audit holdout extreme campaign signal review test serve all
 
 collect:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.collect20 --start 2006-01-01 --end "$$(date +%F)"
 
+challenge:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.challenger
+
 backtest:
-	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.pipeline
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.pipeline --portfolio-tickets $(TICKETS)
+
+forecast:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.forecast sync
+
+future-audit:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.future_audit
 
 holdout:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.holdout --seed 20261120 --count 10
 
 extreme:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.extreme --start 2008-01-01 --target 0.99
+
+campaign:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.campaign --target 0.99
 
 signal:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.signal_audit --start 2008-01-01
@@ -31,4 +44,4 @@ test:
 serve:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m lottery_lab.server --port 8765
 
-all: collect backtest holdout extreme signal test
+all: collect challenge backtest forecast future-audit holdout extreme campaign signal test

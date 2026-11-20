@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "experiment": "future X-draw coverage planner",
+    "target_probability": 0.99,
+    "draw_horizons": [
+      10,
+      52,
+      100,
+      500,
+      1000
+    ],
+    "total_combinations": 17721088,
+    "ticket_cost_yuan": 2,
+    "no_future_results_used": true,
+    "coverage_is_not_prediction": true,
+    "uniform_distinct_ticket_model": true,
+    "independent_draw_assumption": true
+  },
+  "baselines": {
+    "exact_jackpot_rate": 5.642994380480476e-08,
+    "second_prize_rate": 8.464491570720715e-07,
+    "third_prize_rate": 9.141650896378372e-06,
+    "top3_prize_rate": 1.0044529997255248e-05,
+    "jackpot_one_in": 17721088.0,
+    "top3_prize_one_in": 99556.67415730337,
+    "top10_red_coverage_rate": 0.908857063403782,
+    "top10_five_red_rate": 0.0054226918798665185,
+    "top10_top4_top3_candidate_rate": 0.0013556729699666296,
+    "top6_red_coverage_rate": 0.7327387573494359,
+    "any_prize_rate": 0.06709452602458721,
+    "blue_hit_rate": 0.0625,
+    "expected_red_hits": 1.0909090909090908,
+    "expected_top10_red_hits": 1.8181818181818181,
+    "total_combinations": 17721088
+  },
+  "requirements": {
+    "top3": [
+      {
+        "draw_count": 10,
+        "prize_target": "top3",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.36904265551980675,
+        "tickets_per_draw": 45789,
+        "previous_ticket_probability": 0.989999942177141,
+        "campaign_probability": 0.9900009491923708,
+        "total_ticket_count": 457890,
+        "total_cost_yuan": 915780,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      },
+      {
+        "draw_count": 52,
+        "prize_target": "top3",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.08475268912261102,
+        "tickets_per_draw": 8815,
+        "previous_ticket_probability": 0.989996873687448,
+        "campaign_probability": 0.9900020997365712,
+        "total_ticket_count": 458380,
+        "total_cost_yuan": 916760,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      },
+      {
+        "draw_count": 100,
+        "prize_target": "top3",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.045007413978564045,
+        "tickets_per_draw": 4585,
+        "previous_ticket_probability": 0.9899986098147074,
+        "campaign_probability": 0.990008653344559,
+        "total_ticket_count": 458500,
+        "total_cost_yuan": 917000,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      },
+      {
+        "draw_count": 500,
+        "prize_target": "top3",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.009168055107232424,
+        "tickets_per_draw": 917,
+        "previous_ticket_probability": 0.9899535567801526,
+        "campaign_probability": 0.9900038890379753,
+        "total_ticket_count": 458500,
+        "total_cost_yuan": 917000,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      },
+      {
+        "draw_count": 1000,
+        "prize_target": "top3",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.004594582648473037,
+        "tickets_per_draw": 459,
+        "previous_ticket_probability": 0.9899529594805455,
+        "campaign_probability": 0.9900533752212269,
+        "total_ticket_count": 459000,
+        "total_cost_yuan": 918000,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      }
+    ],
+    "jackpot": [
+      {
+        "draw_count": 10,
+        "prize_target": "jackpot",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.36904265551980675,
+        "tickets_per_draw": 6539838,
+        "previous_ticket_probability": 0.9899999966531451,
+        "campaign_probability": 0.9900000055966875,
+        "total_ticket_count": 65398380,
+        "total_cost_yuan": 130796760,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      },
+      {
+        "draw_count": 52,
+        "prize_target": "jackpot",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.08475268912261102,
+        "tickets_per_draw": 1501910,
+        "previous_ticket_probability": 0.989999972357823,
+        "campaign_probability": 0.9900000044186702,
+        "total_ticket_count": 78099320,
+        "total_cost_yuan": 156198640,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      },
+      {
+        "draw_count": 100,
+        "prize_target": "jackpot",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.045007413978564045,
+        "tickets_per_draw": 797581,
+        "previous_ticket_probability": 0.9899999796870178,
+        "campaign_probability": 0.990000038776369,
+        "total_ticket_count": 79758100,
+        "total_cost_yuan": 159516200,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      },
+      {
+        "draw_count": 500,
+        "prize_target": "jackpot",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.009168055107232424,
+        "tickets_per_draw": 162468,
+        "previous_ticket_probability": 0.9899997404819079,
+        "campaign_probability": 0.990000025245655,
+        "total_ticket_count": 81234000,
+        "total_cost_yuan": 162468000,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      },
+      {
+        "draw_count": 1000,
+        "prize_target": "jackpot",
+        "target_probability": 0.99,
+        "per_draw_target_probability": 0.004594582648473037,
+        "tickets_per_draw": 81422,
+        "previous_ticket_probability": 0.9899999980516275,
+        "campaign_probability": 0.9900005649398111,
+        "total_ticket_count": 81422000,
+        "total_cost_yuan": 162844000,
+        "coverage_only": true,
+        "prediction_accuracy_claim": false,
+        "uniform_distinct_ticket_model": true
+      }
+    ]
+  },
+  "fixed_prize_assumptions": {
+    "outcomes_by_tier": {
+      "3": 162,
+      "4": 7695,
+      "5": 137475,
+      "6": 1921140
+    },
+    "amounts_yuan_by_tier": {
+      "3": 3000,
+      "4": 200,
+      "5": 10,
+      "6": 5
+    },
+    "omitted_variable_tiers": [
+      1,
+      2
+    ]
+  },
+  "disclaimer": "99% 仅表示在每期从完整票面空间均匀抽取指定数量的不重复组合、且开奖独立时至少覆盖一次目标结果的概率；它是组合覆盖和预算结论，不是单注预测准确率，也不证明模型识别了未来号码。"
+}

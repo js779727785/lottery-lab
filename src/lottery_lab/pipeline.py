@@ -11,9 +11,12 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from .backtest import CaseResult, rolling_series, run_model, summarize, yearly_summary
+from .challenger import DEFAULT_REPORT as DEFAULT_CHALLENGER_REPORT
+from .challenger import challenger_model_by_key
 from .data import DEFAULT_DATA_DIR, load_draws
 from .metrics import paired_bootstrap_difference, theoretical_baselines
 from .models import Model, Prediction, model_registry
+from .portfolio import build_portfolio_payload
 from .schema import Draw, validate_draw_sequence
 
 
@@ -50,6 +53,12 @@ def _prediction_payload(prediction: Prediction, label: str) -> Dict[str, Any]:
         "single_ticket": {"reds": single_reds, "blue": single_blue},
         "red_ranking": list(prediction.red_ranking),
         "blue_ranking": list(prediction.blue_ranking),
+        "red_probabilities": [
+            round(float(prediction.red_probs[number]), 12) for number in range(1, 34)
+        ],
+        "blue_probabilities": [
+            round(float(prediction.blue_probs[number]), 12) for number in range(1, 17)
+        ],
         "top10_red_probs": [
             {"number": number, "probability": round(float(prediction.red_probs[number]), 6)}
             for number in top10_reds
@@ -135,6 +144,7 @@ def build_pipeline(
     data_dir: Path = DEFAULT_DATA_DIR,
     validation_years: int = 2,
     test_years: int = 5,
+    portfolio_ticket_count: int = 10,
     web_data_path: Path = DEFAULT_WEB_DATA,
     report_summary_path: Path = DEFAULT_REPORT_SUMMARY,
     report_cases_path: Path = DEFAULT_REPORT_CASES,
@@ -223,8 +233,10 @@ def build_pipeline(
     experimental_cases = test_cases["ensemble"]
     champion_model = test_models[champion_key]
     next_issue = next_issue_code(draws[-1].issue)
-    latest_prediction = _prediction_payload(
-        champion_model.predict(next_issue), f"{next_issue} · 严格模式"
+    strict_prediction = champion_model.predict(next_issue)
+    latest_prediction = _prediction_payload(strict_prediction, f"{next_issue} · 严格模式")
+    portfolio = build_portfolio_payload(
+        strict_prediction, next_issue, ticket_count=portfolio_ticket_count
     )
 
     experimental = model_registry()
@@ -234,6 +246,41 @@ def build_pipeline(
     experimental_prediction = _prediction_payload(
         experimental_model.predict(next_issue), f"{next_issue} · 实验性多因子候选"
     )
+    development_challenger = None
+    exploratory_challengers = []
+    if DEFAULT_CHALLENGER_REPORT.exists():
+        challenger_report = json.loads(DEFAULT_CHALLENGER_REPORT.read_text(encoding="utf-8"))
+        challenger_key = challenger_report["future_candidate"]["key"]
+        if challenger_key:
+            challenger_model = challenger_model_by_key(challenger_key)
+            for draw in draws:
+                challenger_model.observe(draw)
+            challenger_prediction = _prediction_payload(
+                challenger_model.predict(next_issue),
+                f"{next_issue} · 开发集冻结挑战者",
+            )
+            development_challenger = {
+                "key": challenger_key,
+                "label": challenger_report["future_candidate"]["label"],
+                "selection_data_end": challenger_report["meta"]["development_data_end"],
+                "observed_2021_2026_used_for_selection": False,
+                "promotion": challenger_report["promotion"],
+                "latest_prediction": challenger_prediction,
+            }
+        for panel_item in challenger_report.get("exploratory_panel", []):
+            panel_model = challenger_model_by_key(panel_item["key"])
+            for draw in draws:
+                panel_model.observe(draw)
+            exploratory_challengers.append(
+                {
+                    **panel_item,
+                    "selection_data_end": challenger_report["meta"]["development_data_end"],
+                    "latest_prediction": _prediction_payload(
+                        panel_model.predict(next_issue),
+                        f"{next_issue} · 预注册探索模型 {panel_item['key']}",
+                    ),
+                }
+            )
 
     manifest_path = data_dir / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
@@ -298,6 +345,9 @@ def build_pipeline(
             "rolling": rolling_series(experimental_cases, window=50),
             "yearly": yearly_summary(experimental_cases),
         },
+        "development_challenger": development_challenger,
+        "exploratory_challengers": exploratory_challengers,
+        "portfolio": portfolio,
         "models": models_payload,
         "cases": [case.as_dict() for case in champion_cases],
         "rolling": rolling_series(champion_cases, window=50),
@@ -324,6 +374,9 @@ def build_pipeline(
             "test_summary": dashboard["experimental"]["test_summary"],
             "yearly": dashboard["experimental"]["yearly"],
         },
+        "development_challenger": dashboard["development_challenger"],
+        "exploratory_challengers": dashboard["exploratory_challengers"],
+        "portfolio": dashboard["portfolio"],
         "models": dashboard["models"],
         "yearly": dashboard["yearly"],
         "disclaimer": dashboard["disclaimer"],
@@ -341,6 +394,7 @@ def main() -> None:
     parser.add_argument("--data-dir", default=str(DEFAULT_DATA_DIR))
     parser.add_argument("--validation-years", type=int, default=2)
     parser.add_argument("--test-years", type=int, default=5)
+    parser.add_argument("--portfolio-tickets", type=int, default=10)
     parser.add_argument("--web-data", default=str(DEFAULT_WEB_DATA))
     parser.add_argument("--report-summary", default=str(DEFAULT_REPORT_SUMMARY))
     parser.add_argument("--report-cases", default=str(DEFAULT_REPORT_CASES))
@@ -349,6 +403,7 @@ def main() -> None:
         data_dir=Path(args.data_dir),
         validation_years=args.validation_years,
         test_years=args.test_years,
+        portfolio_ticket_count=args.portfolio_tickets,
         web_data_path=Path(args.web_data),
         report_summary_path=Path(args.report_summary),
         report_cases_path=Path(args.report_cases),

@@ -19,6 +19,7 @@ def main() -> None:
             "next_issue": data["meta"]["next_issue"],
             "strict": data["champion"]["latest_prediction"],
             "experimental": data["experimental"]["latest_prediction"],
+            "portfolio": data["portfolio"],
             "note": data["disclaimer"],
         },
         ensure_ascii=False,

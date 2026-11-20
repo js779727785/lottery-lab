@@ -1343,6 +1343,17 @@
           "addToBetWinner2": "",
           "addToBetWinner3": ""
         }
+      ],
+      "firstPrizeAddress": "江苏2注,浙江1注,湖北1注,四川1注,共5注。",
+      "sendPrizeDetails": [
+        {
+          "prizeType": "下期一等奖派奖金额",
+          "awardMoney": "0"
+        },
+        {
+          "prizeType": "下期六等奖派奖金额",
+          "awardMoney": "0"
+        }
       ]
     },
     {

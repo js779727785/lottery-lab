@@ -163,7 +163,8 @@ class RecencyModel(Model):
     key = "recency"
     label = "近因加权"
 
-    def __init__(self, half_life: float = 52.0) -> None:
+    def __init__(self, half_life: float = 52.0, key: str = "recency") -> None:
+        self.key = key
         self.half_life = half_life
         self.decay = 0.5 ** (1.0 / half_life)
         self.red_weights = {number: 0.0 for number in RED_NUMBERS}
@@ -446,7 +447,8 @@ class OnlineLogisticModel(Model):
             probability = 1.0 / (1.0 + math.exp(-max(-40.0, min(40.0, score))))
             error = probability - (1.0 if number in positives else 0.0)
             for index, value in enumerate(vector):
-                weights[index] += learning_rate * error * value - self.l2 * weights[index]
+                gradient = error * value + self.l2 * weights[index]
+                weights[index] -= learning_rate * gradient
 
     def predict(self, target_issue: str) -> Prediction:
         features = self._build_features()
@@ -457,6 +459,90 @@ class OnlineLogisticModel(Model):
         return _make_prediction(red_scores, blue_scores)
 
 
+class OnlineExpertModel(Model):
+    """Online Hedge mixture of fixed, leakage-free historical experts."""
+
+    key = "hedge"
+    label = "在线专家加权"
+
+    def __init__(self, learning_rate: float = 0.25) -> None:
+        self.learning_rate = learning_rate
+        self.experts = [
+            FrequencyModel(),
+            RecencyModel(13.0, "recency_13"),
+            RecencyModel(52.0, "recency_52"),
+            GapModel(),
+            MarkovModel(),
+        ]
+        self.expert_weights = [1.0 / len(self.experts)] * len(self.experts)
+        self._pending = None
+
+    def reset(self) -> None:
+        for expert in self.experts:
+            expert.reset()
+        self.expert_weights = [1.0 / len(self.experts)] * len(self.experts)
+        self._pending = None
+
+    @staticmethod
+    def _loss(prediction: Prediction, draw: Draw) -> float:
+        red_loss = 0.0
+        for number in RED_NUMBERS:
+            probability = min(1.0 - 1e-12, max(1e-12, prediction.red_probs[number]))
+            label = number in draw.red_set
+            red_loss -= math.log(probability if label else 1.0 - probability)
+        blue_loss = 0.0
+        for number in BLUE_NUMBERS:
+            probability = min(1.0 - 1e-12, max(1e-12, prediction.blue_probs[number]))
+            label = number == draw.blue
+            blue_loss -= math.log(probability if label else 1.0 - probability)
+        return red_loss / len(RED_NUMBERS) + blue_loss / len(BLUE_NUMBERS)
+
+    def _mixture(self, predictions: Sequence[Prediction]) -> Prediction:
+        red_probs = {
+            number: sum(
+                weight * prediction.red_probs[number]
+                for weight, prediction in zip(self.expert_weights, predictions)
+            )
+            for number in RED_NUMBERS
+        }
+        blue_probs = {
+            number: sum(
+                weight * prediction.blue_probs[number]
+                for weight, prediction in zip(self.expert_weights, predictions)
+            )
+            for number in BLUE_NUMBERS
+        }
+        return Prediction(
+            red_scores=dict(red_probs),
+            blue_scores=dict(blue_probs),
+            red_probs=red_probs,
+            blue_probs=blue_probs,
+            red_ranking=_rank(red_probs, RED_NUMBERS),
+            blue_ranking=_rank(blue_probs, BLUE_NUMBERS),
+        )
+
+    def predict(self, target_issue: str) -> Prediction:
+        predictions = [expert.predict(target_issue) for expert in self.experts]
+        self._pending = tuple(predictions)
+        return self._mixture(predictions)
+
+    def observe(self, draw: Draw) -> None:
+        if self._pending is None:
+            self.predict(draw.issue)
+        assert self._pending is not None
+        losses = [self._loss(prediction, draw) for prediction in self._pending]
+        updated = [
+            weight * math.exp(-self.learning_rate * loss)
+            for weight, loss in zip(self.expert_weights, losses)
+        ]
+        normalizer = sum(updated)
+        if normalizer > 0.0 and math.isfinite(normalizer):
+            self.expert_weights = [weight / normalizer for weight in updated]
+        for expert in self.experts:
+            expert.observe(draw)
+        self._pending = None
+
+
 def model_registry() -> List[Model]:
     return [
         RandomModel(),
@@ -465,6 +551,7 @@ def model_registry() -> List[Model]:
         GapModel(),
         MarkovModel(),
         EnsembleModel(),
+        OnlineExpertModel(),
         OnlineLogisticModel("logistic", 0.03, 0.0005),
         OnlineLogisticModel("logistic_fast", 0.08, 0.0005),
     ]

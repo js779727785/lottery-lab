@@ -1,0 +1,924 @@
+{
+  "schema_version": 1,
+  "forecast": {
+    "target_issue": "2026134",
+    "frozen_at_utc": "2026-11-20T04:32:30.565136+00:00",
+    "history_boundary": {
+      "last_issue": "2026133",
+      "last_date": "2026-11-19",
+      "rows": 3166
+    },
+    "data_snapshot": {
+      "manifest_sha256": "8f76ccd91aa6bdc05a3c6377f15f1774deed18faa0b40ef8cdce789b32f054d2",
+      "csv_sha256": "08ed44c4330561459580190acaaef55c909fdbeea5403e419ee88e22149147fd",
+      "provenance_sha256": "0c344ec8d8ea1f62a2c55d1631ef0849a16c418a69ac6355ad87a655e6ffd1aa"
+    },
+    "code_snapshot": {
+      "git_head": "9ade54612ceffc75e211777bc17939e65c79759a",
+      "source_tree_sha256": "a02aa51d9a37f6fe5d02327e10411a831fd67f8ebc192bdf2a87811381520086"
+    },
+    "selection": {
+      "strict_model_key": "random",
+      "strict_model_label": "随机基线",
+      "champion_reason": "没有任何候选模型在验证段对随机基线的 NDCG@10 提升达到 95% 置信显著；按预先设定的门槛回退为随机基线，避免把噪声当作预测能力。",
+      "no_lookahead": true,
+      "challenger_model_key": "ensemble",
+      "challenger_model_label": "多因子集成（实验性）"
+    },
+    "strict": {
+      "label": "2026134 · 严格模式",
+      "top10_reds": [
+        23,
+        17,
+        13,
+        20,
+        4,
+        29,
+        7,
+        3,
+        32,
+        11
+      ],
+      "top4_blues": [
+        13,
+        1,
+        14,
+        2
+      ],
+      "single_ticket": {
+        "reds": [
+          23,
+          17,
+          13,
+          20,
+          4,
+          29
+        ],
+        "blue": 13
+      },
+      "red_ranking": [
+        23,
+        17,
+        13,
+        20,
+        4,
+        29,
+        7,
+        3,
+        32,
+        11,
+        5,
+        14,
+        18,
+        30,
+        24,
+        8,
+        6,
+        1,
+        22,
+        2,
+        16,
+        12,
+        9,
+        25,
+        15,
+        33,
+        31,
+        27,
+        19,
+        28,
+        21,
+        10,
+        26
+      ],
+      "blue_ranking": [
+        13,
+        1,
+        14,
+        2,
+        7,
+        8,
+        6,
+        3,
+        10,
+        12,
+        9,
+        16,
+        5,
+        11,
+        4,
+        15
+      ],
+      "top10_red_probs": [
+        {
+          "number": 23,
+          "probability": 0.181818
+        },
+        {
+          "number": 17,
+          "probability": 0.181818
+        },
+        {
+          "number": 13,
+          "probability": 0.181818
+        },
+        {
+          "number": 20,
+          "probability": 0.181818
+        },
+        {
+          "number": 4,
+          "probability": 0.181818
+        },
+        {
+          "number": 29,
+          "probability": 0.181818
+        },
+        {
+          "number": 7,
+          "probability": 0.181818
+        },
+        {
+          "number": 3,
+          "probability": 0.181818
+        },
+        {
+          "number": 32,
+          "probability": 0.181818
+        },
+        {
+          "number": 11,
+          "probability": 0.181818
+        }
+      ],
+      "top4_blue_probs": [
+        {
+          "number": 13,
+          "probability": 0.0625
+        },
+        {
+          "number": 1,
+          "probability": 0.0625
+        },
+        {
+          "number": 14,
+          "probability": 0.0625
+        },
+        {
+          "number": 2,
+          "probability": 0.0625
+        }
+      ]
+    },
+    "challenger": {
+      "label": "2026134 · 实验性多因子候选",
+      "top10_reds": [
+        22,
+        6,
+        14,
+        1,
+        13,
+        2,
+        30,
+        26,
+        8,
+        18
+      ],
+      "top4_blues": [
+        4,
+        7,
+        1,
+        5
+      ],
+      "single_ticket": {
+        "reds": [
+          22,
+          6,
+          14,
+          1,
+          13,
+          2
+        ],
+        "blue": 4
+      },
+      "red_ranking": [
+        22,
+        6,
+        14,
+        1,
+        13,
+        2,
+        30,
+        26,
+        8,
+        18,
+        9,
+        5,
+        4,
+        24,
+        10,
+        17,
+        32,
+        23,
+        27,
+        25,
+        3,
+        7,
+        19,
+        16,
+        20,
+        29,
+        31,
+        33,
+        12,
+        28,
+        11,
+        15,
+        21
+      ],
+      "blue_ranking": [
+        4,
+        7,
+        1,
+        5,
+        12,
+        6,
+        11,
+        10,
+        15,
+        3,
+        16,
+        13,
+        8,
+        14,
+        9,
+        2
+      ],
+      "top10_red_probs": [
+        {
+          "number": 22,
+          "probability": 0.31995
+        },
+        {
+          "number": 6,
+          "probability": 0.263727
+        },
+        {
+          "number": 14,
+          "probability": 0.259339
+        },
+        {
+          "number": 1,
+          "probability": 0.259023
+        },
+        {
+          "number": 13,
+          "probability": 0.247331
+        },
+        {
+          "number": 2,
+          "probability": 0.230572
+        },
+        {
+          "number": 30,
+          "probability": 0.224746
+        },
+        {
+          "number": 26,
+          "probability": 0.222972
+        },
+        {
+          "number": 8,
+          "probability": 0.221266
+        },
+        {
+          "number": 18,
+          "probability": 0.220901
+        }
+      ],
+      "top4_blue_probs": [
+        {
+          "number": 4,
+          "probability": 0.099314
+        },
+        {
+          "number": 7,
+          "probability": 0.094729
+        },
+        {
+          "number": 1,
+          "probability": 0.091507
+        },
+        {
+          "number": 5,
+          "probability": 0.082972
+        }
+      ]
+    },
+    "exploratory_challengers": [
+      {
+        "key": "gap",
+        "label": "遗漏回补",
+        "role": "precommitted_future_evidence_only",
+        "selection_count": 0,
+        "mean_validation_combined_logloss": 0.721950501705221,
+        "selection_data_end": "2020-12-31",
+        "latest_prediction": {
+          "label": "2026134 · 预注册探索模型 gap",
+          "top10_reds": [
+            8,
+            12,
+            24,
+            23,
+            4,
+            15,
+            22,
+            29,
+            32,
+            27
+          ],
+          "top4_blues": [
+            1,
+            7,
+            8,
+            16
+          ],
+          "single_ticket": {
+            "reds": [
+              8,
+              12,
+              24,
+              23,
+              4,
+              15
+            ],
+            "blue": 1
+          },
+          "red_ranking": [
+            8,
+            12,
+            24,
+            23,
+            4,
+            15,
+            22,
+            29,
+            32,
+            27,
+            3,
+            25,
+            30,
+            2,
+            6,
+            16,
+            20,
+            28,
+            1,
+            19,
+            31,
+            33,
+            5,
+            9,
+            13,
+            17,
+            18,
+            7,
+            10,
+            11,
+            14,
+            21,
+            26
+          ],
+          "blue_ranking": [
+            1,
+            7,
+            8,
+            16,
+            6,
+            10,
+            14,
+            4,
+            3,
+            9,
+            12,
+            5,
+            2,
+            15,
+            11,
+            13
+          ],
+          "top10_red_probs": [
+            {
+              "number": 8,
+              "probability": 0.435368
+            },
+            {
+              "number": 12,
+              "probability": 0.269682
+            },
+            {
+              "number": 24,
+              "probability": 0.251272
+            },
+            {
+              "number": 23,
+              "probability": 0.223658
+            },
+            {
+              "number": 4,
+              "probability": 0.214453
+            },
+            {
+              "number": 15,
+              "probability": 0.214453
+            },
+            {
+              "number": 22,
+              "probability": 0.205249
+            },
+            {
+              "number": 29,
+              "probability": 0.196044
+            },
+            {
+              "number": 32,
+              "probability": 0.196044
+            },
+            {
+              "number": 27,
+              "probability": 0.186839
+            }
+          ],
+          "top4_blue_probs": [
+            {
+              "number": 1,
+              "probability": 0.112733
+            },
+            {
+              "number": 7,
+              "probability": 0.104426
+            },
+            {
+              "number": 8,
+              "probability": 0.089888
+            },
+            {
+              "number": 16,
+              "probability": 0.083658
+            }
+          ]
+        }
+      },
+      {
+        "key": "recency_13",
+        "label": "近因 13 期半衰期",
+        "role": "precommitted_future_evidence_only",
+        "selection_count": 0,
+        "mean_validation_combined_logloss": 0.7236576339580578,
+        "selection_data_end": "2020-12-31",
+        "latest_prediction": {
+          "label": "2026134 · 预注册探索模型 recency_13",
+          "top10_reds": [
+            30,
+            26,
+            10,
+            13,
+            14,
+            4,
+            20,
+            22,
+            5,
+            6
+          ],
+          "top4_blues": [
+            11,
+            12,
+            2,
+            4
+          ],
+          "single_ticket": {
+            "reds": [
+              30,
+              26,
+              10,
+              13,
+              14,
+              4
+            ],
+            "blue": 11
+          },
+          "red_ranking": [
+            30,
+            26,
+            10,
+            13,
+            14,
+            4,
+            20,
+            22,
+            5,
+            6,
+            25,
+            11,
+            9,
+            1,
+            24,
+            16,
+            21,
+            29,
+            31,
+            27,
+            19,
+            17,
+            18,
+            2,
+            7,
+            28,
+            33,
+            23,
+            3,
+            32,
+            12,
+            15,
+            8
+          ],
+          "blue_ranking": [
+            11,
+            12,
+            2,
+            4,
+            5,
+            9,
+            3,
+            15,
+            13,
+            14,
+            16,
+            10,
+            8,
+            6,
+            1,
+            7
+          ],
+          "top10_red_probs": [
+            {
+              "number": 30,
+              "probability": 0.295397
+            },
+            {
+              "number": 26,
+              "probability": 0.267734
+            },
+            {
+              "number": 10,
+              "probability": 0.257811
+            },
+            {
+              "number": 13,
+              "probability": 0.255062
+            },
+            {
+              "number": 14,
+              "probability": 0.254195
+            },
+            {
+              "number": 4,
+              "probability": 0.245453
+            },
+            {
+              "number": 20,
+              "probability": 0.236887
+            },
+            {
+              "number": 22,
+              "probability": 0.229273
+            },
+            {
+              "number": 5,
+              "probability": 0.219551
+            },
+            {
+              "number": 6,
+              "probability": 0.206442
+            }
+          ],
+          "top4_blue_probs": [
+            {
+              "number": 11,
+              "probability": 0.122917
+            },
+            {
+              "number": 12,
+              "probability": 0.105012
+            },
+            {
+              "number": 2,
+              "probability": 0.079749
+            },
+            {
+              "number": 4,
+              "probability": 0.077763
+            }
+          ]
+        }
+      },
+      {
+        "key": "markov",
+        "label": "一阶转移",
+        "role": "precommitted_future_evidence_only",
+        "selection_count": 0,
+        "mean_validation_combined_logloss": 0.7239666917728697,
+        "selection_data_end": "2020-12-31",
+        "latest_prediction": {
+          "label": "2026134 · 预注册探索模型 markov",
+          "top10_reds": [
+            22,
+            1,
+            6,
+            8,
+            26,
+            2,
+            9,
+            13,
+            23,
+            18
+          ],
+          "top4_blues": [
+            7,
+            13,
+            10,
+            6
+          ],
+          "single_ticket": {
+            "reds": [
+              22,
+              1,
+              6,
+              8,
+              26,
+              2
+            ],
+            "blue": 7
+          },
+          "red_ranking": [
+            22,
+            1,
+            6,
+            8,
+            26,
+            2,
+            9,
+            13,
+            23,
+            18,
+            14,
+            32,
+            17,
+            5,
+            7,
+            10,
+            27,
+            3,
+            19,
+            30,
+            20,
+            16,
+            25,
+            33,
+            29,
+            31,
+            4,
+            28,
+            21,
+            12,
+            24,
+            11,
+            15
+          ],
+          "blue_ranking": [
+            7,
+            13,
+            10,
+            6,
+            5,
+            15,
+            4,
+            12,
+            1,
+            11,
+            14,
+            3,
+            8,
+            16,
+            9,
+            2
+          ],
+          "top10_red_probs": [
+            {
+              "number": 22,
+              "probability": 0.307686
+            },
+            {
+              "number": 1,
+              "probability": 0.277739
+            },
+            {
+              "number": 6,
+              "probability": 0.261888
+            },
+            {
+              "number": 8,
+              "probability": 0.249549
+            },
+            {
+              "number": 26,
+              "probability": 0.233706
+            },
+            {
+              "number": 2,
+              "probability": 0.233704
+            },
+            {
+              "number": 9,
+              "probability": 0.230178
+            },
+            {
+              "number": 13,
+              "probability": 0.230176
+            },
+            {
+              "number": 23,
+              "probability": 0.228405
+            },
+            {
+              "number": 18,
+              "probability": 0.223138
+            }
+          ],
+          "top4_blue_probs": [
+            {
+              "number": 7,
+              "probability": 0.105101
+            },
+            {
+              "number": 13,
+              "probability": 0.105077
+            },
+            {
+              "number": 10,
+              "probability": 0.094767
+            },
+            {
+              "number": 6,
+              "probability": 0.084456
+            }
+          ]
+        }
+      }
+    ],
+    "portfolio": {
+      "label": "2026134 · 10 注覆盖组合",
+      "strategy": "保证票面唯一；前 16 注优先使用不同蓝球；红球组合以四中以上结果邻域增量最大化。",
+      "tickets": [
+        {
+          "reds": [
+            4,
+            13,
+            17,
+            20,
+            23,
+            29
+          ],
+          "blue": 13
+        },
+        {
+          "reds": [
+            3,
+            5,
+            7,
+            11,
+            14,
+            32
+          ],
+          "blue": 1
+        },
+        {
+          "reds": [
+            1,
+            6,
+            8,
+            18,
+            24,
+            30
+          ],
+          "blue": 14
+        },
+        {
+          "reds": [
+            2,
+            9,
+            12,
+            16,
+            22,
+            25
+          ],
+          "blue": 2
+        },
+        {
+          "reds": [
+            15,
+            19,
+            27,
+            28,
+            31,
+            33
+          ],
+          "blue": 7
+        },
+        {
+          "reds": [
+            7,
+            10,
+            12,
+            20,
+            24,
+            26
+          ],
+          "blue": 8
+        },
+        {
+          "reds": [
+            2,
+            3,
+            21,
+            23,
+            30,
+            33
+          ],
+          "blue": 6
+        },
+        {
+          "reds": [
+            6,
+            11,
+            13,
+            19,
+            21,
+            25
+          ],
+          "blue": 3
+        },
+        {
+          "reds": [
+            1,
+            4,
+            10,
+            14,
+            15,
+            22
+          ],
+          "blue": 10
+        },
+        {
+          "reds": [
+            8,
+            9,
+            16,
+            17,
+            27,
+            32
+          ],
+          "blue": 12
+        }
+      ],
+      "metrics": {
+        "ticket_count": 10,
+        "unique_ticket_count": 10,
+        "distinct_blue_count": 10,
+        "cost_yuan": 20,
+        "guaranteed_any_prize": false,
+        "red_four_plus_coverage_count": 54244,
+        "red_four_plus_coverage_rate": 0.04897577394796527,
+        "any_prize_outcome_count": 11401144,
+        "any_prize_probability": 0.643365915230487,
+        "top3_outcome_count": 1780,
+        "top3_probability": 0.00010044529997255247,
+        "jackpot_outcome_count": 10,
+        "jackpot_probability": 5.642994380480476e-07,
+        "random_independent_baseline": {
+          "any_prize_probability": 0.5006829295745618,
+          "top3_probability": 0.00010044075992843293,
+          "jackpot_probability": 5.642992949583814e-07
+        },
+        "absolute_lift_vs_random": {
+          "any_prize_probability": 0.1426829856559252,
+          "top3_probability": 4.540044119539762e-09,
+          "jackpot_probability": 1.4308966626185764e-13
+        }
+      },
+      "disclaimer": "覆盖组合能提高同等注数下至少中一个奖的概率，但每张不同票的头奖概率仍为 1/17,721,088；提升来自增加不同组合覆盖，不是预测未来开奖号码。"
+    },
+    "integrity_limit": "本地 SHA-256 可发现意外或未同步篡改；只有提交到外部 Git 远端或可信时间戳后，才能对抗可重写全部本地文件的攻击者。"
+  },
+  "forecast_sha256": "09bb1b26e3b997d20194acf3a51d90324eac03f18c098c5ff4b8409e76e7dcaf"
+}

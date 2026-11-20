@@ -2,6 +2,7 @@ const state = {
   data: null,
   holdout: null,
   extreme: null,
+  campaign: null,
   signal: null,
   mode: 'experimental',
   year: 'all',
@@ -125,6 +126,7 @@ function switchView(name) {
   if (name === 'backtest') requestAnimationFrame(() => renderBacktest());
   if (name === 'holdout2015') requestAnimationFrame(() => renderHoldout());
   if (name === 'extreme') requestAnimationFrame(() => renderExtreme());
+  if (name === 'campaign') requestAnimationFrame(() => renderCampaign());
   if (name === 'models') requestAnimationFrame(() => renderModels());
 }
 
@@ -225,6 +227,37 @@ function renderPredictions() {
   const expPool = $('#expPool');
   expPool.insertAdjacentHTML('beforeend', '<span class="ball-sep">+</span>');
   expPool.insertAdjacentHTML('beforeend', ballsHTML(experimental.top4_blues, 'blue', { small: true }));
+}
+
+function renderPortfolio() {
+  const portfolio = state.data.portfolio;
+  if (!portfolio) return;
+  const metrics = portfolio.metrics;
+  const baseline = metrics.random_independent_baseline;
+  const jackpotOneIn = Math.round(1 / metrics.jackpot_probability);
+
+  $('#portfolioTitle').textContent = portfolio.label;
+  $('#portfolioCost').textContent = `${metrics.ticket_count} 注 · ¥${metrics.cost_yuan}`;
+  $('#portfolioStrategy').textContent = portfolio.strategy;
+  $('#portfolioDisclaimer').textContent = portfolio.disclaimer;
+  $('#portfolioMetrics').innerHTML = [
+    ['至少中一个奖', pct(metrics.any_prize_probability, 2), `独立随机 ${pct(baseline.any_prize_probability, 2)}`],
+    ['不同蓝球', `${metrics.distinct_blue_count}/16`, metrics.guaranteed_any_prize ? '数学保证至少一注中奖' : '减少同期开奖内的重复覆盖'],
+    ['前三等奖', pct(metrics.top3_probability, 5), `随机基线 ${pct(baseline.top3_probability, 5)}`],
+    ['头奖覆盖', `1 / ${jackpotOneIn.toLocaleString('zh-CN')}`, '只来自不同票面数量'],
+  ].map(([label, value, note]) => `
+    <div class="portfolio-metric">
+      <span>${label}</span>
+      <b>${value}</b>
+      <small>${note}</small>
+    </div>
+  `).join('');
+  $('#portfolioTickets').innerHTML = portfolio.tickets.map((ticket, index) => `
+    <div class="portfolio-ticket">
+      <span class="ticket-index">${String(index + 1).padStart(2, '0')}</span>
+      <div class="tiny-balls">${singleTicketHTML(ticket.reds, ticket.blue, { small: true })}</div>
+    </div>
+  `).join('');
 }
 
 function pointsFor(caseItem) {
@@ -479,6 +512,57 @@ function renderExtreme() {
   }).join('');
 }
 
+function money(value) {
+  return `¥${Math.round(Number(value || 0)).toLocaleString('zh-CN')}`;
+}
+
+function campaignRowsHTML(rows) {
+  return rows.map((row) => `
+    <tr>
+      <td>${row.draw_count}</td>
+      <td>${row.tickets_per_draw.toLocaleString('zh-CN')}</td>
+      <td>${row.total_ticket_count.toLocaleString('zh-CN')}</td>
+      <td>${money(row.total_cost_yuan)}</td>
+      <td><span class="tag good">${pct(row.campaign_probability, 6)}</span></td>
+      <td>${pct(row.previous_ticket_probability, 6)}</td>
+    </tr>
+  `).join('');
+}
+
+function renderCampaign() {
+  if (!state.campaign) {
+    $('#campaignStats').innerHTML = '';
+    $('#campaignVerdictTitle').textContent = 'X 期覆盖规划未生成';
+    $('#campaignVerdictText').textContent = '请先运行 make campaign，再重新加载页面。';
+    $('#campaignTop3Body').innerHTML = '';
+    $('#campaignJackpotBody').innerHTML = '';
+    $('#campaignTop3Count').textContent = '—';
+    $('#campaignJackpotCount').textContent = '—';
+    return;
+  }
+
+  const report = state.campaign;
+  const top3 = report.requirements.top3;
+  const jackpot = report.requirements.jackpot;
+  const top3Typical = top3.find((row) => row.draw_count === 100) || top3[0];
+  const jackpotTypical = jackpot.find((row) => row.draw_count === 100) || jackpot[0];
+
+  $('#campaignStats').innerHTML = [
+    ['目标', pct(report.meta.target_probability, 0)],
+    ['前三等奖 · 100 期', `${top3Typical.tickets_per_draw.toLocaleString('zh-CN')} 注/期`],
+    ['前三等奖总成本', money(top3Typical.total_cost_yuan)],
+    ['头奖 · 100 期', `${jackpotTypical.tickets_per_draw.toLocaleString('zh-CN')} 注/期`],
+    ['头奖总成本', money(jackpotTypical.total_cost_yuan)],
+  ].map(([label, value]) => `<div class="mini-stat"><span>${label}</span><b>${value}</b></div>`).join('');
+
+  $('#campaignVerdictTitle').textContent = '99% 是组合覆盖门槛，不是预测准确率';
+  $('#campaignVerdictText').textContent = `前三等奖在 10、52、100、500、1000 期的总注数约为 ${top3.map((row) => row.total_ticket_count.toLocaleString('zh-CN')).join('、')}；头奖对应约为 ${jackpot.map((row) => row.total_ticket_count.toLocaleString('zh-CN')).join('、')}。每行都按开奖前固定票面计算，未使用未来结果。`;
+  $('#campaignTop3Count').textContent = `${top3.length} 个期数方案 · 均匀不重复票面模型`;
+  $('#campaignJackpotCount').textContent = `${jackpot.length} 个期数方案 · 均匀不重复票面模型`;
+  $('#campaignTop3Body').innerHTML = campaignRowsHTML(top3);
+  $('#campaignJackpotBody').innerHTML = campaignRowsHTML(jackpot);
+}
+
 function renderYearFilter() {
   const select = $('#yearFilter');
   if (select.dataset.ready === 'true') return;
@@ -690,12 +774,14 @@ function renderAll() {
   renderMeta();
   renderStats();
   renderPredictions();
+  renderPortfolio();
   saveScore();
   newChallenge();
   renderBacktest();
   renderHoldout();
   renderSignal();
   renderExtreme();
+  renderCampaign();
   renderModels();
   renderData();
 }
@@ -749,16 +835,18 @@ function bindEvents() {
 
 async function init() {
   try {
-    const [response, holdoutResponse, extremeResponse, signalResponse] = await Promise.all([
+    const [response, holdoutResponse, extremeResponse, campaignResponse, signalResponse] = await Promise.all([
       fetch('data/dashboard.json', { cache: 'no-store' }),
       fetch('data/holdout2015.json', { cache: 'no-store' }),
       fetch('data/extreme.json', { cache: 'no-store' }),
+      fetch('data/campaign.json', { cache: 'no-store' }),
       fetch('data/signal_audit.json', { cache: 'no-store' }),
     ]);
     if (!response.ok) throw new Error(`dashboard HTTP ${response.status}`);
     state.data = await response.json();
     state.holdout = holdoutResponse.ok ? await holdoutResponse.json() : null;
     state.extreme = extremeResponse.ok ? await extremeResponse.json() : null;
+    state.campaign = campaignResponse.ok ? await campaignResponse.json() : null;
     state.signal = signalResponse.ok ? await signalResponse.json() : null;
     renderAll();
     bindEvents();

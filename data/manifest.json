@@ -7,7 +7,7 @@
   },
   "requested_start": "2006-01-01",
   "requested_end": "2026-11-20",
-  "fetched_at_utc": "2026-11-20T02:45:41.317945+00:00",
+  "fetched_at_utc": "2026-11-20T04:32:18.865979+00:00",
   "zhcw_fetch": {
     "source": "https://jc.zhcw.com/port/client_json.php",
     "start_issue": "2006001",
@@ -82,10 +82,20 @@
   },
   "raw_records": {
     "path": "data/raw/zhcw_records.json",
-    "sha256": "45389e989c1ab0d168d9c8c3a54ed144ed553738cf4aab52f000608b8ff48ea5"
+    "sha256": "702ec5d60c8bdfdcdc98ff1660ad0d901c7cebe235086872392448177f357640"
   },
   "cwl_raw_records": {
     "path": "data/raw/cwl_records.json",
-    "sha256": "d4288b57271ff4fd59fcd7dcf4503078017cb26386dc1aec21f0924b10773e0a"
+    "sha256": "5d64f27277a9365acb2a2743d9c3082a493d43b413dc186cd4716e4b58fbfbc7"
+  },
+  "provenance": {
+    "path": "data/provenance.json",
+    "sha256": "0c344ec8d8ea1f62a2c55d1631ef0849a16c418a69ac6355ad87a655e6ffd1aa",
+    "rows": 3166,
+    "confidence": {
+      "rows": 3166,
+      "dual_source_verified": 2091,
+      "single_source_structurally_validated": 1075
+    }
   }
 }
