@@ -160,6 +160,9 @@ def run_period_review(
     data_dir: Path = DEFAULT_DATA_DIR,
     report_dir: Path = DEFAULT_REPORT_DIR,
 ) -> Dict[str, Any]:
+    report_dir = Path(report_dir)
+    if not report_dir.is_absolute():
+        report_dir = (PROJECT_ROOT / report_dir).resolve()
     if start > end:
         raise ValueError("review start must not be after end")
     if validation_start > validation_end:
@@ -261,7 +264,7 @@ def run_period_review(
     json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
     with period_csv_path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(
             [
                 "issue",
